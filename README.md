@@ -32,7 +32,11 @@
 
 ## 主题与评论
 
-- 主题：使用 `Minimal Mistakes`，已配置中文与分页，导航包含首页、归档、关于。
+- 主题：使用 `Minimal Mistakes`，已配置中文与分页，导航包含首页、归档、分类、标签、关于。
+- 功能：
+  - 站点搜索：点击导航栏搜索图标即可。
+  - 社交链接：侧边栏与页脚包含 GitHub 与 Email 链接。
+  - 统计：已预留 Google Analytics 配置（需替换 ID）。
 - 评论：启用 `Utterances`（基于 GitHub Issues）。
   - 在仓库中开启 Issues
   - 访问 https://utteranc.es 安装 GitHub App 并选择仓库 `KyrieChao/KyrieChao.github.io`

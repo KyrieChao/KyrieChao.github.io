@@ -9,6 +9,7 @@ paginate_path: "/page:num/"
 
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: air
+search: true
 
 plugins:
   - jekyll-remote-theme
@@ -27,6 +28,20 @@ author:
     - label: "GitHub"
       url: "https://github.com/KyrieChao"
       icon: "fab fa-github"
+    - label: "Email"
+      url: "mailto:your-email@example.com"
+      icon: "fas fa-fw fa-envelope-square"
+
+footer:
+  links:
+    - label: "GitHub"
+      url: "https://github.com/KyrieChao"
+      icon: "fab fa-fw fa-github"
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-XXXXXXXXXX" # 替换为你的 Google Analytics ID
 
 defaults:
   - scope:
