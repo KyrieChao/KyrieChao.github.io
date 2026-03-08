@@ -1,3 +1,56 @@
 title: KyrieChao 的博客
 description: 技术探索与生活记录
-theme: jekyll-theme-minimal
+url: "https://KyrieChao.github.io"
+lang: zh-CN
+locale: zh-CN
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: "/page:num/"
+
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: air
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+author:
+  name: "Kyrie Chao"
+  avatar: # 可选：放置你的头像地址，如 /assets/images/avatar.jpg
+  bio: "热爱技术与生活，记录点滴。"
+  location: "China"
+  links:
+    - label: "GitHub"
+      url: "https://github.com/KyrieChao"
+      icon: "fab fa-github"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+comments:
+  provider: "utterances"
+  utterances:
+    repo: "KyrieChao/KyrieChao.github.io"
+    issue_term: "pathname"
+    label: "comments"
+    theme: "preferred-color-scheme"
+
+collections:
+  posts:
+    output: true
+
+exclude:
+  - vendor
+  - Gemfile.lock
