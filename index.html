@@ -1,22 +1,2 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <title>KyrieChao 的博客</title>
-  <style>
-    .post { margin: 20px 0; padding: 10px; border-left: 3px solid #007acc; }
-  </style>
-</head>
-<body>
-  <h1>我的博客</h1>
-
-  {% for post in site.posts %}
-  <div class="post">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p>发布于 {{ post.date | date: "%Y 年 %m 月 %d 日" }}</p>
-  </div>
-  {% endfor %}
-
-</body>
-</html>
+<h1>Hello, this is KyrieChao's blog!</h1>
+<p>正在慢慢搭建中……</p>
