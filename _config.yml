@@ -16,6 +16,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
 
 author:
   name: "Kyrie Chao"
