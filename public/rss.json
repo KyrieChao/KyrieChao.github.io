@@ -11,6 +11,54 @@
     },
     "items": [
         {
+            "id": "https://kyriechao.github.io/posts/2026-03-08-math-notes",
+            "content_html": "\r\n# 傅里叶变换基础\r\n\r\n本文主要测试博客对 LaTeX 数学公式的支持情况。\r\n\r\n## 欧拉公式\r\n\r\n首先回顾一下著名的欧拉公式：\r\n\r\n$$\r\ne^{ix} = \\cos x + i\\sin x\r\n$$\r\n\r\n这个公式被费曼称为\"数学中最卓越的公式\"。\r\n\r\n## 傅里叶变换定义\r\n\r\n对于一个连续时间信号 $x(t)$，其傅里叶变换 $X(\\omega)$ 定义为：\r\n\r\n$$\r\nX(\\omega) = \\int_{-\\infty}^{\\infty} x(t) e^{-j\\omega t} dt\r\n$$\r\n\r\n逆变换定义为：\r\n\r\n$$\r\nx(t) = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} X(\\omega) e^{j\\omega t} d\\omega\r\n$$\r\n\r\n### 离散傅里叶变换 (DFT)\r\n\r\n在计算机处理中，我们使用离散形式。对于长度为 $N$ 的序列 $x[n]$：\r\n\r\n$$\r\nX[k] = \\sum_{n=0}^{N-1} x[n] e^{-j\\frac{2\\pi}{N}kn}, \\quad k = 0, 1, \\dots, N-1\r\n$$\r\n\r\n## 矩阵运算示例\r\n\r\n$$\r\nA = \\begin{pmatrix}\r\na & b \\\\\r\nc & d\r\n\\end{pmatrix}, \\quad\r\nA^{-1} = \\frac{1}{ad-bc} \\begin{pmatrix}\r\nd & -b \\\\\r\n-c & a\r\n\\end{pmatrix}\r\n$$\r\n\r\n## 总结\r\n\r\n如果上面的公式都能正常显示，说明我们的 KaTeX 配置非常成功！🎉\r\n",
+            "url": "https://kyriechao.github.io/posts/2026-03-08-math-notes",
+            "title": "数学笔记：傅里叶变换基础",
+            "summary": "\r\n 傅里叶变换基础\r\n\r\n本文主要测试博客对 LaTeX 数学公式的支持情况。\r\n\r\n 欧拉公式\r\n\r\n首先回顾一下著名的欧拉公式：\r\n\r\n$$\r\ne^{ix} = \\cos x + i\\sin x\r\n$$\r\n\r\n这个公式被费曼称为\"数学中最卓越的公式\"。\r\n\r\n 傅里叶变换定义\r\n\r\n...",
+            "date_modified": "2026-03-12T00:00:00.000Z",
+            "author": {
+                "name": "Kyrie Chao",
+                "url": "https://github.com/KyrieChao"
+            }
+        },
+        {
+            "id": "https://kyriechao.github.io/posts/2026-03-08-python-data-analysis",
+            "content_html": "\r\n# Python 数据分析入门：Pandas 实战\r\n\r\nPandas 是 Python 中最流行的数据分析库。它提供了名为 DataFrame 的强大数据结构，让数据操作变得异常简单。\r\n\r\n## 安装\r\n\r\n```bash\r\npip install pandas numpy\r\n```\r\n\r\n## 基础操作\r\n\r\n### 1. 创建 DataFrame\r\n\r\n```python\r\nimport pandas as pd\r\nimport numpy as np\r\n\r\ndata = {\r\n    'Name': ['Alice', 'Bob', 'Charlie', 'David'],\r\n    'Age': [24, 27, 22, 32],\r\n    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston']\r\n}\r\n\r\ndf = pd.DataFrame(data)\r\nprint(df)\r\n```\r\n\r\n输出结果：\r\n```text\r\n      Name  Age         City\r\n0    Alice   24     New York\r\n1      Bob   27  Los Angeles\r\n2  Charlie   22      Chicago\r\n3    David   32      Houston\r\n```\r\n\r\n### 2. 数据筛选\r\n\r\n我们可以轻松筛选出满足条件的数据：\r\n\r\n```python\r\n# 筛选年龄大于 25 的人\r\nolder_than_25 = df[df['Age'] > 25]\r\n\r\nprint(older_than_25)\r\n```\r\n\r\n### 3. 数据统计\r\n\r\nPandas 提供了丰富的统计方法：\r\n\r\n```python\r\nprint(f\"平均年龄: {df['Age'].mean()}\")\r\nprint(f\"最大年龄: {df['Age'].max()}\")\r\n```\r\n\r\n## 进阶技巧：分组与聚合\r\n\r\n```python\r\n# 按城市分组并计算平均年龄（示例数据量太小，仅作演示）\r\ngrouped = df.groupby('City')['Age'].mean()\r\n```\r\n\r\n## 结语\r\n\r\nPandas 的功能远不止于此。配合 Matplotlib 或 Seaborn，你还可以轻松画出精美的图表。\r\n\r\n> **提示**: 在处理大型数据集时，注意内存的使用情况。\r\n",
+            "url": "https://kyriechao.github.io/posts/2026-03-08-python-data-analysis",
+            "title": "Python 数据分析入门：Pandas 实战",
+            "summary": "\r\n Python 数据分析入门：Pandas 实战\r\n\r\nPandas 是 Python 中最流行的数据分析库。它提供了名为 DataFrame 的强大数据结构，让数据操作变得异常简单。\r\n\r\n 安装\r\n\r\nbash\r\npip install pandas numpy\r\n\r\n\r\n...",
+            "date_modified": "2026-03-11T00:00:00.000Z",
+            "author": {
+                "name": "Kyrie Chao",
+                "url": "https://github.com/KyrieChao"
+            }
+        },
+        {
+            "id": "https://kyriechao.github.io/posts/2026-03-08-nextjs-tutorial-2",
+            "content_html": "\r\n# Next.js 14 实战系列 (二)\r\n\r\n在上一篇文章中，我们搭建了基础环境。今天我们来聊聊 Next.js 的核心特性之一：**路由系统**。\r\n\r\n## 1. 静态路由\r\n\r\n在 `app` 目录下创建一个文件夹 `about`，并在其中新建 `page.tsx`：\r\n\r\n```tsx\r\n// app/about/page.tsx\r\nexport default function About() {\r\n  return <h1>关于我们</h1>;\r\n}\r\n```\r\n\r\n现在访问 `/about`，Next.js 会自动渲染这个组件。这就是**文件系统路由**的魔力。\r\n\r\n## 2. 动态路由\r\n\r\n如果我们需要为每篇博客文章生成一个页面，比如 `/posts/1`、`/posts/2`，就需要用到动态路由。\r\n\r\n创建 `app/posts/[id]/page.tsx`：\r\n\r\n```tsx\r\nexport default function Post({ params }: { params: { id: string } }) {\r\n  return <div>Post ID: {params.id}</div>;\r\n}\r\n```\r\n\r\n## 3. 嵌套布局 (Nested Layouts)\r\n\r\nNext.js 允许你为特定的路由段定义布局。例如，你可以为博客部分创建一个侧边栏布局，而不影响首页。\r\n\r\n```tsx\r\n// app/blog/layout.tsx\r\nexport default function BlogLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode\r\n}) {\r\n  return (\r\n    <section>\r\n      <nav>Blog Navigation</nav>\r\n      {children}\r\n    </section>\r\n  )\r\n}\r\n```\r\n\r\n### 总结\r\n\r\n- `page.tsx` 定义路由的 UI。\r\n- `layout.tsx` 定义共享 UI。\r\n- `[folderName]` 创建动态路由段。\r\n\r\n掌握这些规则，你就能构建出复杂的应用结构了。下一章我们将讨论数据获取 (Data Fetching)。\r\n",
+            "url": "https://kyriechao.github.io/posts/2026-03-08-nextjs-tutorial-2",
+            "title": "Next.js 14 实战系列 (二)：深入理解路由与布局",
+            "summary": "\r\n Next.js 14 实战系列 (二)\r\n\r\n在上一篇文章中，我们搭建了基础环境。今天我们来聊聊 Next.js 的核心特性之一：路由系统。\r\n\r\n 1. 静态路由\r\n\r\n在 app 目录下创建一个文件夹 about，并在其中新建 page.tsx：\r\n\r\nts...",
+            "date_modified": "2026-03-10T00:00:00.000Z",
+            "author": {
+                "name": "Kyrie Chao",
+                "url": "https://github.com/KyrieChao"
+            }
+        },
+        {
+            "id": "https://kyriechao.github.io/posts/2026-03-08-nextjs-tutorial-1",
+            "content_html": "\r\n# Next.js 14 实战系列 (一)\r\n\r\n欢迎来到 Next.js 学习笔记的第一篇！在本系列中，我们将一起探索 Next.js 14 的强大功能，特别是 App Router 和服务器组件 (Server Components)。\r\n\r\n## 1. 环境准备\r\n\r\n首先，确保你已经安装了 Node.js 18.17 或更高版本。\r\n\r\n```bash\r\nnode -v\r\n# v18.17.0\r\n```\r\n\r\n## 2. 创建项目\r\n\r\n使用 `create-next-app` 脚手架快速启动项目：\r\n\r\n```bash\r\nnpx create-next-app@latest my-blog\r\n```\r\n\r\n在交互式命令行中，我们选择以下配置：\r\n- TypeScript: **Yes**\r\n- Tailwind CSS: **Yes**\r\n- App Router: **Yes**\r\n- ESLint: **Yes**\r\n\r\n## 3. 项目结构概览\r\n\r\n创建完成后，你的项目目录应该是这样的：\r\n\r\n```\r\nmy-blog/\r\n├── app/\r\n│   ├── layout.tsx    # 根布局\r\n│   └── page.tsx      # 首页\r\n├── public/           # 静态资源\r\n├── tailwind.config.ts\r\n└── package.json\r\n```\r\n\r\n## 4. 编写第一个页面\r\n\r\n打开 `app/page.tsx`，修改内容如下：\r\n\r\n```tsx\r\nexport default function Home() {\r\n  return (\r\n    <main className=\"flex min-h-screen flex-col items-center justify-between p-24\">\r\n      <h1 className=\"text-4xl font-bold\">Hello, Next.js 14!</h1>\r\n    </main>\r\n  );\r\n}\r\n```\r\n\r\n运行 `npm run dev`，打开浏览器访问 `http://localhost:3000`，你应该能看到我们的新页面了。\r\n\r\n---\r\n\r\n下一篇文章中，我们将学习如何添加 Markdown 支持来渲染博客文章。敬请期待！\r\n",
+            "url": "https://kyriechao.github.io/posts/2026-03-08-nextjs-tutorial-1",
+            "title": "Next.js 14 实战系列 (一)：从零开始搭建博客",
+            "summary": "\r\n Next.js 14 实战系列 (一)\r\n\r\n欢迎来到 Next.js 学习笔记的第一篇！在本系列中，我们将一起探索 Next.js 14 的强大功能，特别是 App Router 和服务器组件 (Server Components)。\r\n\r\n 1. 环境准备\r\n\r\n首先，确保你已经安装...",
+            "date_modified": "2026-03-09T00:00:00.000Z",
+            "author": {
+                "name": "Kyrie Chao",
+                "url": "https://github.com/KyrieChao"
+            }
+        },
+        {
             "id": "https://kyriechao.github.io/posts/2026-03-08-markdown-demo",
             "content_html": "\n欢迎阅读这篇功能展示文章！这里将为你演示如何使用 Markdown 撰写丰富的内容。\n\n## 文本样式\n\n你可以在文章中使用 **粗体**、*斜体*、~~删除线~~ 以及 `行内代码`。\n\n> 这是一个引用块。\n>\n> 支持多行引用。\n\n## 代码高亮\n\n支持多种语言的语法高亮：\n\n```python\ndef hello_world():\n    print(\"Hello, World!\")\n    return True\n\nif __name__ == \"__main__\":\n    hello_world()\n```\n\n```javascript\nconst greet = (name) => {\n  console.log(`Hello, ${name}!`);\n};\n\ngreet('Kyrie');\n```\n\n## 列表展示\n\n### 无序列表\n- 项目一\n- 项目二\n  - 子项目 A\n  - 子项目 B\n\n### 有序列表\n1. 第一步\n2. 第二步\n3. 第三步\n\n### 任务列表\n- [x] 已完成任务\n- [ ] 待办任务\n- [ ] 进行中...\n\n## 表格示例\n\n| 姓名 | 角色 | 技能 |\n|:-----|:-----:|-----:|\n| Kyrie | 开发者 | Ruby, Python |\n| User | 访客 | 阅读, 评论 |\n\n## 提示块 (Notices)\n\nNext.js 博客使用 HTML/Tailwind 替代了 Jekyll 的 Kramdown 语法：\n\n<div class=\"p-4 mb-4 text-blue-800 border-l-4 border-blue-300 bg-blue-50\">\n  <strong>Primary Notice</strong>\n  <p>这是一个主要提示块。</p>\n</div>\n\n<div class=\"p-4 mb-4 text-cyan-800 border-l-4 border-cyan-300 bg-cyan-50\">\n  <strong>Info Notice</strong>\n  <p>这是一个信息提示块。</p>\n</div>\n\n<div class=\"p-4 mb-4 text-yellow-800 border-l-4 border-yellow-300 bg-yellow-50\">\n  <strong>Warning Notice</strong>\n  <p>这是一个警告提示块。</p>\n</div>\n\n<div class=\"p-4 mb-4 text-red-800 border-l-4 border-red-300 bg-red-50\">\n  <strong>Danger Notice</strong>\n  <p>这是一个危险/错误提示块。</p>\n</div>\n\n## 按钮链接\n\n<div class=\"space-x-2\">\n  <a href=\"/\" class=\"inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 no-underline\">主要按钮</a>\n  <a href=\"/\" class=\"inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 no-underline\">成功按钮</a>\n  <a href=\"/\" class=\"inline-block px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 no-underline\">警告按钮</a>\n  <a href=\"/\" class=\"inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 no-underline\">危险按钮</a>\n</div>\n\n## 图片与媒体\n\n你可以在文章中插入图片：\n\n![示例图片](https://source.unsplash.com/random/800x400/?technology)\n\n## 数学公式\n\n启用 MathJax 后，你可以编写 LaTeX 公式：\n\n行内公式：$E = mc^2$\n\n块级公式：\n\n$$\n\\sum_{i=1}^n i = \\frac{n(n+1)}{2}\n$$\n\n## 结语\n\n这就是迁移到 Next.js 后的一些核心功能展示。快去尝试写一篇属于你的文章吧！\n",
             "url": "https://kyriechao.github.io/posts/2026-03-08-markdown-demo",
