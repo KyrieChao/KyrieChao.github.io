@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KyrieChao Blog
 
-## Getting Started
+基于 Next.js 14 构建的个人博客，部署于 GitHub Pages。
 
-First, run the development server:
+🌐 **在线访问**: [https://kyriechao.github.io/](https://kyriechao.github.io/)
+
+## ✨ 特性
+
+- **框架**: Next.js 14 (App Router)
+- **样式**: Tailwind CSS
+- **内容管理**: 基于 Markdown 文件
+- **暗黑模式**: 完美支持日间/夜间模式切换
+- **功能**:
+  - 全文搜索 (Fuse.js)
+  - RSS 订阅
+  - 代码高亮
+  - 数学公式支持 (KaTeX)
+  - 响应式设计 (移动端/PC端适配)
+
+## 🚀 本地开发
+
+首先，安装依赖：
+
+```bash
+npm install
+# 或者
+yarn
+# 或者
+pnpm install
+```
+
+启动开发服务器：
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开浏览器访问 [http://localhost:3000](http://localhost:3000) 即可看到效果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 写文章
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+详细指南请参考：[博客写作指南 (docs/WRITING_GUIDE.md)](docs/WRITING_GUIDE.md)
 
-## Learn More
+简而言之：
+1. 在 `content/posts/` 目录下创建 Markdown 文件。
+2. 添加必要的 Frontmatter 元数据（标题、日期、分类等）。
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ 部署
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+本项目通过 GitHub Actions 自动部署到 GitHub Pages。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **触发条件**: 推送到 `main` 分支时。
+- **定时构建**: 每天北京时间 05:00, 14:00, 22:00 自动触发（用于发布定时文章）。
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
