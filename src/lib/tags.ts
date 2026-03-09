@@ -1,20 +1,12 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-
-const postsDirectory = path.join(process.cwd(), "content/posts");
+import { getSortedPostsData } from "./posts";
 
 export function getAllTags() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const allPosts = getSortedPostsData();
   const tags: Record<string, number> = {};
 
-  fileNames.forEach((fileName) => {
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data } = matter(fileContents);
-    
-    if (data.tags) {
-      const tagList = Array.isArray(data.tags) ? data.tags : [data.tags];
+  allPosts.forEach((post) => {
+    if (post.tags) {
+      const tagList = Array.isArray(post.tags) ? post.tags : [post.tags];
       tagList.forEach((tag: string) => {
         tags[tag] = (tags[tag] || 0) + 1;
       });
@@ -25,16 +17,12 @@ export function getAllTags() {
 }
 
 export function getAllCategories() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const allPosts = getSortedPostsData();
   const categories: Record<string, number> = {};
 
-  fileNames.forEach((fileName) => {
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data } = matter(fileContents);
-    
-    if (data.categories) {
-      const categoryList = Array.isArray(data.categories) ? data.categories : [data.categories];
+  allPosts.forEach((post) => {
+    if (post.categories) {
+      const categoryList = Array.isArray(post.categories) ? post.categories : [post.categories];
       categoryList.forEach((category: string) => {
         categories[category] = (categories[category] || 0) + 1;
       });

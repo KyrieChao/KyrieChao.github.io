@@ -11,6 +11,7 @@ import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import GithubSlugger from "github-slugger";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -125,11 +126,12 @@ export async function getPostData(id: string | string[]) {
   // Extract TOC
   const toc: { id: string; text: string; level: number }[] = [];
   const headingRegex = /^(#{2,3})\s+(.*)$/gm;
+  const slugger = new GithubSlugger();
   let match;
   while ((match = headingRegex.exec(matterResult.content)) !== null) {
     const level = match[1].length;
     const text = match[2];
-    const id = text.toLowerCase().replace(/[^\w\u4e00-\u9fa5]+/g, "-");
+    const id = slugger.slug(text);
     toc.push({ id, text, level });
   }
 

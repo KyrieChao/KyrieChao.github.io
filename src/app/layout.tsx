@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kyriechao.github.io"),
   title: "KyrieChao Blog",
   description: "基于 Next.js 14 构建的个人博客",
 };

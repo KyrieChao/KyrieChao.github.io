@@ -3,6 +3,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import { TableOfContents } from "@/components/TableOfContents";
 import { Comments } from "@/components/Comments";
+import { ReadingProgress } from "@/components/ReadingProgress";
 
 // 静态导出必须实现此函数，告知 Next.js 有哪些路径需要预渲染
 export async function generateStaticParams() {
@@ -10,6 +11,36 @@ export async function generateStaticParams() {
   return paths.map((path) => ({
     id: path.params.id, // 这里 id 是一个数组
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string[] }> }) {
+  const { id } = await params;
+  const postId = id.join("/");
+  const postData = await getPostData(postId);
+
+  return {
+    title: postData.title,
+    openGraph: {
+      title: postData.title,
+      description: postData.excerpt || postData.title,
+      type: 'article',
+      publishedTime: postData.date,
+      images: [
+        {
+          url: `/og/${postId}.png`,
+          width: 1200,
+          height: 630,
+          alt: postData.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: postData.title,
+      description: postData.excerpt || postData.title,
+      images: [`/og/${postId}.png`],
+    },
+  };
 }
 
 export default async function Post({
@@ -25,6 +56,7 @@ export default async function Post({
 
   return (
     <div className="flex flex-col items-center w-full">
+      <ReadingProgress />
       <div className="max-w-[1920px] w-full px-8 pt-8">
         <Link
           href="/"
