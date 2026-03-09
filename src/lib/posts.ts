@@ -50,8 +50,16 @@ export function getSortedPostsData() {
       categories: Array.isArray(data.categories) ? data.categories : (data.categories ? [data.categories] : []),
     };
   });
+  
+  // Filter out future posts
+  const now = new Date();
+  const visiblePosts = allPostsData.filter(post => {
+    const postDate = new Date(post.date);
+    return postDate <= now;
+  });
+
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  return visiblePosts.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {

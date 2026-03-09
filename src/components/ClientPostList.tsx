@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { format } from "date-fns";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 import { PostData } from "@/lib/posts";
 
 const POSTS_PER_PAGE = 5;
 
 export function ClientPostList({ allPostsData }: { allPostsData: PostData[] }) {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const pageParam = searchParams.get("page");
   const searchParam = searchParams.get("search");
 
@@ -48,7 +49,7 @@ export function ClientPostList({ allPostsData }: { allPostsData: PostData[] }) {
               )}
             </Link>
             <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-500 mt-auto pt-4 border-t dark:border-gray-800">
-              <time>{date ? format(new Date(date), "yyyy-MM-dd") : "Unknown Date"}</time>
+              <time>{date ? format(new Date(date), "yyyy-MM-dd") : "未知日期"}</time>
               <div className="flex gap-2">
                 {Array.isArray(categories) && categories.slice(0, 1).map((cat) => (
                   <span key={cat} className="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded">
@@ -71,7 +72,7 @@ export function ClientPostList({ allPostsData }: { allPostsData: PostData[] }) {
         <div className="flex justify-between mt-10">
           {page > 1 ? (
             <Link
-              href={`/?page=${page - 1}${searchParam ? `&search=${searchParam}` : ""}`}
+              href={`${pathname}?page=${page - 1}${searchParam ? `&search=${searchParam}` : ""}`}
               className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm"
             >
               ← 上一页
@@ -84,7 +85,7 @@ export function ClientPostList({ allPostsData }: { allPostsData: PostData[] }) {
           </span>
           {page < totalPages && (
             <Link
-              href={`/?page=${page + 1}${searchParam ? `&search=${searchParam}` : ""}`}
+              href={`${pathname}?page=${page + 1}${searchParam ? `&search=${searchParam}` : ""}`}
               className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm"
             >
               下一页 →

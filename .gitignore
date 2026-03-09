@@ -46,9 +46,6 @@ next-env.d.ts
 docs/
 .vscode/
 
-# Legacy Jekyll Blog
-_legacy_jekyll/
-
 # Generated Files
 public/rss.xml
 public/rss.json

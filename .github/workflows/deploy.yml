@@ -4,6 +4,12 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    # UTC times corresponding to Beijing Time (UTC+8) 05:00, 14:00, 22:00
+    # 21:00 UTC (prev day) -> 05:00 UTC+8
+    # 06:00 UTC -> 14:00 UTC+8
+    # 14:00 UTC -> 22:00 UTC+8
+    - cron: '0 6,14,21 * * *'
 
 permissions:
   contents: read

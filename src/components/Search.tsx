@@ -84,7 +84,7 @@ export function Search() {
                     {post.excerpt}
                   </p>
                   <div className="flex justify-between items-center text-xs text-gray-400">
-                    <span>{post.date ? format(new Date(post.date), "yyyy-MM-dd") : "Unknown Date"}</span>
+                    <span>{post.date ? format(new Date(post.date), "yyyy-MM-dd") : "未知日期"}</span>
                     <div className="flex gap-1">
                       {post.tags.slice(0, 2).map((tag) => (
                         <span key={tag} className="bg-gray-100 dark:bg-gray-700 px-1 rounded">

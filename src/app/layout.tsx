@@ -59,7 +59,7 @@ export default function RootLayout({
             </header>
             <main className="flex-grow w-full px-8 py-4 max-w-[1920px] mx-auto">{children}</main>
             <footer className="py-6 text-center text-gray-500 dark:text-gray-400 text-sm border-t dark:border-gray-800 mt-10">
-              © {new Date().getFullYear()} My Blog. Powered by Next.js & GitHub Pages.
+              © {new Date().getFullYear()} KyrieChao. Powered by Next.js & GitHub Pages.
             </footer>
           </div>
         </Providers>

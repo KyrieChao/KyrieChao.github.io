@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kyriechao.github.io</id>
     <title>My Blog</title>
-    <updated>2026-03-09T06:07:22.519Z</updated>
+    <updated>2026-03-09T09:48:18.888Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Kyrie Chao</name>
@@ -373,6 +373,50 @@ export default function Home() {
         </contributor>
     </entry>
     <entry>
+        <title type="html"><![CDATA[重读《黑客与画家》有感]]></title>
+        <id>https://kyriechao.github.io/posts/2026-03-08-hackers-and-painters</id>
+        <link href="https://kyriechao.github.io/posts/2026-03-08-hackers-and-painters"/>
+        <updated>2026-03-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[保罗·格雷厄姆的《黑客与画家》是一本常读常新的经典。这次重读，我对“创造财富”和“设计品味”有了新的理解。]]></summary>
+        <content type="html"><![CDATA[
+![Book Cover](https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1000)
+
+最近周末闲暇，我又拿起了保罗·格雷厄姆（Paul Graham）的经典文集《黑客与画家》。
+
+## 黑客与画家的共同点
+
+书中通过比较黑客（优秀的程序员）和画家，提出了一个有趣的观点：**黑客也是创造者**。
+
+> 黑客与画家的共同之处，在于他们都是创作者。与科学家不同，科学家的目的是发现真理，而黑客的目的是创造美好的事物。
+
+这一点我深有同感。编程不仅仅是逻辑的堆砌，更是结构与美学的构建。优雅的代码就像一幅构图精巧的画作，不仅功能完善，而且易于理解和维护。
+
+## 关于财富
+
+PG 在书中关于财富的定义也非常深刻：**财富不是金钱，财富是我们需要的东西**（食物、衣服、房子、汽车、假期等）。金钱只是交换财富的媒介。
+
+要创造财富，你需要做两件事：
+1.  **可测量性** (Measurement)：你的贡献可以被量化。
+2.  **可放大性** (Leverage)：你的工作成果可以被放大（例如通过软件服务千万人）。
+
+## 结语
+
+这本书不仅适合程序员阅读，也适合所有对创业、设计和思考感兴趣的人。它鼓励我们去创造、去打破常规、去追求卓越。
+
+如果你还没有读过，强烈推荐！
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Markdown 功能展示与富文本示例]]></title>
         <id>https://kyriechao.github.io/posts/2026-03-08-markdown-demo</id>
         <link href="https://kyriechao.github.io/posts/2026-03-08-markdown-demo"/>
@@ -489,6 +533,127 @@ $$
 ## 结语
 
 这就是迁移到 Next.js 后的一些核心功能展示。快去尝试写一篇属于你的文章吧！
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我的 2026 高效工作流分享]]></title>
+        <id>https://kyriechao.github.io/posts/2026-03-08-productivity-workflow</id>
+        <link href="https://kyriechao.github.io/posts/2026-03-08-productivity-workflow"/>
+        <updated>2026-03-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[工欲善其事，必先利其器。本文将介绍我在 2026 年使用的一套高效工作流，涵盖任务管理、笔记记录和代码开发。]]></summary>
+        <content type="html"><![CDATA[
+在这个信息爆炸的时代，建立一套适合自己的高效工作流至关重要。
+
+## 任务管理：Todoist
+
+我尝试过很多 To-Do List 应用，最终还是回归到了 **Todoist**。它的自然语言输入功能非常强大。
+
+*   **Inbox Zero**：每天早上清空收件箱，根据优先级安排当天的任务。
+*   **标签系统**：使用 `@工作`、`@生活`、`@学习` 等标签进行分类。
+
+## 笔记系统：Notion + Obsidian
+
+*   **Notion**：用于项目管理、数据库和协作文档。它的 Database 功能非常灵活，适合管理结构化数据。
+*   **Obsidian**：用于个人知识库（第二大脑）。基于 Markdown 的本地文件存储让我很有安全感，双向链接功能也非常适合建立知识网络。
+
+## 开发工具：Trae IDE
+
+最近我开始使用 **Trae IDE**，这是一款集成了 AI 能力的现代编辑器。
+
+> Trae 不仅仅是一个代码编辑器，它更像是一个智能编程助手。
+
+### 主要优势
+
+1.  **智能补全**：AI 能够根据上下文准确预测我想要写的代码。
+2.  **自然语言指令**：我可以直接告诉它“帮我创建一个 React 组件”，它就能自动生成代码。
+3.  **集成终端**：无需离开编辑器即可运行命令。
+
+## 结语
+
+工具只是辅助，核心还是在于坚持和执行。找到适合自己的工作流，并不断优化它，才能真正提高效率。
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tailwind CSS 实用技巧分享]]></title>
+        <id>https://kyriechao.github.io/posts/2026-03-08-tailwind-tips</id>
+        <link href="https://kyriechao.github.io/posts/2026-03-08-tailwind-tips"/>
+        <updated>2026-03-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[在这篇文章中，我将分享一些我在使用 Tailwind CSS 开发项目时总结的实用技巧，帮助你更高效地构建现代网页界面。]]></summary>
+        <content type="html"><![CDATA[
+## 为什么选择 Tailwind CSS？
+
+Tailwind CSS 是一个功能类优先（utility-first）的 CSS 框架。与 Bootstrap 等传统框架不同，它不提供预制的组件，而是提供了一套底层的工具类，让你能够直接在 HTML 中构建完全定制的设计。
+
+### 1. 使用 `@apply` 抽取组件
+
+虽然 Tailwind 提倡在 HTML 中写样式，但在某些情况下（比如按钮、输入框），如果多个地方用到相同的样式组合，可以使用 `@apply` 指令来抽取成一个 CSS 类。
+
+```css
+/* globals.css */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors;
+  }
+}
+```
+
+### 2. 自定义配置 `tailwind.config.ts`
+
+Tailwind 的强大之处在于其可配置性。你可以轻松地扩展默认的主题，添加自定义的颜色、字体或断点。
+
+```typescript
+// tailwind.config.ts
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  theme: {
+    extend: {
+      colors: {
+        'brand-blue': '#0070f3',
+      },
+      spacing: {
+        '128': '32rem',
+      }
+    },
+  },
+  // ...
+};
+export default config;
+```
+
+### 3. 暗黑模式 (Dark Mode)
+
+Tailwind 内置了对暗黑模式的支持。只需在类名前加上 `dark:` 前缀即可。
+
+```html
+<div class="bg-white dark:bg-gray-800 text-black dark:text-white">
+  <h1>自动适配暗黑模式的标题</h1>
+</div>
+```
+
+## 总结
+
+Tailwind CSS 极大地提高了前端开发的效率，一旦习惯了这种写法，你就很难回去了。希望这些小技巧对你有帮助！
 ]]></content>
         <author>
             <name>Kyrie Chao</name>
