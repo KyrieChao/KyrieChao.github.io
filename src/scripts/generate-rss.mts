@@ -19,13 +19,26 @@ function generateRssFeed() {
     return;
   }
   
-  const fileNames = fs.readdirSync(postsDirectory);
+  const getAllFiles = (dir: string, fileList: string[] = []) => {
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
+      if (stat.isDirectory()) {
+        getAllFiles(filePath, fileList);
+      } else if (file.endsWith(".md")) {
+        fileList.push(filePath);
+      }
+    });
+    return fileList;
+  };
 
-  const allPosts = fileNames
-    .filter(fileName => fileName.endsWith(".md"))
-    .map((fileName) => {
-      const id = fileName.replace(/\.md$/, "");
-      const fullPath = path.join(postsDirectory, fileName);
+  const allFiles = getAllFiles(postsDirectory);
+
+  const allPosts = allFiles
+    .map((fullPath) => {
+      const relativePath = path.relative(postsDirectory, fullPath);
+      const id = relativePath.replace(/\.md$/, "").replace(/\\/g, "/");
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
 

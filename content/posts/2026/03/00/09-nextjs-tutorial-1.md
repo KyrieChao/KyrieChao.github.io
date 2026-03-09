@@ -1,6 +1,6 @@
 ---
 title: "Next.js 14 实战系列 (一)：从零开始搭建博客"
-date: "2026-03-10"
+date: "2026-03-09"
 description: "这是 Next.js 学习系列的第一篇文章，我们将介绍如何配置开发环境并创建一个基础的 Next.js 项目。"
 tags: ["Next.js", "React", "前端开发"]
 categories: ["技术教程"]

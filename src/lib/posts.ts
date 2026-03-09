@@ -28,13 +28,29 @@ export interface PostData {
 
 export function getSortedPostsData() {
   // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
+  const getAllFiles = (dir: string, fileList: string[] = []) => {
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
+      if (stat.isDirectory()) {
+        getAllFiles(filePath, fileList);
+      } else if (file.endsWith(".md")) {
+        fileList.push(filePath);
+      }
+    });
+    return fileList;
+  };
+
+  const allFiles = getAllFiles(postsDirectory);
+
+  const allPostsData = allFiles.map((fullPath) => {
     // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, "");
+    // Use relative path as id to support nested folders, replacing path separators with slashes
+    const relativePath = path.relative(postsDirectory, fullPath);
+    const id = relativePath.replace(/\.md$/, "").replace(/\\/g, "/");
 
     // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     // Use gray-matter to parse the post metadata section
@@ -69,18 +85,38 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map((fileName) => {
+  const getAllFiles = (dir: string, fileList: string[] = []) => {
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
+      if (stat.isDirectory()) {
+        getAllFiles(filePath, fileList);
+      } else if (file.endsWith(".md")) {
+        fileList.push(filePath);
+      }
+    });
+    return fileList;
+  };
+
+  const allFiles = getAllFiles(postsDirectory);
+
+  return allFiles.map((fullPath) => {
+    const relativePath = path.relative(postsDirectory, fullPath);
+    // Encode the id to handle slashes in URL
+    const id = relativePath.replace(/\.md$/, "").replace(/\\/g, "/");
     return {
       params: {
-        id: fileName.replace(/\.md$/, ""),
+        id: id.split("/"), // Return as array for catch-all route if needed, or handle in page
       },
     };
   });
 }
 
-export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+export async function getPostData(id: string | string[]) {
+  // Handle id being an array (from catch-all route) or string
+  const idStr = Array.isArray(id) ? id.join("/") : id;
+  const fullPath = path.join(postsDirectory, `${idStr}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section

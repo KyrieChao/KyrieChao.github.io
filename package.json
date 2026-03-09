@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tsx src/scripts/generate-search-index.mts && tsx src/scripts/generate-rss.mts && next dev",
-    "build": "tsx src/scripts/generate-search-index.mts && tsx src/scripts/generate-rss.mts && next build",
+    "dev": "tsx src/scripts/generate-search-index.mts && tsx src/scripts/generate-rss.mts && tsx src/scripts/generate-commit-history.mts && next dev",
+    "build": "tsx src/scripts/generate-search-index.mts && tsx src/scripts/generate-rss.mts && tsx src/scripts/generate-commit-history.mts && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -21,6 +21,7 @@
     "next": "16.1.6",
     "next-themes": "^0.4.6",
     "react": "19.2.3",
+    "react-activity-calendar": "^3.1.1",
     "react-dom": "19.2.3",
     "react-icons": "^5.6.0",
     "react-markdown": "^10.1.0",

@@ -51,3 +51,4 @@ public/rss.xml
 public/rss.json
 public/atom.xml
 public/search-index.json
+public/commit-history.json

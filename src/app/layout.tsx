@@ -50,6 +50,9 @@ export default function RootLayout({
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-rss"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
                   </a>
                 </nav>
+                <a href="/activity" className="hover:text-blue-500 transition-colors" aria-label="Activity Log">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-activity"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </a>
                 <a href="https://github.com/KyrieChao" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors" aria-label="GitHub">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 1.5-1 4.5 2.5 1.5-1 3.5-1 4.5-2.5 0 0 1.5-1 4.5 2.5a5.5 5.5 0 0 1-5.5 0c0 .9.3 1.8.8 2.5-2.5 1-4.5 2-6.5 2-2 0-3-1.5-4-3-1-1.5-2-1.5-2-1.5"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                 </a>

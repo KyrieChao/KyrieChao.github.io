@@ -4,25 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 初始化 Jekyll 博客项目并配置 Minimal Mistakes 主题&#10;&#10;- 添加 .gitignore 文件配置忽略规则&#10;- 创建 Markdown 功能展示文章和博客欢迎页面&#10;- 配置 Minimal Mistakes 主题的 SCSS 样式文件&#10;- 设置博客主题配置文件 _config.yml&#10;- 添加多种颜色主题皮肤支持&#10;- 配置归档、基础元素、按钮、页脚和表单样式&#10;- 设置代码版权信息和动画效果">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026-03-08-hackers-and-painters.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026-03-08-productivity-workflow.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026-03-08-tailwind-tips.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FeaturedSeries.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RecentPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(readme): 更新文档以反映博客项目的完整信息&#10;&#10;- 替换默认 Next.js 项目描述为 KyrieChao Blog 介绍&#10;- 添加项目特性列表包括框架、样式、内容管理和功能特点&#10;- 提供详细的本地开发和安装说明&#10;- 添加写文章指南和目录结构说明&#10;- 包含部署配置和 GitHub Actions 自动化信息&#10;- 补充许可证信息和在线访问链接">
+      <change afterPath="$PROJECT_DIR$/src/components/CommitGraph.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-nextjs-tutorial-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026-03-09-nextjs-tutorial-1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_legacy_jekyll/_posts/2026-03-08-markdown-demo.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_legacy_jekyll/_posts/2026-03-08-welcome.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_legacy_jekyll/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/about.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_legacy_jekyll/assets/images/chao.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_legacy_jekyll/assets/images/wallhaven-wexo5q.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-hackers-and-painters.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/08-hackers-and-painters.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-markdown-demo.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/08-markdown-demo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-math-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/12-math-notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-nextjs-tutorial-2.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/10-nextjs-tutorial-2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-productivity-workflow.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/08-productivity-workflow.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-python-data-analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/11-python-data-analysis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-tailwind-tips.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/08-tailwind-tips.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-08-welcome.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026-03-10-nextjs-tutorial-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/09-nextjs-tutorial-1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/atom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/atom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/file.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/file.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/globe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/globe.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/next.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/rss.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/rss.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/rss.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/search-index.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/search-index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vercel.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/window.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/window.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientPostList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientPostList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/posts/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/tags/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/tags/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeaturedSeries.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedSeries.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/posts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/generate-rss.mts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/generate-rss.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/generate-search-index.mts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/generate-search-index.mts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +116,8 @@
       <recent name="D:\Work\WorkRuby\github-blog\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\WorkRuby\github-blog\content\posts\2026\03" />
+      <recent name="D:\Work\WorkRuby\github-blog\public\images" />
       <recent name="D:\Work\WorkRuby\github-blog\.trae" />
       <recent name="D:\Work\WorkRuby\github-blog\test" />
     </key>
@@ -255,7 +274,7 @@
       <workItem from="1772978069474" duration="3722000" />
       <workItem from="1773013918888" duration="17607000" />
       <workItem from="1773045161570" duration="375000" />
-      <workItem from="1773045581032" duration="4360000" />
+      <workItem from="1773045581032" duration="11673000" />
     </task>
     <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
       <option name="closed" value="true" />
@@ -361,7 +380,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773047596685</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat(blog): 添加新文章并重构首页布局&#10;&#10;- 添加三篇新文章：&quot;重读《黑客与画家》有感&quot;、&quot;我的 2026 高效工作流分享&quot;、&quot;Tailwind CSS 实用技巧分享&quot;&#10;- 新增 FeaturedSeries 组件展示精选专栏&#10;- 新增 RecentPosts 组件显示最新文章&#10;- 移除遗留的 Jekyll 博客相关忽略规则&#10;- 更新 RSS 和 Atom 订阅文件内容&#10;- 添加定时部署任务到 GitHub Actions&#10;- 过滤掉未来日期的文章以避免提前发布&#10;- 修复分页导航路径问题&#10;- 更新博客名称和版权信息">
+      <option name="closed" value="true" />
+      <created>1773050078646</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1773050078646</updated>
+    </task>
+    <task id="LOCAL-00015" summary="docs(readme): 更新文档以反映博客项目的完整信息&#10;&#10;- 替换默认 Next.js 项目描述为 KyrieChao Blog 介绍&#10;- 添加项目特性列表包括框架、样式、内容管理和功能特点&#10;- 提供详细的本地开发和安装说明&#10;- 添加写文章指南和目录结构说明&#10;- 包含部署配置和 GitHub Actions 自动化信息&#10;- 补充许可证信息和在线访问链接">
+      <option name="closed" value="true" />
+      <created>1773050172035</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1773050172035</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,6 +419,8 @@
     <MESSAGE value="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新&#10;- 添加next-env.d.ts配置文件支持Next.js类型检查&#10;- 更新IDEA工作空间配置以适配新的开发环境设置" />
     <MESSAGE value="chore(config): 更新项目配置和忽略规则&#10;&#10;- 在 .gitignore 中添加 docs 目录忽略规则&#10;- 将网站标题从 &quot;我的 Next.js 博客&quot; 更新为 &quot;KyrieChao Blog&quot;&#10;- 从项目中移除 WRITING_TEMPLATE.md 模板文件&#10;- 更新 IDEA 工作空间配置以适配新的开发环境设置&#10;- 调整最近移动文件记录路径配置&#10;- 更新本地任务计数器和提交历史记录" />
     <MESSAGE value="feat(blog): 初始化 Jekyll 博客项目并配置 Minimal Mistakes 主题&#10;&#10;- 添加 .gitignore 文件配置忽略规则&#10;- 创建 Markdown 功能展示文章和博客欢迎页面&#10;- 配置 Minimal Mistakes 主题的 SCSS 样式文件&#10;- 设置博客主题配置文件 _config.yml&#10;- 添加多种颜色主题皮肤支持&#10;- 配置归档、基础元素、按钮、页脚和表单样式&#10;- 设置代码版权信息和动画效果" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 初始化 Jekyll 博客项目并配置 Minimal Mistakes 主题&#10;&#10;- 添加 .gitignore 文件配置忽略规则&#10;- 创建 Markdown 功能展示文章和博客欢迎页面&#10;- 配置 Minimal Mistakes 主题的 SCSS 样式文件&#10;- 设置博客主题配置文件 _config.yml&#10;- 添加多种颜色主题皮肤支持&#10;- 配置归档、基础元素、按钮、页脚和表单样式&#10;- 设置代码版权信息和动画效果" />
+    <MESSAGE value="feat(blog): 添加新文章并重构首页布局&#10;&#10;- 添加三篇新文章：&quot;重读《黑客与画家》有感&quot;、&quot;我的 2026 高效工作流分享&quot;、&quot;Tailwind CSS 实用技巧分享&quot;&#10;- 新增 FeaturedSeries 组件展示精选专栏&#10;- 新增 RecentPosts 组件显示最新文章&#10;- 移除遗留的 Jekyll 博客相关忽略规则&#10;- 更新 RSS 和 Atom 订阅文件内容&#10;- 添加定时部署任务到 GitHub Actions&#10;- 过滤掉未来日期的文章以避免提前发布&#10;- 修复分页导航路径问题&#10;- 更新博客名称和版权信息" />
+    <MESSAGE value="docs(readme): 更新文档以反映博客项目的完整信息&#10;&#10;- 替换默认 Next.js 项目描述为 KyrieChao Blog 介绍&#10;- 添加项目特性列表包括框架、样式、内容管理和功能特点&#10;- 提供详细的本地开发和安装说明&#10;- 添加写文章指南和目录结构说明&#10;- 包含部署配置和 GitHub Actions 自动化信息&#10;- 补充许可证信息和在线访问链接" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(readme): 更新文档以反映博客项目的完整信息&#10;&#10;- 替换默认 Next.js 项目描述为 KyrieChao Blog 介绍&#10;- 添加项目特性列表包括框架、样式、内容管理和功能特点&#10;- 提供详细的本地开发和安装说明&#10;- 添加写文章指南和目录结构说明&#10;- 包含部署配置和 GitHub Actions 自动化信息&#10;- 补充许可证信息和在线访问链接" />
   </component>
 </project>
