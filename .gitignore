@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDEs
+.idea/
+.trae/
+.vscode/
+
+# Legacy Jekyll Blog
+_legacy_jekyll/
+
+# Generated Files
+public/rss.xml
+public/rss.json
+public/atom.xml
+public/search-index.json

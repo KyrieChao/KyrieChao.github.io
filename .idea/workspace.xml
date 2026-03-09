@@ -4,201 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 迁移博客系统从 Jekyll 到 Next.js&#10;&#10;- 创建新的 .gitignore 文件配置 Next.js 和相关工具的忽略规则&#10;- 将旧的 Jekyll 配置文件和文章迁移到 _legacy_jekyll 目录&#10;- 添加新的博客文章内容到 content/posts 目录&#10;- 更新配置文件中的作者信息、联系方式和默认布局设置&#10;- 添加 Minimal Mistakes 主题的 SCSS 样式文件用于旧版 Jekyll 站点&#10;- 调整文章日期格式和页面布局配置以适配新系统">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.trae/documents/PRODUCT_REQUIREMENTS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.trae/documents/TECHNICAL_ARCHITECTURE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WRITING_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/after-content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/analytics-providers/custom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/analytics-providers/google-gtag.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/analytics-providers/google-universal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/analytics-providers/google.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/analytics-providers/swetrix.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/analytics.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/archive-single.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/author-profile-custom-links.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/author-profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/before-related.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/breadcrumbs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/category-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/custom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/custom_scripts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/discourse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/disqus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/facebook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/giscus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/scripts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/staticman.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/staticman_v2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments-providers/utterances.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/comments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/copyright.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/copyright.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/documents-collection.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/feature_row" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/figure" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/footer/custom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/gallery" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/group-by-array" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/head.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/head/custom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/masthead.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/nav_list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/page__date.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/page__hero.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/page__hero_video.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/page__meta.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/page__related.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/page__taxonomy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/paginator-v1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/paginator-v2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/paginator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/post_pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/posts-category.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/posts-tag.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/posts-taxonomy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/schema.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/scripts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/search/algolia-search-scripts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/search/google-search-scripts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/search/lunr-search-scripts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/search/search_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/seo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/skip-links.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/social-share.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/tag-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/toc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_includes/video" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/archive-taxonomy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/archive.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/categories.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/category.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/collection.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/compress.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/default.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/posts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/single.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/splash.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/tag.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_layouts/tags.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_pages/archive.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_animations.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_archive.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_copyright.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_masthead.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_navigation.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_notices.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_print.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_search.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_syntax.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_tables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_utilities.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_air.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_aqua.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_contrast.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_dark.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_default.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_dirt.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_mint.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_neon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_plum.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/_sass/minimal-mistakes/skins/_sunrise.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/css/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/images/chao.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/images/wallhaven-wexo5q.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/_main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/lunr/lunr-en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/lunr/lunr-gr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/lunr/lunr-store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/lunr/lunr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/lunr/lunr.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/main.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/main.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/plugins/gumshoe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/plugins/jquery.ba-throttle-debounce.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/plugins/jquery.fitvids.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/plugins/jquery.greedy-navigation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/plugins/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/assets/js/plugins/smooth-scroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_legacy_jekyll/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026-03-08-markdown-demo.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026-03-08-welcome.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PUBLISHING_GUIDE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/atom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/file.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/globe.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/rss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/rss.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/search-index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/window.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/about/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/posts/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/posts/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/providers.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/series/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/tags/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ClientPostList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CodeBlockEnhancer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Comments.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TableOfContents.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ThemeToggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/about.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/posts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/search.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/series.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/tags.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/generate-rss.mts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/generate-search-index.mts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/github-blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/.idea/github-blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/navigation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/_data/navigation.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2026-03-08-markdown-demo.md" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/_posts/2026-03-08-markdown-demo.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2026-03-08-welcome.md" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/_posts/2026-03-08-welcome.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/about.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories.md" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/categories.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags.md" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/tags.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/year-archive.md" beforeDir="false" afterPath="$PROJECT_DIR$/_legacy_jekyll/year-archive.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新">
+      <change afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,12 +22,12 @@
     &quot;assignee&quot;: &quot;KyrieChao&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/KyrieChao/KyrieChao.github.io.git&quot;,
-    &quot;accountId&quot;: &quot;84acb141-f9c8-4b95-9ce5-5e8a610869e4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/KyrieChao/KyrieChao.github.io.git",
+    "accountId": "63db1572-92d1-4238-995a-bf827723b9bb"
   }
-}</component>
+}]]></component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="xkmgoei5" />
   </component>
@@ -237,37 +45,37 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="3AfKDYTKASIIuetf3baYyXWCQSF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Work/WorkRuby/github-blog&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.27701148&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\WorkRuby\\github-blog\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "ignore_missing_gitignore": "true",
+    "js.debugger.nextJs.config.created.client": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Work/WorkRuby/github-blog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "org.rust.first.attach.projects": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.27701148",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "ts.external.directory.path": "D:\\Work\\WorkRuby\\github-blog\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\WorkRuby\github-blog" />
@@ -277,7 +85,7 @@
       <recent name="D:\Work\WorkRuby\github-blog\test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -386,6 +194,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -408,8 +219,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-WS-252.26199.162" />
       </set>
     </attachedChunks>
   </component>
@@ -425,7 +235,9 @@
       <option name="presentableId" value="Default" />
       <updated>1772978066724</updated>
       <workItem from="1772978069474" duration="3722000" />
-      <workItem from="1773013918888" duration="16882000" />
+      <workItem from="1773013918888" duration="17607000" />
+      <workItem from="1773045161570" duration="375000" />
+      <workItem from="1773045581032" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
       <option name="closed" value="true" />
@@ -483,7 +295,31 @@
       <option name="project" value="LOCAL" />
       <updated>1772981193646</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat(blog): 迁移博客系统从 Jekyll 到 Next.js&#10;&#10;- 创建新的 .gitignore 文件配置 Next.js 和相关工具的忽略规则&#10;- 将旧的 Jekyll 配置文件和文章迁移到 _legacy_jekyll 目录&#10;- 添加新的博客文章内容到 content/posts 目录&#10;- 更新配置文件中的作者信息、联系方式和默认布局设置&#10;- 添加 Minimal Mistakes 主题的 SCSS 样式文件用于旧版 Jekyll 站点&#10;- 调整文章日期格式和页面布局配置以适配新系统">
+      <option name="closed" value="true" />
+      <created>1773035981324</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773035981324</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat(blog): 添加文章摘要支持并更新feed时间戳&#10;&#10;- 在文章数据结构中添加excerpt字段支持&#10;- 更新RSS和Atom订阅的时间戳为最新构建时间&#10;- 扩展文章元数据类型定义以包含excerpt和series字段&#10;- 修改posts.ts中的数据验证类型以匹配新的字段结构">
+      <option name="closed" value="true" />
+      <created>1773036128279</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773036128279</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新">
+      <option name="closed" value="true" />
+      <created>1773036513031</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773036513031</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,6 +337,8 @@
     <MESSAGE value="remove(css): 删除主样式文件中的所有CSS代码&#10;&#10;- 移除了炫酷深色风格的主题变量定义&#10;- 删除了毛玻璃导航栏的自定义样式&#10;- 移除了文章列表卡片的悬浮动画效果&#10;- 清理了文章页面内容的字体设置&#10;- 删除了代码块、按钮等UI组件的圆角样式&#10;-" />
     <MESSAGE value="feat(site): 添加搜索功能、社交链接和统计配置&#10;&#10;- 启用站点搜索功能并配置相关设置&#10;- 添加 Email 社交链接到侧边栏&#10;- 配置页脚链接包含 GitHub 和 Email&#10;- 添加 Google Analytics 统计配置&#10;- 在导航菜单中增加分类和标签页面入口&#10;- 创建分类和标签页面布局文件&#10;- 添加 Markdown 功能展示示例文章" />
     <MESSAGE value="feat(blog): 迁移博客系统从 Jekyll 到 Next.js&#10;&#10;- 创建新的 .gitignore 文件配置 Next.js 和相关工具的忽略规则&#10;- 将旧的 Jekyll 配置文件和文章迁移到 _legacy_jekyll 目录&#10;- 添加新的博客文章内容到 content/posts 目录&#10;- 更新配置文件中的作者信息、联系方式和默认布局设置&#10;- 添加 Minimal Mistakes 主题的 SCSS 样式文件用于旧版 Jekyll 站点&#10;- 调整文章日期格式和页面布局配置以适配新系统" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 迁移博客系统从 Jekyll 到 Next.js&#10;&#10;- 创建新的 .gitignore 文件配置 Next.js 和相关工具的忽略规则&#10;- 将旧的 Jekyll 配置文件和文章迁移到 _legacy_jekyll 目录&#10;- 添加新的博客文章内容到 content/posts 目录&#10;- 更新配置文件中的作者信息、联系方式和默认布局设置&#10;- 添加 Minimal Mistakes 主题的 SCSS 样式文件用于旧版 Jekyll 站点&#10;- 调整文章日期格式和页面布局配置以适配新系统" />
+    <MESSAGE value="feat(blog): 添加文章摘要支持并更新feed时间戳&#10;&#10;- 在文章数据结构中添加excerpt字段支持&#10;- 更新RSS和Atom订阅的时间戳为最新构建时间&#10;- 扩展文章元数据类型定义以包含excerpt和series字段&#10;- 修改posts.ts中的数据验证类型以匹配新的字段结构" />
+    <MESSAGE value="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新" />
   </component>
 </project>
