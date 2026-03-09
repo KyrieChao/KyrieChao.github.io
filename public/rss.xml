@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>My Blog</title>
+        <link>https://kyriechao.github.io</link>
+        <description>Personal blog powered by Next.js</description>
+        <lastBuildDate>Mon, 09 Mar 2026 05:56:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>My Blog</title>
+            <url>https://kyriechao.github.io/logo.png</url>
+            <link>https://kyriechao.github.io</link>
+        </image>
+        <copyright>All rights reserved 2026, Kyrie Chao</copyright>
+        <item>
+            <title><![CDATA[Markdown 功能展示与富文本示例]]></title>
+            <link>https://kyriechao.github.io/posts/2026-03-08-markdown-demo</link>
+            <guid isPermaLink="false">https://kyriechao.github.io/posts/2026-03-08-markdown-demo</guid>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[这篇文章展示了 Minimal Mistakes 主题支持的各种 Markdown 语法，包括代码高亮、数学公式、提示块、表格与多媒体。]]></description>
+            <content:encoded><![CDATA[
+欢迎阅读这篇功能展示文章！这里将为你演示如何使用 Markdown 撰写丰富的内容。
+
+## 文本样式
+
+你可以在文章中使用 **粗体**、*斜体*、~~删除线~~ 以及 `行内代码`。
+
+> 这是一个引用块。
+>
+> 支持多行引用。
+
+## 代码高亮
+
+支持多种语言的语法高亮：
+
+```python
+def hello_world():
+    print("Hello, World!")
+    return True
+
+if __name__ == "__main__":
+    hello_world()
+```
+
+```javascript
+const greet = (name) => {
+  console.log(`Hello, ${name}!`);
+};
+
+greet('Kyrie');
+```
+
+## 列表展示
+
+### 无序列表
+- 项目一
+- 项目二
+  - 子项目 A
+  - 子项目 B
+
+### 有序列表
+1. 第一步
+2. 第二步
+3. 第三步
+
+### 任务列表
+- [x] 已完成任务
+- [ ] 待办任务
+- [ ] 进行中...
+
+## 表格示例
+
+| 姓名 | 角色 | 技能 |
+|:-----|:-----:|-----:|
+| Kyrie | 开发者 | Ruby, Python |
+| User | 访客 | 阅读, 评论 |
+
+## 提示块 (Notices)
+
+Next.js 博客使用 HTML/Tailwind 替代了 Jekyll 的 Kramdown 语法：
+
+<div class="p-4 mb-4 text-blue-800 border-l-4 border-blue-300 bg-blue-50">
+  <strong>Primary Notice</strong>
+  <p>这是一个主要提示块。</p>
+</div>
+
+<div class="p-4 mb-4 text-cyan-800 border-l-4 border-cyan-300 bg-cyan-50">
+  <strong>Info Notice</strong>
+  <p>这是一个信息提示块。</p>
+</div>
+
+<div class="p-4 mb-4 text-yellow-800 border-l-4 border-yellow-300 bg-yellow-50">
+  <strong>Warning Notice</strong>
+  <p>这是一个警告提示块。</p>
+</div>
+
+<div class="p-4 mb-4 text-red-800 border-l-4 border-red-300 bg-red-50">
+  <strong>Danger Notice</strong>
+  <p>这是一个危险/错误提示块。</p>
+</div>
+
+## 按钮链接
+
+<div class="space-x-2">
+  <a href="/" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 no-underline">主要按钮</a>
+  <a href="/" class="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 no-underline">成功按钮</a>
+  <a href="/" class="inline-block px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 no-underline">警告按钮</a>
+  <a href="/" class="inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 no-underline">危险按钮</a>
+</div>
+
+## 图片与媒体
+
+你可以在文章中插入图片：
+
+![示例图片](https://source.unsplash.com/random/800x400/?technology)
+
+## 数学公式
+
+启用 MathJax 后，你可以编写 LaTeX 公式：
+
+行内公式：$E = mc^2$
+
+块级公式：
+
+$$
+\sum_{i=1}^n i = \frac{n(n+1)}{2}
+$$
+
+## 结语
+
+这就是迁移到 Next.js 后的一些核心功能展示。快去尝试写一篇属于你的文章吧！
+]]></content:encoded>
+            <author>your-email@example.com (Kyrie Chao)</author>
+        </item>
+        <item>
+            <title><![CDATA[Welcome to My Blog!]]></title>
+            <link>https://kyriechao.github.io/posts/2026-03-08-welcome</link>
+            <guid isPermaLink="false">https://kyriechao.github.io/posts/2026-03-08-welcome</guid>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+ Welcome!
+
+博客初始化说明<br/>
+站点搭建记录（2026 年 3 月 8 号）...]]></description>
+            <content:encoded><![CDATA[
+## Welcome!
+
+**博客初始化说明**<br/>
+**站点搭建记录（2026 年 3 月 8 号）**]]></content:encoded>
+            <author>your-email@example.com (Kyrie Chao)</author>
+        </item>
+    </channel>
+</rss>

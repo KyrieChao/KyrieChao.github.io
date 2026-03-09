@@ -1,43 +1,36 @@
-# KyrieChao.github.io
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-我的个人博客，基于 Jekyll，部署在 GitHub Pages。
+## Getting Started
 
-## 本地运行
+First, run the development server:
 
-1. 安装 Ruby 与 Bundler。
-2. 执行 `bundle install`。
-3. 执行 `bundle exec jekyll serve`。
-4. 打开 `http://localhost:4000` 预览。
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## 如何写新文章
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. 在 `_posts` 目录下新建文件：`YYYY-MM-DD-title.md`
-2. 在文件顶部添加 Front Matter：
-   ```markdown
-   ---
-   layout: single
-   title:  "你的文章标题"
-   date:   YYYY-MM-DD HH:MM:SS +0800
-   categories: blog
-   comments: true
-   ---
-   ```
-3. 使用 Markdown 写正文内容。
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 部署
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-将改动推送到 GitHub 的 `main` 或 `master` 分支后，GitHub Pages 会自动构建并发布。
+## Learn More
 
-访问地址： [https://KyrieChao.github.io](https://KyrieChao.github.io)
+To learn more about Next.js, take a look at the following resources:
 
-## 主题与评论
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- 主题：使用 `Minimal Mistakes`，已配置中文与分页，导航包含首页、归档、分类、标签、关于。
-- 功能：
-  - 站点搜索：点击导航栏搜索图标即可。
-  - 社交链接：侧边栏与页脚包含 GitHub 与 Email 链接。
-  - 统计：已预留 Google Analytics 配置（需替换 ID）。
-- 评论：启用 `Utterances`（基于 GitHub Issues）。
-  - 在仓库中开启 Issues
-  - 访问 https://utteranc.es 安装 GitHub App 并选择仓库 `KyrieChao/KyrieChao.github.io`
-  - 配置 `Issue Term` 为 `pathname`（已在 `_config.yml` 中设置）
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
