@@ -49,6 +49,7 @@ export function getSortedPostsData() {
     // Remove ".md" from file name to get id
     // Use relative path as id to support nested folders, replacing path separators with slashes
     const relativePath = path.relative(postsDirectory, fullPath);
+    // Important: Normalize path separators to forward slashes for consistency across OS
     const id = relativePath.replace(/\.md$/, "").replace(/\\/g, "/");
 
     // Read markdown file as string
@@ -105,10 +106,20 @@ export function getAllPostIds() {
   return allFiles.map((fullPath) => {
     const relativePath = path.relative(postsDirectory, fullPath);
     // Encode the id to handle slashes in URL
+    // Also handle URL encoding for non-ASCII characters (e.g., Chinese)
+    // We keep the internal ID decoded, but Next.js might encode it in params
     const id = relativePath.replace(/\.md$/, "").replace(/\\/g, "/");
+    
     return {
       params: {
-        id: id.split("/"), // Return as array for catch-all route if needed, or handle in page
+        // We do NOT decode here because generateStaticParams expects the segments as they would appear in the URL structure
+        // However, Next.js handles encoding automatically.
+        // The issue is likely that when we split by "/", if a segment contains encoded chars, 
+        // we need to make sure we're consistent.
+        // Actually, for file system operations, we need the raw string.
+        // For URLs, we need the encoded string.
+        // generateStaticParams should return unencoded params, Next.js encodes them for the URL.
+        id: id.split("/"), 
       },
     };
   });
@@ -116,7 +127,14 @@ export function getAllPostIds() {
 
 export async function getPostData(id: string | string[]) {
   // Handle id being an array (from catch-all route) or string
-  const idStr = Array.isArray(id) ? id.join("/") : id;
+  // If id comes from URL (params), it might be encoded (e.g. %E4%B8%AD%E6%96%87)
+  // If id comes from file system (getSortedPostsData), it is raw string
+  
+  // We need to normalize to file system path string
+  const idStr = Array.isArray(id) 
+    ? id.map(segment => decodeURIComponent(segment)).join("/") 
+    : decodeURIComponent(id);
+    
   const fullPath = path.join(postsDirectory, `${idStr}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

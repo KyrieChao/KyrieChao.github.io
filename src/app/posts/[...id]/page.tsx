@@ -9,7 +9,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 export async function generateStaticParams() {
   const paths = getAllPostIds();
   return paths.map((path) => ({
-    id: path.params.id, // 这里 id 是一个数组
+    id: path.params.id, 
   }));
 }
 

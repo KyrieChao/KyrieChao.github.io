@@ -8,9 +8,11 @@ export async function generateStaticParams() {
   return paths.map((path) => {
     // Clone id array
     const id = [...path.params.id];
-    // Append .png to the last segment to ensure file extension for static hosting
+    // Append .png to the last segment
     const lastIndex = id.length - 1;
     if (lastIndex >= 0) {
+      // encode URI component for the filename part to be safe?
+      // actually, nextjs handles routing.
       id[lastIndex] = id[lastIndex] + '.png';
     }
     return { id };
@@ -23,14 +25,16 @@ export async function GET(
 ) {
   const { id } = await params;
   
-  // Remove .png from the last segment to get the original post ID
+  // Remove .png from the last segment
   const cleanId = [...id];
   const lastIndex = cleanId.length - 1;
   if (lastIndex >= 0) {
     cleanId[lastIndex] = cleanId[lastIndex].replace(/\.png$/, '');
   }
   
-  const postId = cleanId.join('/');
+  // Decode URL components
+  const decodedId = cleanId.map(segment => decodeURIComponent(segment));
+  const postId = decodedId.join('/');
 
   try {
     const post = await getPostData(postId);

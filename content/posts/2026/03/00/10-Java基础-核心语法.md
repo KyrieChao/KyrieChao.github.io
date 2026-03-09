@@ -2,6 +2,7 @@
 title: "Java 零基础入门：从 Hello World 到核心语法"
 date: "2026-03-09"
 description: "真正从零开始学 Java：从 System.out.println 讲起，逐步掌握。"
+excerpt: "真正从零开始学 Java：从 System.out.println 讲起，逐步掌握。"
 tags: ["Java", "零基础", "入门教程"]
 categories: ["技术教程"]
 series: "Java 从入门到实践"
