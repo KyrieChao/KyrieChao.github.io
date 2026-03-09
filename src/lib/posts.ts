@@ -119,7 +119,7 @@ export function getAllPostIds() {
         // Actually, for file system operations, we need the raw string.
         // For URLs, we need the encoded string.
         // generateStaticParams should return unencoded params, Next.js encodes them for the URL.
-        id: id.split("/"), 
+        id: id.split("/").map(segment => encodeURIComponent(segment)), 
       },
     };
   });
@@ -153,7 +153,7 @@ export async function getPostData(id: string | string[]) {
     toc.push({ id, text, level });
   }
 
-  // Use remark to convert markdown into HTML string
+// Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(remarkGfm) // Support GFM (tables, etc.)
     .use(remarkMath) // Support Math

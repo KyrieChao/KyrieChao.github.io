@@ -11,8 +11,7 @@ export async function generateStaticParams() {
     // Append .png to the last segment
     const lastIndex = id.length - 1;
     if (lastIndex >= 0) {
-      // encode URI component for the filename part to be safe?
-      // actually, nextjs handles routing.
+      // id is already encoded from getAllPostIds
       id[lastIndex] = id[lastIndex] + '.png';
     }
     return { id };
@@ -33,6 +32,11 @@ export async function GET(
   }
   
   // Decode URL components
+  // Note: If params are already decoded by Next.js, this might double decode, but usually safe for standard chars.
+  // But wait, if we passed encoded params in generateStaticParams, Next.js passes them to us.
+  // In app router, params are usually decoded.
+  // However, since we encoded them MANUALLY in generateStaticParams, Next.js might treat them as raw strings?
+  // Let's assume we need to decode.
   const decodedId = cleanId.map(segment => decodeURIComponent(segment));
   const postId = decodedId.join('/');
 

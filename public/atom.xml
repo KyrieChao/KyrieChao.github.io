@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kyriechao.github.io</id>
     <title>My Blog</title>
-    <updated>2026-03-09T14:44:44.024Z</updated>
+    <updated>2026-03-09T15:11:22.489Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Kyrie Chao</name>
@@ -377,12 +377,7 @@ export default function Home() {
         <id>https://kyriechao.github.io/posts/2026/03/00/10-Java基础-核心语法</id>
         <link href="https://kyriechao.github.io/posts/2026/03/00/10-Java基础-核心语法"/>
         <updated>2026-03-09T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[
-欢迎来到 Java 学习笔记的第一篇！在本系列中，我们将从零开始，一步步掌握 Java 的核心语法。<br/>
-不跳过任何基础，从最简单的 System.out.println 讲起，带你真正理解输开发中必备的知识。
-
- 1. 环境准备
-首先，确保你已经安装了 Java 8 或更...]]></summary>
+        <summary type="html"><![CDATA[真正从零开始学 Java：从 System.out.println 讲起，逐步掌握。]]></summary>
         <content type="html"><![CDATA[
 欢迎来到 Java 学习笔记的第一篇！在本系列中，我们将从零开始，一步步掌握 Java 的核心语法。<br/>
 不跳过任何基础，从最简单的 `System.out.println` 讲起，带你真正理解输开发中必备的知识。

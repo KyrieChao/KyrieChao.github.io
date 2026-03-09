@@ -15,7 +15,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string[] }> }) {
   const { id } = await params;
-  const postId = id.join("/");
+  
+  // Need to decode here as well if we encoded in generateStaticParams?
+  // Next.js App Router usually decodes params automatically.
+  // But our getPostData handles decoding.
+  const postId = id.map(segment => decodeURIComponent(segment)).join("/");
+  
   const postData = await getPostData(postId);
 
   return {
@@ -49,8 +54,10 @@ export default async function Post({
   params: Promise<{ id: string[] }>;
 }) {
   const { id } = await params;
-  // 将数组 id 重新组合成路径字符串用于数据获取
-  const postId = id.join("/");
+  // id params are usually decoded by Next.js.
+  // But since we are encoding them in generateStaticParams, let's make sure.
+  const postId = id.map(segment => decodeURIComponent(segment)).join("/");
+  
   const postData = await getPostData(postId);
   const { prev, next } = getAdjacentPosts(postId);
 
