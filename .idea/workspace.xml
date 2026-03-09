@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明&#10;- 修复URL编码处理问题，确保中文路径正确解析&#10;- 更新RSS和Atom订阅源内容&#10;- 添加文章摘要元数据字段">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/atom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/atom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/rss.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/rss.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/rss.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/search-index.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/search-index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/og/[...id]/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/og/[...id]/route.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/posts/[...id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/posts/[...id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/posts.ts" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="fix(blog): 修复URL参数编码处理问题&#10;&#10;- 在generateStaticParams中对ID段进行encodeURIComponent编码&#10;- 在页面组件中添加decodeURIComponent解码处理URL参数&#10;- 修复Next.js路由中中文路径的正确解析&#10;- 更新atom.xml和rss.xml中的时间戳和摘要内容&#10;- 调整OG路由中ID参数的解码逻辑&#10;- 修正RSS和Atom订阅源的文章摘要长度">
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/03/00/09-nextjs-tutorial-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/03/00/09-nextjs-tutorial-1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -413,7 +405,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773067607215</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix(blog): 修复URL参数编码处理问题&#10;&#10;- 在generateStaticParams中对ID段进行encodeURIComponent编码&#10;- 在页面组件中添加decodeURIComponent解码处理URL参数&#10;- 修复Next.js路由中中文路径的正确解析&#10;- 更新atom.xml和rss.xml中的时间戳和摘要内容&#10;- 调整OG路由中ID参数的解码逻辑&#10;- 修正RSS和Atom订阅源的文章摘要长度">
+      <option name="closed" value="true" />
+      <created>1773069224600</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1773069224600</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,6 +442,7 @@
     <MESSAGE value="feat(blog): 更新博客功能并修复链接格式&#10;&#10;- 添加阅读进度组件显示文章阅读状态&#10;- 修复文章链接格式，统一使用斜杠分隔日期路径&#10;- 更新Next.js路由配置，调整路径解析逻辑&#10;- 添加社交媒体卡片元数据生成功能&#10;- 集成@vercel/og库用于生成Open Graph图像&#10;- 添加github-slugger依赖处理标题锚点链接&#10;- 更新atom.xml中的文章链接和更新时间&#10;- 添加react-tooltip组件增强用户体验&#10;- 修复next-env.d.ts中的类型引用路径&#10;- 配置metadataBase确保URL生成正确" />
     <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明" />
     <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明&#10;- 修复URL编码处理问题，确保中文路径正确解析&#10;- 更新RSS和Atom订阅源内容&#10;- 添加文章摘要元数据字段" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明&#10;- 修复URL编码处理问题，确保中文路径正确解析&#10;- 更新RSS和Atom订阅源内容&#10;- 添加文章摘要元数据字段" />
+    <MESSAGE value="fix(blog): 修复URL参数编码处理问题&#10;&#10;- 在generateStaticParams中对ID段进行encodeURIComponent编码&#10;- 在页面组件中添加decodeURIComponent解码处理URL参数&#10;- 修复Next.js路由中中文路径的正确解析&#10;- 更新atom.xml和rss.xml中的时间戳和摘要内容&#10;- 调整OG路由中ID参数的解码逻辑&#10;- 修正RSS和Atom订阅源的文章摘要长度" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(blog): 修复URL参数编码处理问题&#10;&#10;- 在generateStaticParams中对ID段进行encodeURIComponent编码&#10;- 在页面组件中添加decodeURIComponent解码处理URL参数&#10;- 修复Next.js路由中中文路径的正确解析&#10;- 更新atom.xml和rss.xml中的时间戳和摘要内容&#10;- 调整OG路由中ID参数的解码逻辑&#10;- 修正RSS和Atom订阅源的文章摘要长度" />
   </component>
 </project>
