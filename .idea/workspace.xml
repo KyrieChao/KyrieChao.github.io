@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 更新博客功能并修复链接格式&#10;&#10;- 添加阅读进度组件显示文章阅读状态&#10;- 修复文章链接格式，统一使用斜杠分隔日期路径&#10;- 更新Next.js路由配置，调整路径解析逻辑&#10;- 添加社交媒体卡片元数据生成功能&#10;- 集成@vercel/og库用于生成Open Graph图像&#10;- 添加github-slugger依赖处理标题锚点链接&#10;- 更新atom.xml中的文章链接和更新时间&#10;- 添加react-tooltip组件增强用户体验&#10;- 修复next-env.d.ts中的类型引用路径&#10;- 配置metadataBase确保URL生成正确">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/03/00/10-Java基础-核心语法.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -382,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773060715302</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明">
+      <option name="closed" value="true" />
+      <created>1773066770416</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1773066770416</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,6 +414,7 @@
     <MESSAGE value="docs(readme): 更新文档以反映博客项目的完整信息&#10;&#10;- 替换默认 Next.js 项目描述为 KyrieChao Blog 介绍&#10;- 添加项目特性列表包括框架、样式、内容管理和功能特点&#10;- 提供详细的本地开发和安装说明&#10;- 添加写文章指南和目录结构说明&#10;- 包含部署配置和 GitHub Actions 自动化信息&#10;- 补充许可证信息和在线访问链接" />
     <MESSAGE value="feat(blog): 重构博客系统并新增提交活跃度功能&#10;&#10;- 添加 CommitGraph 组件展示提交历史热力图&#10;- 更新 .gitignore 添加 commit-history.json&#10;- 重命名并移动文章文件至日期格式目录结构&#10;- 删除 Jekyll 遗留文件和旧文章内容&#10;- 重构关于页面增加个人信息和技能栈展示&#10;- 更新 RSS 和搜索索引生成脚本支持嵌套目录&#10;- 添加活动日志导航链接到布局组件&#10;- 修改构建脚本集成提交历史生成&#10;- 安装 react-activity-calendar 依赖包&#10;- 修复标签页面链接问题" />
     <MESSAGE value="feat(blog): 更新博客功能并修复链接格式&#10;&#10;- 添加阅读进度组件显示文章阅读状态&#10;- 修复文章链接格式，统一使用斜杠分隔日期路径&#10;- 更新Next.js路由配置，调整路径解析逻辑&#10;- 添加社交媒体卡片元数据生成功能&#10;- 集成@vercel/og库用于生成Open Graph图像&#10;- 添加github-slugger依赖处理标题锚点链接&#10;- 更新atom.xml中的文章链接和更新时间&#10;- 添加react-tooltip组件增强用户体验&#10;- 修复next-env.d.ts中的类型引用路径&#10;- 配置metadataBase确保URL生成正确" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 更新博客功能并修复链接格式&#10;&#10;- 添加阅读进度组件显示文章阅读状态&#10;- 修复文章链接格式，统一使用斜杠分隔日期路径&#10;- 更新Next.js路由配置，调整路径解析逻辑&#10;- 添加社交媒体卡片元数据生成功能&#10;- 集成@vercel/og库用于生成Open Graph图像&#10;- 添加github-slugger依赖处理标题锚点链接&#10;- 更新atom.xml中的文章链接和更新时间&#10;- 添加react-tooltip组件增强用户体验&#10;- 修复next-env.d.ts中的类型引用路径&#10;- 配置metadataBase确保URL生成正确" />
+    <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明" />
   </component>
 </project>
