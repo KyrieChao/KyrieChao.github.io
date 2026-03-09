@@ -22,6 +22,7 @@ export interface PostData {
   toc?: { id: string; text: string; level: number }[];
   tags?: string[];
   categories?: string[];
+  excerpt?: string;
   [key: string]: any;
 }
 
@@ -40,7 +41,7 @@ export function getSortedPostsData() {
     const matterResult = matter(fileContents);
 
     // Combine the data with the id
-    const data = matterResult.data as { date: string; title: string; tags?: string[] | string; categories?: string[] | string };
+    const data = matterResult.data as { date: string; title: string; tags?: string[] | string; categories?: string[] | string; excerpt?: string; series?: string };
     
     return {
       id,
@@ -102,7 +103,7 @@ export async function getPostData(id: string) {
     
   const contentHtml = processedContent.toString();
 
-  const data = matterResult.data as { date: string; title: string; tags?: string[] | string; categories?: string[] | string };
+  const data = matterResult.data as { date: string; title: string; tags?: string[] | string; categories?: string[] | string; excerpt?: string; series?: string };
 
   return {
     id,
