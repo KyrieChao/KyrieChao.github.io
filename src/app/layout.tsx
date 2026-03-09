@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "我的 Next.js 博客",
+  title: "KyrieChao Blog",
   description: "基于 Next.js 14 构建的个人博客",
 };
 

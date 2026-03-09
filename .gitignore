@@ -43,6 +43,7 @@ next-env.d.ts
 # IDEs
 .idea/
 .trae/
+docs/
 .vscode/
 
 # Legacy Jekyll Blog

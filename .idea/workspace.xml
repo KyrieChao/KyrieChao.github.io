@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新">
-      <change afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新&#10;- 添加next-env.d.ts配置文件支持Next.js类型检查&#10;- 更新IDEA工作空间配置以适配新的开发环境设置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WRITING_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +83,7 @@
       <recent name="D:\Work\WorkRuby\github-blog\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\WorkRuby\github-blog\.trae" />
       <recent name="D:\Work\WorkRuby\github-blog\test" />
     </key>
   </component>
@@ -237,7 +239,7 @@
       <workItem from="1772978069474" duration="3722000" />
       <workItem from="1773013918888" duration="17607000" />
       <workItem from="1773045161570" duration="375000" />
-      <workItem from="1773045581032" duration="304000" />
+      <workItem from="1773045581032" duration="1123000" />
     </task>
     <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
       <option name="closed" value="true" />
@@ -319,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773036513031</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新&#10;- 添加next-env.d.ts配置文件支持Next.js类型检查&#10;- 更新IDEA工作空间配置以适配新的开发环境设置">
+      <option name="closed" value="true" />
+      <created>1773046167940</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773046167940</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +349,7 @@
     <MESSAGE value="feat(blog): 迁移博客系统从 Jekyll 到 Next.js&#10;&#10;- 创建新的 .gitignore 文件配置 Next.js 和相关工具的忽略规则&#10;- 将旧的 Jekyll 配置文件和文章迁移到 _legacy_jekyll 目录&#10;- 添加新的博客文章内容到 content/posts 目录&#10;- 更新配置文件中的作者信息、联系方式和默认布局设置&#10;- 添加 Minimal Mistakes 主题的 SCSS 样式文件用于旧版 Jekyll 站点&#10;- 调整文章日期格式和页面布局配置以适配新系统" />
     <MESSAGE value="feat(blog): 添加文章摘要支持并更新feed时间戳&#10;&#10;- 在文章数据结构中添加excerpt字段支持&#10;- 更新RSS和Atom订阅的时间戳为最新构建时间&#10;- 扩展文章元数据类型定义以包含excerpt和series字段&#10;- 修改posts.ts中的数据验证类型以匹配新的字段结构" />
     <MESSAGE value="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新" />
+    <MESSAGE value="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新&#10;- 添加next-env.d.ts配置文件支持Next.js类型检查&#10;- 更新IDEA工作空间配置以适配新的开发环境设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新&#10;- 添加next-env.d.ts配置文件支持Next.js类型检查&#10;- 更新IDEA工作空间配置以适配新的开发环境设置" />
   </component>
 </project>
