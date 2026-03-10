@@ -4,7 +4,7 @@
         <title>My Blog</title>
         <link>https://kyriechao.github.io</link>
         <description>Personal blog powered by Next.js</description>
-        <lastBuildDate>Mon, 09 Mar 2026 15:11:22 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Mar 2026 01:23:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -262,14 +262,7 @@ export default function BlogLayout({
             <link>https://kyriechao.github.io/posts/2026/03/00/09-nextjs-tutorial-1</link>
             <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/00/09-nextjs-tutorial-1</guid>
             <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[
- Next.js 14 实战系列 (一)
-
-欢迎来到 Next.js 学习笔记的第一篇！在本系列中，我们将一起探索 Next.js 14 的强大功能，特别是 App Router 和服务器组件 (Server Components)。
-
- 1. 环境准备
-
-首先，确保你已经安装...]]></description>
+            <description><![CDATA[这是 Next.js 学习系列的第一篇文章，我们将介绍如何配置开发环境并创建一个基础的 Next.js 项目。]]></description>
             <content:encoded><![CDATA[
 # Next.js 14 实战系列 (一)
 
@@ -336,8 +329,8 @@ export default function Home() {
         </item>
         <item>
             <title><![CDATA[Java 零基础入门：从 Hello World 到核心语法]]></title>
-            <link>https://kyriechao.github.io/posts/2026/03/00/10-Java基础-核心语法</link>
-            <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/00/10-Java基础-核心语法</guid>
+            <link>https://kyriechao.github.io/posts/2026/03/00/10-java-basics</link>
+            <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/00/10-java-basics</guid>
             <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[真正从零开始学 Java：从 System.out.println 讲起，逐步掌握。]]></description>
             <content:encoded><![CDATA[

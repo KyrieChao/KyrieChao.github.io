@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kyriechao.github.io</id>
     <title>My Blog</title>
-    <updated>2026-03-09T15:11:22.489Z</updated>
+    <updated>2026-03-10T01:23:11.713Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Kyrie Chao</name>
@@ -291,14 +291,7 @@ export default function BlogLayout({
         <id>https://kyriechao.github.io/posts/2026/03/00/09-nextjs-tutorial-1</id>
         <link href="https://kyriechao.github.io/posts/2026/03/00/09-nextjs-tutorial-1"/>
         <updated>2026-03-09T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[
- Next.js 14 实战系列 (一)
-
-欢迎来到 Next.js 学习笔记的第一篇！在本系列中，我们将一起探索 Next.js 14 的强大功能，特别是 App Router 和服务器组件 (Server Components)。
-
- 1. 环境准备
-
-首先，确保你已经安装...]]></summary>
+        <summary type="html"><![CDATA[这是 Next.js 学习系列的第一篇文章，我们将介绍如何配置开发环境并创建一个基础的 Next.js 项目。]]></summary>
         <content type="html"><![CDATA[
 # Next.js 14 实战系列 (一)
 
@@ -374,8 +367,8 @@ export default function Home() {
     </entry>
     <entry>
         <title type="html"><![CDATA[Java 零基础入门：从 Hello World 到核心语法]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/00/10-Java基础-核心语法</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/00/10-Java基础-核心语法"/>
+        <id>https://kyriechao.github.io/posts/2026/03/00/10-java-basics</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/00/10-java-basics"/>
         <updated>2026-03-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[真正从零开始学 Java：从 System.out.println 讲起，逐步掌握。]]></summary>
         <content type="html"><![CDATA[
