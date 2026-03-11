@@ -5,7 +5,7 @@ import { format } from "date-fns";
 import { useSearchParams, usePathname } from "next/navigation";
 import { PostData } from "@/lib/posts";
 
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 6;
 
 export function ClientPostList({ allPostsData }: { allPostsData: PostData[] }) {
   const searchParams = useSearchParams();
