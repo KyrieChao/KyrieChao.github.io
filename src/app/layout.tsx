@@ -57,6 +57,9 @@ export default function RootLayout({
                 <a href="https://github.com/KyrieChao" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors" aria-label="GitHub">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 1.5-1 4.5 2.5 1.5-1 3.5-1 4.5-2.5 0 0 1.5-1 4.5 2.5a5.5 5.5 0 0 1-5.5 0c0 .9.3 1.8.8 2.5-2.5 1-4.5 2-6.5 2-2 0-3-1.5-4-3-1-1.5-2-1.5-2-1.5"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                 </a>
+                <a href="https://huggingface.co/spaces/KyrieChao/code-method-namer" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors" aria-label="Code Method Namer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </a>
                 <Search />
                 <ThemeToggle />
               </div>
