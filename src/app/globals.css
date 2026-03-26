@@ -30,6 +30,28 @@ pre code.hljs {
   overflow-x: auto;
   padding: 1em
 }
+/* This targets inline code blocks like `Failure.begin()` */
+.prose :not(pre) > code {
+  padding: 0.2em 0.4em !important;
+  margin: 0 !important;
+  font-size: 85% !important;
+  background-color: rgba(175, 184, 193, 0.2) !important;
+  border-radius: 6px !important;
+  color: #24292f !important;
+}
+
+.dark .prose :not(pre) > code {
+  background-color: rgba(110, 118, 129, 0.4) !important;
+  color: #e6edf3 !important;
+}
+
+/* Remove backticks added by Tailwind Typography */
+.prose code::before,
+.prose code::after {
+  content: none !important;
+  display: none !important;
+}
+
 code.hljs {
   padding: 3px 5px
 }
