@@ -14,7 +14,7 @@
         </image>
         <copyright>All rights reserved 2026, Kyrie Chao</copyright>
         <item>
-            <title><![CDATA[Failure 框架实战指南]]></title>
+            <title><![CDATA[Failure 框架指南]]></title>
             <link>https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix</link>
             <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix</guid>
             <pubDate>Thu, 26 Mar 2026 04:00:00 GMT</pubDate>
@@ -60,7 +60,7 @@
             <author>your-email@example.com (Kyrie Chao)</author>
         </item>
         <item>
-            <title><![CDATA[Failure 框架实战指南]]></title>
+            <title><![CDATA[Failure 框架指南]]></title>
             <link>https://kyriechao.github.io/posts/2026/03/2/26-functional-result</link>
             <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/2/26-functional-result</guid>
             <pubDate>Thu, 26 Mar 2026 03:00:00 GMT</pubDate>
@@ -105,7 +105,7 @@ res.stream().forEach(System.out::println); // 如果是 Fail，stream 会为空�
             <author>your-email@example.com (Kyrie Chao)</author>
         </item>
         <item>
-            <title><![CDATA[Failure 框架实战指南]]></title>
+            <title><![CDATA[Failure 框架指南]]></title>
             <link>https://kyriechao.github.io/posts/2026/03/2/26-declarative-validation</link>
             <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/2/26-declarative-validation</guid>
             <pubDate>Thu, 26 Mar 2026 02:00:00 GMT</pubDate>
@@ -227,7 +227,7 @@ public class MyValidator extends TypedValidator {
             <author>your-email@example.com (Kyrie Chao)</author>
         </item>
         <item>
-            <title><![CDATA[Failure 框架实战指南]]></title>
+            <title><![CDATA[Failure 框架指南]]></title>
             <link>https://kyriechao.github.io/posts/2026/03/2/26-programmatic-validation</link>
             <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/2/26-programmatic-validation</guid>
             <pubDate>Thu, 26 Mar 2026 01:00:00 GMT</pubDate>
@@ -293,7 +293,7 @@ Failure.begin()
             <author>your-email@example.com (Kyrie Chao)</author>
         </item>
         <item>
-            <title><![CDATA[Failure 框架实战指南]]></title>
+            <title><![CDATA[Failure 框架指南]]></title>
             <link>https://kyriechao.github.io/posts/2026/03/2/26-quick-start</link>
             <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/03/2/26-quick-start</guid>
             <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>

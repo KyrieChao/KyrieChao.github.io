@@ -16,7 +16,7 @@
     <icon>https://kyriechao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2026, Kyrie Chao</rights>
     <entry>
-        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <title type="html"><![CDATA[Failure 框架指南]]></title>
         <id>https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix</id>
         <link href="https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix"/>
         <updated>2026-03-26T04:00:00.000Z</updated>
@@ -71,7 +71,7 @@
         </contributor>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <title type="html"><![CDATA[Failure 框架指南]]></title>
         <id>https://kyriechao.github.io/posts/2026/03/2/26-functional-result</id>
         <link href="https://kyriechao.github.io/posts/2026/03/2/26-functional-result"/>
         <updated>2026-03-26T03:00:00.000Z</updated>
@@ -125,7 +125,7 @@ res.stream().forEach(System.out::println); // 如果是 Fail，stream 会为空�
         </contributor>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <title type="html"><![CDATA[Failure 框架指南]]></title>
         <id>https://kyriechao.github.io/posts/2026/03/2/26-declarative-validation</id>
         <link href="https://kyriechao.github.io/posts/2026/03/2/26-declarative-validation"/>
         <updated>2026-03-26T02:00:00.000Z</updated>
@@ -256,7 +256,7 @@ public class MyValidator extends TypedValidator {
         </contributor>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <title type="html"><![CDATA[Failure 框架指南]]></title>
         <id>https://kyriechao.github.io/posts/2026/03/2/26-programmatic-validation</id>
         <link href="https://kyriechao.github.io/posts/2026/03/2/26-programmatic-validation"/>
         <updated>2026-03-26T01:00:00.000Z</updated>
@@ -331,7 +331,7 @@ Failure.begin()
         </contributor>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <title type="html"><![CDATA[Failure 框架指南]]></title>
         <id>https://kyriechao.github.io/posts/2026/03/2/26-quick-start</id>
         <link href="https://kyriechao.github.io/posts/2026/03/2/26-quick-start"/>
         <updated>2026-03-26T00:00:00.000Z</updated>
