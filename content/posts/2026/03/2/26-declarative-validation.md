@@ -10,113 +10,168 @@ series: "Failure 学习系列"
 
 # 🚀 Failure 框架使用教程 - 2. 声明式校验与 Web 层集成（实战主力）
 
-通过 AOP 和注解，Failure 能让你的 Controller 层代码干净到极致。
+这一篇讲的是“把校验收口到方法入口”：
+- Controller/Service 方法加一个 `@Validate` ✅
+- DTO 用 JSR-303 注解描述基础规则 ✅
+- 复杂业务规则用自定义 Validator 扩展 ✅
 
-## 1. 🎛️ @Validate 参数详解与多层叠加
-`@Validate` 是触发校验的总开关。
-- **`value`**：指定自定义的 `FastValidator` 实现类。
-- **`fast`**：**声明式收集模式控制**。
-    - `true` (默认)：快速失败模式。遇到第一个校验错误（无论是 JSR-303 还是自定义 Validator）立即停止并抛出异常。
-    - `false`：全量收集模式。收集该方法入参的所有校验错误，最后抛出 `MultiBusiness` 异常。
-- **`scene`**：指定当前业务场景（如 `Scenario.CREATE`）。
-- **`groups`**：透传给 JSR-303 的校验分组。
+---
 
-**合并策略**：方法上的 `@Validate` 会与参数上的 `@Validate` 合并，方法级别优先级更高。
+## 1. 🎛️ `@Validate`：方法级校验总开关
 
-## 2. 🎭 @Scene 进阶：场景化校验
-复用 DTO 是常态，但创建和更新的规则往往不同。
+`@Validate` 只能标在 **方法** 上（`@Target(ElementType.METHOD)`），它的作用是：在方法执行前统一完成校验，失败就抛 `Business / MultiBusiness`。
+
+常用参数：
+- `value`：指定自定义校验器（实现 `FastValidator` 或 `TypedValidator`）
+- `fast`：声明式收集模式控制
+    - `true`（默认）：快速失败，只抛第一个错误
+    - `false`：全量收集，汇总多个错误后抛 `MultiBusiness`
+- `scene`：指定业务场景（配合 `@Scene` 过滤字段校验）
+- `groups`：透传给 JSR-303 groups
+
+示例：
+```java
+@PostMapping("/users")
+@Validate(scene = Scenario.CREATE, fast = false)
+public ApiResponse<String> create(@FailFastBody UserDTO dto) {
+    return ApiResponse.success("ok");
+}
+```
+
+---
+
+## 2. 🎭 `@Scene`：同一套 DTO 的“场景复用”
+
+很多接口会复用 DTO，但不同场景的约束不同：
+- CREATE：用户名/密码必填
+- UPDATE：id 必填，其它字段可选
+
+用法是“字段上标 `@Scene`，方法上用 `@Validate(scene=...)` 指定当前场景”：
+
 ```java
 public class UserDTO {
-    @Scene(Scenario.UPDATE) // 只有更新场景才校验 ID
+    @Scene(Scenario.UPDATE)
     @NotNull
     private Long id;
-    
-    @Scene({Scenario.CREATE, Scenario.UPDATE}) // 两个场景都校验
+
+    @Scene({Scenario.CREATE, Scenario.UPDATE})
     @NotBlank
     private String username;
 }
 
-// Controller
 @Validate(scene = Scenario.UPDATE)
-@PostMapping("/update")
-public void update(@RequestBody UserDTO dto) { ... }
+public void update(@RequestBody UserDTO dto) { }
 ```
 
-## 3. 🛑 @SkipValidation
-如果 Controller 方法里有个参数你绝对不想让 `@Validate` 去碰它：
+实现语义（很重要）：
+- `@Scene` 只影响 JSR-303 这部分的 violation 过滤
+- 自定义 Validator 是否执行，仍由 `@Validate` 控制
+
+---
+
+## 3. 🛑 `@SkipValidation`：某个参数不参与校验
+
+当方法上有 `@Validate` 时，切面会收集“可校验参数”。如果你希望某个参数完全跳过（例如某个包装对象、或者你就是不想校验它），用 `@SkipValidation`：
+
 ```java
 @Validate
-public void doSomething(UserDTO user, @SkipValidation HttpServletRequest request) { ... }
+public void doSomething(UserDTO user, @SkipValidation HttpServletRequest request) { }
 ```
 
-## 4. 🔍 Scope 深度用法：优雅处理集合与嵌套
-当你需要校验 `List<Item>` 时，如何让报错信息精确指出 `items[2].price` 有问题？
+---
+
+## 4. 🔍 Scope：集合/嵌套对象校验 + 精确路径
+
+校验集合时，最值钱的是“路径精确到第几个元素的哪个字段”，例如：
+- `[0].name`
+- `users[2].address.city`
+
+### 4.1 List 集合校验（推荐 PathEntry 写法）
+
 ```java
 Failure.strict()
-    .forEach("items", order::getItems, scope -> scope
-        // 显式指定字段名 "price"，否则路径会回退到默认的 "field"
-        .notNull(scope.field("price", Item::getPrice), Code.PRICE_NULL)
-        .done()
-    )
+    .notNull(users, ResponseCode.VALIDATION_ERROR_400, "用户列表不能为空")
+    .forEach(users, scope -> {
+        PathEntry<String> name = scope.field(UserDTO::getUsername).as("name");
+        PathEntry<String> email = scope.fieldEntry(UserDTO::getEmail);
+        PathEntry<Integer> age = scope.fieldEntry(UserDTO::getAge);
+
+        scope.notBlank(name, ResponseCode.VALIDATION_ERROR_400)
+             .email(email, ResponseCode.VALIDATION_ERROR_400)
+             .positive(age, ResponseCode.VALIDATION_ERROR_400)
+             .done();
+    })
     .failAll();
-// 报错时，框架会自动拼接出精确路径：items[0].price
 ```
-```java
-// 推荐用 PathEntry
-Failure.strict()
-        .notNull(users, ResponseCode.VALIDATION_ERROR_400, "用户列表不能为空")
-        .forEach(users, scope -> {
-            PathEntry<String> name = scope.field(UserDTO::getUsername).as("name");
-            PathEntry<String> email = scope.fieldEntry(UserDTO::getEmail);
-            PathEntry<Integer> age = scope.fieldEntry(UserDTO::getAge);
-            scope.notBlank(name, ResponseCode.VALIDATION_ERROR_400)
-                    .email(email, ResponseCode.VALIDATION_ERROR_400)
-                    .positive(age, ResponseCode.VALIDATION_ERROR_400)
-                    .merge();
-        })
-        .failAll();
-```
-还支持 `forEachEntry` 遍历 Map，以及 `nested` 校验嵌套对象。
 
-## 5. 🧬 TypedValidator：复杂多态 DTO 的终极方案
-当你有一个基类 `Command` 和多个子类，怎么校验？
+为什么要这么写？
+- `field(getter)` 解析 getter 名称在 Java 里不可靠（会回退到默认 `"field"`），所以推荐用 `.as("name")` 显式指定展示名
+- `fieldEntry(getter)` 直接返回 `PathEntry<T>`，适合不需要改名的字段
+
+### 4.2 Map 校验与 nested（思路相同）
+- `forEachEntry(...)` 用于 Map 的 value 校验（路径会带上 key）
+- `nested(...)` 用于对象嵌套（路径会自动追加子字段）
+
+---
+
+## 5. 🧬 TypedValidator：一个校验器处理多种类型
+
+当你有多个 DTO/Command，希望统一用一个校验入口，但不同类型规则不同，推荐 `TypedValidator`：
+
 ```java
 public class MyValidator extends TypedValidator {
     @Override
     protected void registerValidators() {
-        register(CreateCmd.class, (cmd, ctx) -> Failure.with(ctx).notBlank(cmd.name, Code.ERR).verify());
-        register(UpdateCmd.class, (cmd, ctx) -> Failure.with(ctx).notNull(cmd.id, Code.ERR).verify());
+        register(CreateCmd.class, (cmd, ctx) ->
+            Failure.with(ctx)
+                .notBlank(cmd.getName(), Code.NAME_EMPTY)
+                .verify()
+        );
+
+        register(UpdateCmd.class, (cmd, ctx) ->
+            Failure.with(ctx)
+                .notNull(cmd.getId(), Code.ID_EMPTY)
+                .verify()
+        );
     }
 }
 ```
-**注意**：`Failure.with(ctx)` 是精髓，它复用了 `@Validate` 切面传进来的上下文，确保错误被正确收集。最后使用 `.verify()` 来将校验结果同步到上下文中，这里不使用 `.fail()` 因为切面会统一抛出异常。
 
-## 6. 🛡️ Web 层增强
-- **`@FailFastBody`**：可选的 RequestBody。设置 `required=false` 时，如果前端没传 body，Controller 会收到 `null`，而不是 Spring 默认报出的 400 `HttpMessageNotReadableException`。
+这里用 `.verify()` 而不是 `.fail()`：
+- `.verify()` 只把错误写入 `ctx`
+- 是否抛错、抛一个还是抛多个，由外层 `@Validate(fast=...)` 统一决定
 
-- **统一异常处理与精确日志定位**：框架自带 `FailFastExceptionHandler`。无论是业务抛出的 `Business`，还是 JSR-303 抛出的异常，最终都会被拦截，转化为如下标准 JSON：
-  ```json
-  {
-      "traceId": "ae0fe5e1-0511-498e-91c1-6208e5f2a92c",
-      "code": 40001,
-      "description": "参数错误",
-      "message": "参数错误",
-      "errors": [
-          {
-              "path": null,
-              "code": 40001,
-              "rejected": null,
-              "detail": "参数错误",
-              "message": "参数错误"
-          }
-      ],
-      "scene": "CREATE",
-      "timestamp": "2026-03-26 14:57:05"
-  }
-  ```
-  **💡 开发者体验拉满的控制台日志**：
-  框架在打印异常日志时，会自动追踪并打印触发错误的**具体代码行号**（例如 `(FailureController.java:34)`）。在 IDEA 等主流 IDE 中，**点击该行号即可直接跳转到报错的那行代码**，极大提升了排查效率！
-  ```text
-  2026-03-26T14:57:05.179+08:00 ERROR 22124 [failure-test] --- [nio-8686-exec-1] c.c.f.advice.FailFastExceptionHandler    : [FailureController#scene] {code=400_01, mes=参数错误, des=参数错误} (FailureController.java:34)[ae0fe5e1-0511-498e-91c1-6208e5f2a92c]
-  ```
-- **OpenAPI 完美集成**：引入 `failure-openapi-springdoc-starter` 后，Swagger UI 会自动解析并展示这些错误结构。
+---
+
+## 6. 🧾 `@FailFastBody`：可选 RequestBody（避免 400）
+
+`@FailFastBody` 语义上等同 `@RequestBody`，但支持 `required=false`：
+
+```java
+@PostMapping("/search")
+public ApiResponse<?> search(@FailFastBody(required = false) QueryDTO dto) {
+    if (dto == null) {
+        return ApiResponse.success("no body");
+    }
+    return ApiResponse.success(dto);
+}
+```
+
+---
+
+## 7. 🧯 统一异常处理与日志定位（IDE 可点击跳转）
+
+失败时会返回统一 JSON，且日志中会带上 `(SomeClass.java:34)` 这种可点击定位信息，排查体验非常好。
+
+TraceId 说明：
+- 默认关闭（`fail-fast.trace-id.enabled=false`）：响应体不返回 `traceId`
+- 显式开启（`enabled=true`）：响应体/响应头/MDC 按配置生效
+
+---
+
+## 8. 🧩 OpenAPI（Swagger）集成
+
+如果你需要让 Swagger UI 展示统一错误结构，可以引入 `failure-openapi-springdoc-starter` 相关模块进行增强。
+
+注意事项：
+- Springdoc 与 Spring Boot 的版本要匹配，避免传递依赖引入不兼容的 Boot 版本导致启动异常。

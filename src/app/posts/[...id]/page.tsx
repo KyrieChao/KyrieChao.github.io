@@ -4,6 +4,7 @@ import Link from "next/link";
 import { TableOfContents } from "@/components/TableOfContents";
 import { Comments } from "@/components/Comments";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { CodeBlockEnhancer } from "@/components/CodeBlockEnhancer";
 
 // 静态导出必须实现此函数，告知 Next.js 有哪些路径需要预渲染
 export async function generateStaticParams() {
@@ -64,6 +65,7 @@ export default async function Post({
   return (
     <div className="flex flex-col items-center w-full">
       <ReadingProgress />
+      <CodeBlockEnhancer />
       <div className="max-w-[1920px] w-full px-8 pt-8">
         <Link
           href="/"
@@ -84,7 +86,7 @@ export default async function Post({
           </div>
 
           <div
-            className="prose lg:prose-xl dark:prose-invert max-w-none mb-12"
+            className="prose prose-base md:prose-lg dark:prose-invert max-w-none mb-12 prose-h1:text-2xl md:prose-h1:text-3xl prose-h1:leading-tight prose-h2:text-xl md:prose-h2:text-2xl prose-h3:text-lg md:prose-h3:text-xl"
             dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
           />
           

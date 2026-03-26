@@ -16,7 +16,7 @@ const CopyButton = ({ text }: { text: string }) => {
   return (
     <button
       onClick={handleCopy}
-      className="absolute top-2 right-2 p-2 text-gray-400 hover:text-white bg-gray-700/50 hover:bg-gray-700 rounded transition-all opacity-0 group-hover:opacity-100"
+      className="absolute top-2 right-2 p-2 text-gray-400 hover:text-gray-100 bg-black/50 hover:bg-black/70 rounded transition-all opacity-100"
       aria-label="Copy code"
     >
       {copied ? <FiCheck className="w-4 h-4 text-green-400" /> : <FiCopy className="w-4 h-4" />}

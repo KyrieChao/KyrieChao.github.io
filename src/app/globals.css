@@ -119,9 +119,18 @@ code.hljs {
   background: #0d1117
 }
 
-/* Force dark background for code blocks in dark mode, overriding prose/tailwind-typography if needed */
-.dark .prose pre {
-  background-color: #0d1117;
+.prose pre {
+  background-color: transparent;
+  padding: 0;
+}
+
+.prose pre code.hljs {
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .prose pre code.hljs {
+  border-color: #30363d;
 }
 
 .dark .hljs-doctag,

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kyriechao.github.io</id>
     <title>My Blog</title>
-    <updated>2026-03-12T00:29:10.926Z</updated>
+    <updated>2026-03-26T09:03:53.335Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Kyrie Chao</name>
@@ -16,9 +16,393 @@
     <icon>https://kyriechao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2026, Kyrie Chao</rights>
     <entry>
+        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <id>https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix"/>
+        <updated>2026-03-26T04:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Spring Boot 参数校验新选择：无缝兼容 JSR-303，支持 Fail-Fast 快速失败与 Fail-Strict 全量收集，提供 Scene+Group 双维度场景校验与统一异常响应。]]></summary>
+        <content type="html"><![CDATA[
+# 🚀 Failure 框架使用教程 - 4. 生产运维与附录
+
+## 1. 📊 生产运维支持
+- **监控指标**：引入 `failure-observability-spring-boot-starter`。它会自动将 `@Validate` 的校验耗时、调用次数、失败率等指标对接到 Spring Boot Actuator (Micrometer)，你可以直接在 Prometheus/Grafana 中展示。
+- **链路追踪**：内置 `FailFastTraceIdFilter`，自动生成 `trace-id` 并注入 MDC（方便日志打印），同时在 HTTP Response Header 中回显，方便排查客诉。
+- **TraceId 与日志联动（推荐配置）**：开启响应回显 + MDC 后，前端拿到 `traceId`，可以直接在后端日志中全文搜索定位一次请求的全链路日志。默认关闭，需要显式开启。
+  当 `fail-fast.trace-id.enabled=false` 时，异常响应体将不再返回 `traceId` 字段。
+  ```yaml
+  fail-fast:
+    trace-id:
+      enabled: true
+      header-name: X-Trace-Id
+      mdc-enabled: true
+      mdc-key: traceId
+      response-header: true
+  ```
+  ```yaml
+  logging:
+    pattern:
+      console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(${PID:-}){magenta} %clr([${spring.application.name:-}]){faint} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%replace([%X{traceId:-}]){'^\\[\\]$',''}%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  ```
+- **缓存调优**：支持 I18n 国际化资源的缓存配置，减少磁盘 IO。
+  在开发环境可以设为 `0` 实现热更新，在生产环境建议保持默认值或适当调大：
+  ```yaml
+  fail-fast:
+    i18n:
+      cache-seconds: 3600 # 默认缓存1小时
+  ```
+
+## 2. 📚 附录：核心注解速查表
+| 注解 | 作用位置 | 核心作用 |
+|---|---|---|
+| `@Validate` | 方法、参数 | 开启校验，指定 Validator、场景(scene)与分组(groups) |
+| `@Scene` | 字段 | 标记该字段仅在特定场景下才参与 JSR-303 校验 |
+| `@SkipValidation` | 参数 | 在 `@Validate` 切面中强行跳过该参数的校验 |
+| `@FailFastBody` | 参数 | 增强型 `@RequestBody`，支持安全的可选空 Body |
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <id>https://kyriechao.github.io/posts/2026/03/2/26-functional-result</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/2/26-functional-result"/>
+        <updated>2026-03-26T03:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Spring Boot 参数校验新选择：无缝兼容 JSR-303，支持 Fail-Fast 快速失败与 Fail-Strict 全量收集，提供 Scene+Group 双维度场景校验与统一异常响应。]]></summary>
+        <content type="html"><![CDATA[
+# 🚀 Failure 框架使用教程 - 3. 函数式结果处理 (Result)
+
+如果你讨厌 `try-catch` 满天飞，Failure 提供了另一套哲学：**Monad Result**。
+
+## 1. 🤔 Result vs 异常的选择决策树
+- **选异常 (Business)**：在 Controller/Service 顶层，希望框架自动拦截并返回错误给前端。
+- **选 Result**：在内部复杂业务流转、聚合调用多个外部接口时，希望显式处理每一步的成功与失败。
+
+## 2. 🔗 Result 链式操作
+`Result<T>` 封装了 `Success` 和 `Fail` 两种状态：
+```java
+Result<String> result = Result.ok("data")
+    .tap(s -> log.info("处理成功: {}", s))       // 成功时执行，不改变结果
+    .tapAsync(s -> service.asyncLog(s))        // 异步执行副作用
+    .map(String::toUpperCase)
+    .flatMap(s -> Result.ok(s + "_PROCESSED"))
+    .recover(fail -> "DEFAULT_VALUE") // 失败降级，直接返回降级后的值 T
+   .fold(
+        success -> "最终成功：" + success,
+        fail -> "最终失败：" + fail.getMessage()
+    );
+```
+
+## 3. 🧰 Results 工具类全览
+- **`tryOf()`**：捕获旧代码的异常。
+  `Result<User> res = Results.tryOf(() -> dao.get(), Code.DB_ERR);`
+- **`fromOptional()`**：Optional 转 Result。
+- **`sequence()`**：将 `List<Result<T>>` 反转为 `Result<List<T>>`。如果有任何一个 Fail，整体就是 Fail。
+- **`fold()` (针对列表)**：对 `List<Result<T>>` 进行归约（Reduce）操作，类似于 Stream 的 reduce。
+
+## 4. 🌊 与 Java Stream API 集成
+```java
+Result<List<String>> res = Result.ok(List.of("a", "b"));
+res.stream().forEach(System.out::println); // 如果是 Fail，stream 会为空，不会报 NPE
+```
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <id>https://kyriechao.github.io/posts/2026/03/2/26-declarative-validation</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/2/26-declarative-validation"/>
+        <updated>2026-03-26T02:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Spring Boot 参数校验新选择：无缝兼容 JSR-303，支持 Fail-Fast 快速失败与 Fail-Strict 全量收集，提供 Scene+Group 双维度场景校验与统一异常响应。]]></summary>
+        <content type="html"><![CDATA[
+# 🚀 Failure 框架使用教程 - 2. 声明式校验与 Web 层集成（实战主力）
+
+通过 AOP 和注解，Failure 能让你的 Controller 层代码干净到极致。
+
+## 1. 🎛️ @Validate 参数详解与多层叠加
+`@Validate` 是触发校验的总开关。
+- **`value`**：指定自定义的 `FastValidator` 实现类。
+- **`fast`**：**声明式收集模式控制**。
+    - `true` (默认)：快速失败模式。遇到第一个校验错误（无论是 JSR-303 还是自定义 Validator）立即停止并抛出异常。
+    - `false`：全量收集模式。收集该方法入参的所有校验错误，最后抛出 `MultiBusiness` 异常。
+- **`scene`**：指定当前业务场景（如 `Scenario.CREATE`）。
+- **`groups`**：透传给 JSR-303 的校验分组。
+
+**合并策略**：方法上的 `@Validate` 会与参数上的 `@Validate` 合并，方法级别优先级更高。
+
+## 2. 🎭 @Scene 进阶：场景化校验
+复用 DTO 是常态，但创建和更新的规则往往不同。
+```java
+public class UserDTO {
+    @Scene(Scenario.UPDATE) // 只有更新场景才校验 ID
+    @NotNull
+    private Long id;
+    
+    @Scene({Scenario.CREATE, Scenario.UPDATE}) // 两个场景都校验
+    @NotBlank
+    private String username;
+}
+
+// Controller
+@Validate(scene = Scenario.UPDATE)
+@PostMapping("/update")
+public void update(@RequestBody UserDTO dto) { ... }
+```
+
+## 3. 🛑 @SkipValidation
+如果 Controller 方法里有个参数你绝对不想让 `@Validate` 去碰它：
+```java
+@Validate
+public void doSomething(UserDTO user, @SkipValidation HttpServletRequest request) { ... }
+```
+
+## 4. 🔍 Scope 深度用法：优雅处理集合与嵌套
+当你需要校验 `List<Item>` 时，如何让报错信息精确指出 `items[2].price` 有问题？
+```java
+Failure.strict()
+    .forEach("items", order::getItems, scope -> scope
+        // 显式指定字段名 "price"，否则路径会回退到默认的 "field"
+        .notNull(scope.field("price", Item::getPrice), Code.PRICE_NULL)
+        .done()
+    )
+    .failAll();
+// 报错时，框架会自动拼接出精确路径：items[0].price
+```
+```java
+// 推荐用 PathEntry
+Failure.strict()
+        .notNull(users, ResponseCode.VALIDATION_ERROR_400, "用户列表不能为空")
+        .forEach(users, scope -> {
+            PathEntry<String> name = scope.field(UserDTO::getUsername).as("name");
+            PathEntry<String> email = scope.fieldEntry(UserDTO::getEmail);
+            PathEntry<Integer> age = scope.fieldEntry(UserDTO::getAge);
+            scope.notBlank(name, ResponseCode.VALIDATION_ERROR_400)
+                    .email(email, ResponseCode.VALIDATION_ERROR_400)
+                    .positive(age, ResponseCode.VALIDATION_ERROR_400)
+                    .merge();
+        })
+        .failAll();
+```
+还支持 `forEachEntry` 遍历 Map，以及 `nested` 校验嵌套对象。
+
+## 5. 🧬 TypedValidator：复杂多态 DTO 的终极方案
+当你有一个基类 `Command` 和多个子类，怎么校验？
+```java
+public class MyValidator extends TypedValidator {
+    @Override
+    protected void registerValidators() {
+        register(CreateCmd.class, (cmd, ctx) -> Failure.with(ctx).notBlank(cmd.name, Code.ERR).verify());
+        register(UpdateCmd.class, (cmd, ctx) -> Failure.with(ctx).notNull(cmd.id, Code.ERR).verify());
+    }
+}
+```
+**注意**：`Failure.with(ctx)` 是精髓，它复用了 `@Validate` 切面传进来的上下文，确保错误被正确收集。最后使用 `.verify()` 来将校验结果同步到上下文中，这里不使用 `.fail()` 因为切面会统一抛出异常。
+
+## 6. 🛡️ Web 层增强
+- **`@FailFastBody`**：可选的 RequestBody。设置 `required=false` 时，如果前端没传 body，Controller 会收到 `null`，而不是 Spring 默认报出的 400 `HttpMessageNotReadableException`。
+
+- **统一异常处理与精确日志定位**：框架自带 `FailFastExceptionHandler`。无论是业务抛出的 `Business`，还是 JSR-303 抛出的异常，最终都会被拦截，转化为如下标准 JSON：
+  ```json
+  {
+      "traceId": "ae0fe5e1-0511-498e-91c1-6208e5f2a92c",
+      "code": 40001,
+      "description": "参数错误",
+      "message": "参数错误",
+      "errors": [
+          {
+              "path": null,
+              "code": 40001,
+              "rejected": null,
+              "detail": "参数错误",
+              "message": "参数错误"
+          }
+      ],
+      "scene": "CREATE",
+      "timestamp": "2026-03-26 14:57:05"
+  }
+  ```
+  **💡 开发者体验拉满的控制台日志**：
+  框架在打印异常日志时，会自动追踪并打印触发错误的**具体代码行号**（例如 `(FailureController.java:34)`）。在 IDEA 等主流 IDE 中，**点击该行号即可直接跳转到报错的那行代码**，极大提升了排查效率！
+  ```text
+  2026-03-26T14:57:05.179+08:00 ERROR 22124 [failure-test] --- [nio-8686-exec-1] c.c.f.advice.FailFastExceptionHandler    : [FailureController#scene] {code=400_01, mes=参数错误, des=参数错误} (FailureController.java:34)[ae0fe5e1-0511-498e-91c1-6208e5f2a92c]
+  ```
+- **OpenAPI 完美集成**：引入 `failure-openapi-springdoc-starter` 后，Swagger UI 会自动解析并展示这些错误结构。
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <id>https://kyriechao.github.io/posts/2026/03/2/26-programmatic-validation</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/2/26-programmatic-validation"/>
+        <updated>2026-03-26T01:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Spring Boot 参数校验新选择：无缝兼容 JSR-303，支持 Fail-Fast 快速失败与 Fail-Strict 全量收集，提供 Scene+Group 双维度场景校验与统一异常响应。]]></summary>
+        <content type="html"><![CDATA[
+# 🚀 Failure 框架使用教程 - 1. 编程式链式校验（核心基础）
+
+当你需要在 Service 层手写复杂的校验逻辑时，Failure 提供了极度流畅的链式 API。
+
+## 1. 🏃‍♂️ 两种校验哲学：begin() vs strict()
+
+- **`Failure.begin()`（快速失败 Fail-Fast）** 🏎️
+    - **行为**：遇到第一个不满足的条件，立即终止链式调用并抛出 `Business` 异常。
+    - **场景**：性能敏感的接口、或者表单填写时前端只需要逐项提示的场景。
+
+- **`Failure.strict()`（全量收集 Fail-Strict）** 🕵️‍♂️
+    - **行为**：即使某个条件失败，也会继续执行后续校验，最后统一抛出包含所有错误的 `MultiBusiness` 异常。
+    - **场景**：希望一次性告诉前端所有填错的字段，提升用户体验。
+
+## 2. 🛠️ 链式 API 完整清单与自定义规则
+
+除了常用的 `notNull`, `notBlank`, `positive`，你还可以使用高阶扩展：
+
+- **`check(boolean condition, Code code)`**：传入任意布尔表达式。
+- **自定义 Predicate `satisfies()`**：
+  ```java
+  Failure.begin()
+      .satisfies(str, s -> s.startsWith("A"), ErrorCode.MUST_START_WITH_A)
+      .fail();
+  ```
+- **控制流：`when()` 与 `resume()` 状态开关**：
+  你可以通过 `when(boolean)` 动态开启或关闭后续的校验逻辑：
+  ```java
+  Failure.begin()
+      .when(user.isVip()) // 如果不是 VIP，后续校验将被忽略
+      .notNull(user.getVipLevel(), Code.VIP_LEVEL_REQUIRED)
+      .resume()           // 恢复全量校验模式
+      .notBlank(user.getUsername(), Code.NAME_BLANK)
+      .fail();
+  ```
+
+## 3. 🚦 短路逻辑控制
+在 `strict()` 模式下，有时你希望某个关键错误发生后**局部短路**：
+```java
+Failure.strict()
+       .notNull(user, Code.USER_NULL)
+       .stopOnFail() // 如果 user 是 null，立刻停下，防止下面的 getUsername 报 NPE！
+       .notBlank(user.getUsername(), Code.NAME_BLANK)
+       .resume()     // 恢复全量收集模式
+       .failAll();
+```
+同时支持组合条件：`.or(chain -> chain.notNull(a).notNull(b))` 满足其一即可。
+
+## 4. 🧳 延迟计算 (defer)
+如果你需要在校验链中执行一些耗时的数据库查询，可以使用 `defer`，它只在前面的校验都通过时才会执行：
+```java
+Failure.begin()
+       .notBlank(user.getUsername(), Code.NAME_BLANK)
+       .defer(() -> userService.findByUsername(user.getUsername()) == null, Code.USER_EXISTS)
+       .fail();
+```
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Failure 框架实战指南]]></title>
+        <id>https://kyriechao.github.io/posts/2026/03/2/26-quick-start</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/2/26-quick-start"/>
+        <updated>2026-03-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Spring Boot 参数校验新选择：无缝兼容 JSR-303，支持 Fail-Fast 快速失败与 Fail-Strict 全量收集，提供 Scene+Group 双维度场景校验与统一异常响应。]]></summary>
+        <content type="html"><![CDATA[
+
+# 🚀 Failure 框架使用教程 - 0. 前置准备（快速开始）
+
+## 1. 🛠️ 环境要求
+- **JDK 版本**：JDK 17 或以上
+- **Spring Boot**：3.x 系列（强依赖 `jakarta.validation` 和 Spring Boot 3 的自动装配机制）
+
+## 2. 📦 依赖引入
+在 `pom.xml` 中引入核心 Starter：
+
+```xml
+<dependency>
+    <groupId>io.github.kyriechao</groupId>
+    <artifactId>failure-spring-boot-starter</artifactId>
+    <version>1.2.0</version><!-- 请使用最新版本 -->
+</dependency>
+```
+
+## 3. ⚙️ 自动配置原理简述
+引入 Starter 后，`FailFastAutoConfiguration` 会在幕后为你自动完成以下工作：
+- 注入 `@Validate` 切面（`ValidationAspect`）。
+- 注册 `OptionalBodyResolver` 以支持 `@FailFastBody`。
+- 注册 `FailFastExceptionHandler` 接管全局异常并输出标准 JSON。
+- 注册链路追踪和上下文清理的 Web 过滤器。
+
+## 4. ⚡ 与 Spring Boot Starter Validation 的关系
+**绝不是替代，而是增强！** Failure 完美兼容并底层调用了 `spring-boot-starter-validation` (Hibernate Validator)。它将原本生硬的约束异常转换为了优雅的业务异常（`Business` / `MultiBusiness`），并提供了强大的场景化过滤和统一返回体。
+
+## 5. 🎯 第一个完整示例
+让我们快速体验一下从传统校验到 Failure 校验的进化：
+
+**传统写法 😖：**
+```java
+if (user.getUsername() == null) {
+    throw new RuntimeException("用户名不能为空");
+}
+if (user.getAge() < 18) {
+    throw new RuntimeException("未成年");
+}
+```
+
+**Failure 编程式写法 🤩：**
+```java
+Failure.begin()
+       .notBlank(user.getUsername(), UserCode.USERNAME_BLANK)
+       .positive(user.getAge(), UserCode.AGE_INVALID)
+       .fail(); // 任意一步失败，立即抛出对应的 Business 异常！
+```
+
+
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[数学笔记：傅里叶变换基础]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/11/12-math-notes</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/11/12-math-notes"/>
+        <id>https://kyriechao.github.io/posts/2026/03/1/12-math-notes</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/1/12-math-notes"/>
         <updated>2026-03-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[
  傅里叶变换基础
@@ -105,8 +489,8 @@ $$
     </entry>
     <entry>
         <title type="html"><![CDATA[Java 零基础入门：从 Hello World 到核心语法]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/11/11-java-operators-and-control-flow</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/11/11-java-operators-and-control-flow"/>
+        <id>https://kyriechao.github.io/posts/2026/03/1/11-java-operators-and-control-flow</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/1/11-java-operators-and-control-flow"/>
         <updated>2026-03-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[
 Hello 我来继续介绍
@@ -477,8 +861,8 @@ for (int i = 1; i <= 5; i++) {
     </entry>
     <entry>
         <title type="html"><![CDATA[Python 数据分析入门：Pandas 实战]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/11/11-python-data-analysis</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/11/11-python-data-analysis"/>
+        <id>https://kyriechao.github.io/posts/2026/03/1/11-python-data-analysis</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/1/11-python-data-analysis"/>
         <updated>2026-03-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[
  Python 数据分析入门：Pandas 实战
@@ -576,8 +960,8 @@ Pandas 的功能远不止于此。配合 Matplotlib 或 Seaborn，你还可以�
     </entry>
     <entry>
         <title type="html"><![CDATA[Next.js 14 实战系列 (二)：深入理解路由与布局]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/11/10-nextjs-tutorial-2</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/11/10-nextjs-tutorial-2"/>
+        <id>https://kyriechao.github.io/posts/2026/03/1/10-nextjs-tutorial-2</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/1/10-nextjs-tutorial-2"/>
         <updated>2026-03-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[
  Next.js 14 实战系列 (二)
@@ -660,8 +1044,8 @@ export default function BlogLayout({
     </entry>
     <entry>
         <title type="html"><![CDATA[Next.js 14 实战系列 (一)：从零开始搭建博客]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/00/09-nextjs-tutorial-1</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/00/09-nextjs-tutorial-1"/>
+        <id>https://kyriechao.github.io/posts/2026/03/0/09-nextjs-tutorial-1</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/0/09-nextjs-tutorial-1"/>
         <updated>2026-03-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[这是 Next.js 学习系列的第一篇文章，我们将介绍如何配置开发环境并创建一个基础的 Next.js 项目。]]></summary>
         <content type="html"><![CDATA[
@@ -739,8 +1123,8 @@ export default function Home() {
     </entry>
     <entry>
         <title type="html"><![CDATA[Java 零基础入门：从 Hello World 到核心语法]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/00/10-java-basics</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/00/10-java-basics"/>
+        <id>https://kyriechao.github.io/posts/2026/03/0/10-java-basics</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/0/10-java-basics"/>
         <updated>2026-03-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[真正从零开始学 Java：从 System.out.println 讲起，逐步掌握。]]></summary>
         <content type="html"><![CDATA[
@@ -940,8 +1324,8 @@ String userName = "Tom";
     </entry>
     <entry>
         <title type="html"><![CDATA[重读《黑客与画家》有感]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/00/08-hackers-and-painters</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/00/08-hackers-and-painters"/>
+        <id>https://kyriechao.github.io/posts/2026/03/0/08-hackers-and-painters</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/0/08-hackers-and-painters"/>
         <updated>2026-03-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[保罗·格雷厄姆的《黑客与画家》是一本常读常新的经典。这次重读，我对“创造财富”和“设计品味”有了新的理解。]]></summary>
         <content type="html"><![CDATA[
@@ -984,8 +1368,8 @@ PG 在书中关于财富的定义也非常深刻：**财富不是金钱，财富
     </entry>
     <entry>
         <title type="html"><![CDATA[Markdown 功能展示与富文本示例]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/00/08-markdown-demo</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/00/08-markdown-demo"/>
+        <id>https://kyriechao.github.io/posts/2026/03/0/08-markdown-demo</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/0/08-markdown-demo"/>
         <updated>2026-03-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[这篇文章展示了 Minimal Mistakes 主题支持的各种 Markdown 语法，包括代码高亮、数学公式、提示块、表格与多媒体。]]></summary>
         <content type="html"><![CDATA[
@@ -1113,8 +1497,8 @@ $$
     </entry>
     <entry>
         <title type="html"><![CDATA[我的 2026 高效工作流分享]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/00/08-productivity-workflow</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/00/08-productivity-workflow"/>
+        <id>https://kyriechao.github.io/posts/2026/03/0/08-productivity-workflow</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/0/08-productivity-workflow"/>
         <updated>2026-03-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[工欲善其事，必先利其器。本文将介绍我在 2026 年使用的一套高效工作流，涵盖任务管理、笔记记录和代码开发。]]></summary>
         <content type="html"><![CDATA[
@@ -1161,8 +1545,8 @@ $$
     </entry>
     <entry>
         <title type="html"><![CDATA[Tailwind CSS 实用技巧分享]]></title>
-        <id>https://kyriechao.github.io/posts/2026/03/00/08-tailwind-tips</id>
-        <link href="https://kyriechao.github.io/posts/2026/03/00/08-tailwind-tips"/>
+        <id>https://kyriechao.github.io/posts/2026/03/0/08-tailwind-tips</id>
+        <link href="https://kyriechao.github.io/posts/2026/03/0/08-tailwind-tips"/>
         <updated>2026-03-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[在这篇文章中，我将分享一些我在使用 Tailwind CSS 开发项目时总结的实用技巧，帮助你更高效地构建现代网页界面。]]></summary>
         <content type="html"><![CDATA[
