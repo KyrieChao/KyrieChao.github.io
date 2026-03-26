@@ -2,9 +2,12 @@
 title: "Failure 框架实战指南"
 date: "2026-03-26 08:00:00 +0800"
 description: "Spring Boot 参数校验新选择：无缝兼容 JSR-303，支持 Fail-Fast 快速失败与 Fail-Strict 全量收集，提供 Scene+Group 双维度场景校验与统一异常响应。"
+excerpt: "Spring Boot 参数校验新选择：无缝兼容 JSR-303，支持 Fail-Fast 快速失败与 Fail-Strict 全量收集，提供 Scene+Group 双维度场景校验与统一异常响应。"
 tags: ["Failure", "Spring Boot", "Validation", "Java", "开源框架"]
 categories: ["Failure 学习系列"]
+series: "Failure 学习系列"
 ---
+
 
 # 🚀 Failure 框架使用教程 - 0. 前置准备（快速开始）
 
