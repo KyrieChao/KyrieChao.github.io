@@ -4,7 +4,7 @@
         <title>My Blog</title>
         <link>https://kyriechao.github.io</link>
         <description>Personal blog powered by Next.js</description>
-        <lastBuildDate>Thu, 26 Mar 2026 09:52:09 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Jul 2026 07:22:27 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,19 @@
             <link>https://kyriechao.github.io</link>
         </image>
         <copyright>All rights reserved 2026, Kyrie Chao</copyright>
+        <item>
+            <title><![CDATA[测试标题]]></title>
+            <link>https://kyriechao.github.io/posts/2026/07/24-plan</link>
+            <guid isPermaLink="false">https://kyriechao.github.io/posts/2026/07/24-plan</guid>
+            <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+
+ demo...]]></description>
+            <content:encoded><![CDATA[
+
+## demo]]></content:encoded>
+            <author>your-email@example.com (Kyrie Chao)</author>
+        </item>
         <item>
             <title><![CDATA[Failure 框架指南]]></title>
             <link>https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix</link>

@@ -131,10 +131,10 @@ export async function getPostData(id: string | string[]) {
   // If id comes from file system (getSortedPostsData), it is raw string
   
   // We need to normalize to file system path string
-  const idStr = Array.isArray(id) 
-    ? id.map(segment => decodeURIComponent(segment)).join("/") 
-    : decodeURIComponent(id);
-    
+  const idStr = (Array.isArray(id)
+    ? id.map(segment => decodeURIComponent(segment)).join("/")
+    : decodeURIComponent(id)).replace(/\.md$/, ""); // 容错：URL 可能带了 .md 后缀
+
   const fullPath = path.join(postsDirectory, `${idStr}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

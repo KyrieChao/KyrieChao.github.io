@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kyriechao.github.io</id>
     <title>My Blog</title>
-    <updated>2026-03-26T09:52:09.302Z</updated>
+    <updated>2026-07-24T07:22:27.232Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Kyrie Chao</name>
@@ -15,6 +15,28 @@
     <logo>https://kyriechao.github.io/logo.png</logo>
     <icon>https://kyriechao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2026, Kyrie Chao</rights>
+    <entry>
+        <title type="html"><![CDATA[测试标题]]></title>
+        <id>https://kyriechao.github.io/posts/2026/07/24-plan</id>
+        <link href="https://kyriechao.github.io/posts/2026/07/24-plan"/>
+        <updated>2026-07-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[
+
+ demo...]]></summary>
+        <content type="html"><![CDATA[
+
+## demo]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Failure 框架指南]]></title>
         <id>https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix</id>

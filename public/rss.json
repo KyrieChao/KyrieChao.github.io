@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://kyriechao.github.io/posts/2026/07/24-plan",
+            "content_html": "\r\n\r\n## demo",
+            "url": "https://kyriechao.github.io/posts/2026/07/24-plan",
+            "title": "测试标题",
+            "summary": "\r\n\r\n demo...",
+            "date_modified": "2026-07-24T00:00:00.000Z",
+            "author": {
+                "name": "Kyrie Chao",
+                "url": "https://github.com/KyrieChao"
+            }
+        },
+        {
             "id": "https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix",
             "content_html": "\n# 🚀 Failure 框架使用教程 - 4. 生产运维与附录\n\n这一篇关注“上线以后你最关心的事”：\n- 监控：失败率、耗时、QPS 📈\n- 排障：TraceId、日志一键定位 🔎\n- 国际化：文案缓存与刷新 🌍\n\n---\n\n## 1. 📊 可观测性（Micrometer）\n\n如果你接入了 `failure-observability-spring-boot-starter`（且项目里有 `MeterRegistry`），框架会自动上报校验相关指标。\n\n建议在 Grafana 上至少做 3 张图：\n- 校验耗时（Timer）\n- 校验次数（Counter）\n- 校验失败率（fail / total）\n\n---\n\n## 2. 🧵 TraceId（默认关闭，按需开启）\n\n### 2.1 开启后的收益\n开启 `trace-id` 后，你会获得三件事：\n- 响应体（可选）/响应头（可选）回传 TraceId，前端报错时能把它带回来\n- MDC 注入：日志自动包含 TraceId\n- 控制台日志里可以直接全文搜索 TraceId，定位整条请求链路\n\n### 2.2 推荐配置（开启）\n\n```yaml\nfail-fast:\n  trace-id:\n    enabled: true\n    header-name: X-Trace-Id\n    response-header: true\n    response-header-name: X-Trace-Id\n    generate-if-missing: true\n    mdc-enabled: true\n    mdc-key: traceId\n```\n\n### 2.3 关闭语义（方案 A）\n\n```yaml\nfail-fast:\n  trace-id:\n    enabled: false\n```\n\n当 `enabled=false` 时：\n- TraceId Filter 不会注册\n- 异常响应体将不再返回 `traceId` 字段（关掉就是彻底没有）\n\n---\n\n## 3. 🧾 日志 Pattern（把 TraceId 打到日志里）\n\n如果你启用了 `mdc-enabled=true`，建议把 MDC 字段拼到 console pattern：\n\n```yaml\nlogging:\n  pattern:\n    console: \"%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(${PID:-}){magenta} %clr([${spring.application.name:-}]){faint} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%replace([%X{traceId:-}]){'^\\\\[\\\\]$',''}%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}\"\n```\n\n这样前端拿到的 `traceId` 可以直接在日志里一搜就定位到错误原因。\n\n---\n\n## 4. 🌍 I18n 缓存调优\n\nFailure 的错误信息可以走国际化资源文件。缓存配置项是：\n\n```yaml\nfail-fast:\n  i18n:\n    cache-seconds: 3600\n```\n\n建议：\n- 开发环境：`cache-seconds: 0`（方便你改文案立即生效）\n- 生产环境：保持默认（减少磁盘 IO）\n\n---\n\n## 5. 📚 附录：注解速查表\n\n| 注解 | 位置 | 作用 |\n|---|---|---|\n| `@Validate` | 方法 | 声明式校验总开关（scene/groups/fast） |\n| `@Scene` | 字段 | 场景化过滤 JSR-303 violation |\n| `@SkipValidation` | 参数 | 指定参数不参与校验 |\n| `@FailFastBody` | 参数 | 可选 RequestBody（required=false） |\n\n---\n\n## 6. 🧩 FAQ（常见问题）\n\n### 6.1 为什么我关闭 trace-id 仍看到 traceId？\n如果你把 `fail-fast.trace-id.enabled=false` 后仍看到 `traceId`，通常是：\n- 你没生效到当前环境配置文件（profile 配置覆盖）\n- 你启用了旧版本（升级后需要重新发布）\n\n### 6.2 为什么日志里能点击 `(SomeClass.java:34)`？\n框架在异常日志里打印了触发异常的源码位置，IDEA 会识别并提供点击跳转，这对排查定位非常省时间。\n",
             "url": "https://kyriechao.github.io/posts/2026/03/2/26-operations-and-appendix",
