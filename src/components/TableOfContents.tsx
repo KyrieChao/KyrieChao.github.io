@@ -32,7 +32,7 @@ export function TableOfContents({ toc }: { toc: any[] }) {
   if (!Array.isArray(toc) || toc.length === 0) return null;
 
   return (
-    <div className="hidden xl:block fixed right-[max(2rem,calc(50%-48rem+2rem))] top-32 w-64 p-4 border-l border-gray-200 dark:border-gray-800">
+    <div className="hidden xl:block fixed right-[max(2rem,calc(50%-48rem+2rem))] top-32 w-64 max-h-[calc(100vh-8rem)] overflow-y-auto p-4 border-l border-gray-200 dark:border-gray-800">
       <h3 className="font-bold mb-4 text-gray-900 dark:text-gray-100">目录</h3>
       <ul className="space-y-2 text-sm">
         {toc.map((item) => (
