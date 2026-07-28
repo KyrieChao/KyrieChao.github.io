@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第二篇，详细记录Day2学习内容&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/28-diary.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/28-rust-day3.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,7 +260,8 @@
       <workItem from="1784877397492" duration="6548000" />
       <workItem from="1784886534560" duration="609000" />
       <workItem from="1784966391551" duration="3530000" />
-      <workItem from="1785149985822" duration="2107000" />
+      <workItem from="1785149985822" duration="3063000" />
+      <workItem from="1785238357954" duration="1125000" />
     </task>
     <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
       <option name="closed" value="true" />
@@ -570,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785152104902</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件">
+      <option name="closed" value="true" />
+      <created>1785152403837</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1785152403837</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +604,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 初始化 Jekyll 博客项目并配置 Minimal Mistakes 主题&#10;&#10;- 添加 .gitignore 文件配置忽略规则&#10;- 创建 Markdown 功能展示文章和博客欢迎页面&#10;- 配置 Minimal Mistakes 主题的 SCSS 样式文件&#10;- 设置博客主题配置文件 _config.yml&#10;- 添加多种颜色主题皮肤支持&#10;- 配置归档、基础元素、按钮、页脚和表单样式&#10;- 设置代码版权信息和动画效果" />
     <MESSAGE value="feat(blog): 添加新文章并重构首页布局&#10;&#10;- 添加三篇新文章：&quot;重读《黑客与画家》有感&quot;、&quot;我的 2026 高效工作流分享&quot;、&quot;Tailwind CSS 实用技巧分享&quot;&#10;- 新增 FeaturedSeries 组件展示精选专栏&#10;- 新增 RecentPosts 组件显示最新文章&#10;- 移除遗留的 Jekyll 博客相关忽略规则&#10;- 更新 RSS 和 Atom 订阅文件内容&#10;- 添加定时部署任务到 GitHub Actions&#10;- 过滤掉未来日期的文章以避免提前发布&#10;- 修复分页导航路径问题&#10;- 更新博客名称和版权信息" />
     <MESSAGE value="docs(readme): 更新文档以反映博客项目的完整信息&#10;&#10;- 替换默认 Next.js 项目描述为 KyrieChao Blog 介绍&#10;- 添加项目特性列表包括框架、样式、内容管理和功能特点&#10;- 提供详细的本地开发和安装说明&#10;- 添加写文章指南和目录结构说明&#10;- 包含部署配置和 GitHub Actions 自动化信息&#10;- 补充许可证信息和在线访问链接" />
     <MESSAGE value="feat(blog): 重构博客系统并新增提交活跃度功能&#10;&#10;- 添加 CommitGraph 组件展示提交历史热力图&#10;- 更新 .gitignore 添加 commit-history.json&#10;- 重命名并移动文章文件至日期格式目录结构&#10;- 删除 Jekyll 遗留文件和旧文章内容&#10;- 重构关于页面增加个人信息和技能栈展示&#10;- 更新 RSS 和搜索索引生成脚本支持嵌套目录&#10;- 添加活动日志导航链接到布局组件&#10;- 修改构建脚本集成提交历史生成&#10;- 安装 react-activity-calendar 依赖包&#10;- 修复标签页面链接问题" />
@@ -616,6 +628,7 @@
     <MESSAGE value="chore(workflow): 更新GitHub Actions部署版本&#10;&#10;- 将actions/deploy-pages从v4升级到v5版本&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录&#10;- 在博客文章中添加excerpt字段支持" />
     <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第一篇，制定3个月学习路线&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
     <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第二篇，详细记录Day2学习内容&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第二篇，详细记录Day2学习内容&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
+    <MESSAGE value="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件" />
   </component>
 </project>
