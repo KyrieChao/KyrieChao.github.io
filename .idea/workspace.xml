@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/28-diary.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/28-rust-day3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/29-diary.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/29-rust-day4.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,7 +261,8 @@
       <workItem from="1784886534560" duration="609000" />
       <workItem from="1784966391551" duration="3530000" />
       <workItem from="1785149985822" duration="3063000" />
-      <workItem from="1785238357954" duration="1125000" />
+      <workItem from="1785238357954" duration="1437000" />
+      <workItem from="1785330059063" duration="784000" />
     </task>
     <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
       <option name="closed" value="true" />
@@ -583,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785152403837</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件">
+      <option name="closed" value="true" />
+      <created>1785239788392</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1785239788392</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
