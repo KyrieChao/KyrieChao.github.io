@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/31-diary.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/31-rust-day6.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/07/30-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/07/30-diary.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,6 +265,8 @@
       <workItem from="1785238357954" duration="1437000" />
       <workItem from="1785330059063" duration="983000" />
       <workItem from="1785422743214" duration="719000" />
+      <workItem from="1785479541231" duration="100000" />
+      <workItem from="1785479820737" duration="5734000" />
     </task>
     <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
       <option name="closed" value="true" />
@@ -605,7 +612,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785423476914</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日">
+      <option name="closed" value="true" />
+      <created>1785479580454</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1785479580454</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
