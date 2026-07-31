@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/31-diary.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/07/31-rust-day6.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/07/30-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/07/30-diary.md" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -266,7 +261,7 @@
       <workItem from="1785330059063" duration="983000" />
       <workItem from="1785422743214" duration="719000" />
       <workItem from="1785479541231" duration="100000" />
-      <workItem from="1785479820737" duration="5734000" />
+      <workItem from="1785479820737" duration="6004000" />
     </task>
     <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
       <option name="closed" value="true" />
@@ -620,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785479580454</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录">
+      <option name="closed" value="true" />
+      <created>1785502303072</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1785502303072</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,7 +644,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 重构博客系统并新增提交活跃度功能&#10;&#10;- 添加 CommitGraph 组件展示提交历史热力图&#10;- 更新 .gitignore 添加 commit-history.json&#10;- 重命名并移动文章文件至日期格式目录结构&#10;- 删除 Jekyll 遗留文件和旧文章内容&#10;- 重构关于页面增加个人信息和技能栈展示&#10;- 更新 RSS 和搜索索引生成脚本支持嵌套目录&#10;- 添加活动日志导航链接到布局组件&#10;- 修改构建脚本集成提交历史生成&#10;- 安装 react-activity-calendar 依赖包&#10;- 修复标签页面链接问题" />
     <MESSAGE value="feat(blog): 更新博客功能并修复链接格式&#10;&#10;- 添加阅读进度组件显示文章阅读状态&#10;- 修复文章链接格式，统一使用斜杠分隔日期路径&#10;- 更新Next.js路由配置，调整路径解析逻辑&#10;- 添加社交媒体卡片元数据生成功能&#10;- 集成@vercel/og库用于生成Open Graph图像&#10;- 添加github-slugger依赖处理标题锚点链接&#10;- 更新atom.xml中的文章链接和更新时间&#10;- 添加react-tooltip组件增强用户体验&#10;- 修复next-env.d.ts中的类型引用路径&#10;- 配置metadataBase确保URL生成正确" />
     <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明" />
     <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明&#10;- 修复URL编码处理问题，确保中文路径正确解析&#10;- 更新RSS和Atom订阅源内容&#10;- 添加文章摘要元数据字段" />
@@ -666,6 +668,7 @@
     <MESSAGE value="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件" />
     <MESSAGE value="docs(diary): 添加 7月29日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rust Options学习进展&#10;- 添加Rust第4天学习笔记详细记录Option与Result实践&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <MESSAGE value="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日" />
+    <MESSAGE value="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
   </component>
 </project>
