@@ -1,19 +1,11 @@
 ---
-title: "日志"
-date: "2026-07-29 08:00:00 +0800"
-excerpt: "域名备案通过，rustling test 收尾，C 语言步入正轨"
-tags: ["技术日志", "2026","Rust", "培训","域名", "C语言"]
-categories: ["日志", "技术"]
-series: "每日日志"
----
----
 title: "2026-07-30 周四 · Rustlings 收尾"
 date: "2026-07-30 21:00:00 +0800"
 excerpt: "Rustlings 测试全部完成，C 语言进入运算符，Rust 推进到智能指针"
 tags: ["Rust", "C语言", "培训", "日志"]
 categories: ["日志"]
 series: "每日日志"
-  ---
+---
 
 ## 技术
 
