@@ -1,7 +1,7 @@
 ---
 title: "Rust 学习计划"
 date: "2026-08-01 08:00:00 +0800"
-excerpt: "Rust 第6天学习 — Rustlings 完结"
+excerpt: "Rust 第7天学习 — Rustlings 完结"
 tags: ["Rust", "学习路线", "编程语言"]
 categories: ["学习规划", "技术成长"]
 series: "Rust Plan"
