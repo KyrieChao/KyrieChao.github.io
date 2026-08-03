@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/3-diary.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/3-rust-day-8.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/1-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/1-diary.md" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -270,15 +265,7 @@
       <workItem from="1785479820737" duration="6004000" />
       <workItem from="1785502974408" duration="418000" />
       <workItem from="1785571692593" duration="2899000" />
-      <workItem from="1785757238979" duration="1728000" />
-    </task>
-    <task id="LOCAL-00003" summary="feat(blog): 初始化博客站点并配置深色主题&#10;&#10;- 创建博客初始文章 _posts/2026-03-08-welcome.md&#10;- 添加自定义样式文件 assets/css/main.scss&#10;- 配置炫酷深色风格主题变量&#10;- 实现毛玻璃导航栏效果&#10;- 设计文章列表卡片悬停动画&#10;- 添加 Google Fonts 字体支持&#10;- 优化代码块和按钮样式&#10;- 实现移动端适配方案">
-      <option name="closed" value="true" />
-      <created>1772980181313</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1772980181313</updated>
+      <workItem from="1785757238979" duration="2312000" />
     </task>
     <task id="LOCAL-00004" summary="style(css): 移除主样式文件中的front matter注释&#10;&#10;- 删除了Sass文件开头的YAML front matter注释块&#10;- 保留了必要的CSS编码声明和其他样式定义&#10;- 清理了多余的注释和空行以保持代码简洁">
       <option name="closed" value="true" />
@@ -664,7 +651,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785576170336</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <option name="closed" value="true" />
+      <created>1785761081101</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1785761081102</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明&#10;- 修复URL编码处理问题，确保中文路径正确解析&#10;- 更新RSS和Atom订阅源内容&#10;- 添加文章摘要元数据字段" />
     <MESSAGE value="fix(blog): 修复URL参数编码处理问题&#10;&#10;- 在generateStaticParams中对ID段进行encodeURIComponent编码&#10;- 在页面组件中添加decodeURIComponent解码处理URL参数&#10;- 修复Next.js路由中中文路径的正确解析&#10;- 更新atom.xml和rss.xml中的时间戳和摘要内容&#10;- 调整OG路由中ID参数的解码逻辑&#10;- 修正RSS和Atom订阅源的文章摘要长度" />
     <MESSAGE value="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容" />
     <MESSAGE value="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容&#10;- 更新 atom.xml、rss.xml 和 rss.json 中的文章摘要&#10;- 修复 Java 教程文章 URL 中的编码问题&#10;- 调整 RSS 订阅源中的时间戳更新&#10;- 更新 next-env.d.ts 中的类型导入路径" />
@@ -710,6 +704,7 @@
     <MESSAGE value="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <MESSAGE value="docs(diary): 添加 8月1日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言隐式类型转换规则和Rustlings完结学习进展&#10;- 添加Rust第7天学习笔记详细记录生命周期、闭包、迭代器、智能指针等内容&#10;- 修正7月31日日记标题格式保持一致性&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;" />
+    <MESSAGE value="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
   </component>
 </project>
