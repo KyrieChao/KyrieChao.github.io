@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/1-diary.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/1-rust-day7.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/3-diary.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/3-rust-day-8.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/07/31-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/07/31-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/1-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/1-diary.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,34 +51,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "ignore_missing_gitignore": "true",
-    "js.debugger.nextJs.config.created.client": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Work/WorkRuby/github-blog/content/posts/2026/08",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "org.rust.first.attach.projects": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.27701148",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "通义灵码",
-    "ts.external.directory.path": "D:\\Work\\WorkRuby\\github-blog\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/WorkRuby/github-blog/content/posts/2026/08&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.27701148&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;通义灵码&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\WorkRuby\\github-blog\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\WorkRuby\github-blog\content\posts\2026\08" />
@@ -269,23 +269,8 @@
       <workItem from="1785479541231" duration="100000" />
       <workItem from="1785479820737" duration="6004000" />
       <workItem from="1785502974408" duration="418000" />
-      <workItem from="1785571692593" duration="1901000" />
-    </task>
-    <task id="LOCAL-00001" summary="feat(blog): 初始化 Jekyll 博客项目并配置主题功能&#10;&#10;- 添加 .gitignore 文件忽略 Jekyll 构建相关文件&#10;- 创建首篇博客文章 _posts/2026-03-08-welcome.md&#10;- 配置 _config.yml 设置站点信息、主题、分页和评论系统&#10;- 添加 about.md 页面展示作者信息&#10;- 创建 Gemfile 管理 Ruby 依赖&#10;- 更新 index.html 为 Jekyll 布局结构&#10;- 修改 .idea/misc.xml 适配 Ruby 开发环境&#10;- 添加 _data/navigation.yml 配置导航菜单&#10;- 扩展 README.md 包含本地运行、写作指南和部署说明&#10;- 创建 year-archive.md 实现文章归档功能">
-      <option name="closed" value="true" />
-      <created>1772979240931</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1772979240931</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feat(config): 添加 jekyll-include-cache 插件支持&#10;&#10;- 在 _config.yml 中配置 jekyll-include-cache 插件&#10;- 在 Gemfile 中添加 jekyll-include-cache 依赖&#10;- 将插件加入 jekyll_plugins 组以确保正确加载">
-      <option name="closed" value="true" />
-      <created>1772979448289</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1772979448289</updated>
+      <workItem from="1785571692593" duration="2899000" />
+      <workItem from="1785757238979" duration="1728000" />
     </task>
     <task id="LOCAL-00003" summary="feat(blog): 初始化博客站点并配置深色主题&#10;&#10;- 创建博客初始文章 _posts/2026-03-08-welcome.md&#10;- 添加自定义样式文件 assets/css/main.scss&#10;- 配置炫酷深色风格主题变量&#10;- 实现毛玻璃导航栏效果&#10;- 设计文章列表卡片悬停动画&#10;- 添加 Google Fonts 字体支持&#10;- 优化代码块和按钮样式&#10;- 实现移动端适配方案">
       <option name="closed" value="true" />
@@ -655,7 +640,31 @@
       <option name="project" value="LOCAL" />
       <updated>1785503386092</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="docs(diary): 添加 8月1日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言隐式类型转换规则和Rustlings完结学习进展&#10;- 添加Rust第7天学习笔记详细记录生命周期、闭包、迭代器、智能指针等内容&#10;- 修正7月31日日记标题格式保持一致性&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <option name="closed" value="true" />
+      <created>1785573667707</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1785573667707</updated>
+    </task>
+    <task id="LOCAL-00050" summary="docs(diary): 添加 8月1日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言隐式类型转换规则和Rustlings完结学习进展&#10;- 添加Rust第7天学习笔记详细记录生命周期、闭包、迭代器、智能指针等内容&#10;- 修正7月31日日记标题格式保持一致性&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <option name="closed" value="true" />
+      <created>1785573716955</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1785573716956</updated>
+    </task>
+    <task id="LOCAL-00051" summary="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;">
+      <option name="closed" value="true" />
+      <created>1785576170335</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1785576170336</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,8 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 更新博客功能并修复链接格式&#10;&#10;- 添加阅读进度组件显示文章阅读状态&#10;- 修复文章链接格式，统一使用斜杠分隔日期路径&#10;- 更新Next.js路由配置，调整路径解析逻辑&#10;- 添加社交媒体卡片元数据生成功能&#10;- 集成@vercel/og库用于生成Open Graph图像&#10;- 添加github-slugger依赖处理标题锚点链接&#10;- 更新atom.xml中的文章链接和更新时间&#10;- 添加react-tooltip组件增强用户体验&#10;- 修复next-env.d.ts中的类型引用路径&#10;- 配置metadataBase确保URL生成正确" />
-    <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明" />
     <MESSAGE value="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明&#10;- 修复URL编码处理问题，确保中文路径正确解析&#10;- 更新RSS和Atom订阅源内容&#10;- 添加文章摘要元数据字段" />
     <MESSAGE value="fix(blog): 修复URL参数编码处理问题&#10;&#10;- 在generateStaticParams中对ID段进行encodeURIComponent编码&#10;- 在页面组件中添加decodeURIComponent解码处理URL参数&#10;- 修复Next.js路由中中文路径的正确解析&#10;- 更新atom.xml和rss.xml中的时间戳和摘要内容&#10;- 调整OG路由中ID参数的解码逻辑&#10;- 修正RSS和Atom订阅源的文章摘要长度" />
     <MESSAGE value="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容" />
@@ -701,6 +708,8 @@
     <MESSAGE value="docs(diary): 添加 7月29日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rust Options学习进展&#10;- 添加Rust第4天学习笔记详细记录Option与Result实践&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <MESSAGE value="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日" />
     <MESSAGE value="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
+    <MESSAGE value="docs(diary): 添加 8月1日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言隐式类型转换规则和Rustlings完结学习进展&#10;- 添加Rust第7天学习笔记详细记录生命周期、闭包、迭代器、智能指针等内容&#10;- 修正7月31日日记标题格式保持一致性&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <MESSAGE value="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;" />
   </component>
 </project>
