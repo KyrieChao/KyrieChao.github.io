@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/4-diary.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/4-rust-day-9.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -265,15 +269,8 @@
       <workItem from="1785479820737" duration="6004000" />
       <workItem from="1785502974408" duration="418000" />
       <workItem from="1785571692593" duration="2899000" />
-      <workItem from="1785757238979" duration="2312000" />
-    </task>
-    <task id="LOCAL-00004" summary="style(css): 移除主样式文件中的front matter注释&#10;&#10;- 删除了Sass文件开头的YAML front matter注释块&#10;- 保留了必要的CSS编码声明和其他样式定义&#10;- 清理了多余的注释和空行以保持代码简洁">
-      <option name="closed" value="true" />
-      <created>1772980305845</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1772980305845</updated>
+      <workItem from="1785757238979" duration="2795000" />
+      <workItem from="1785842056319" duration="4037000" />
     </task>
     <task id="LOCAL-00005" summary="style(css): 移除多余的字符集声明&#10;&#10;- 删除了 main.scss 文件中的 @charset &quot;utf-8&quot; 声明&#10;- 保留了必要的分隔符和注释结构&#10;- 确保样式表的编码声明符合最佳实践">
       <option name="closed" value="true" />
@@ -659,7 +656,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785761081102</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <option name="closed" value="true" />
+      <created>1785761801793</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1785761801793</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
