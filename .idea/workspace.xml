@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月4日技术日志和Rust并发学习笔记&#10;&#10;- 新增日记文章记录C语言循环结构与goto语句学习内容&#10;- 添加Rust第9天学习笔记详细记录并发编程核心概念与实践&#10;- 记录线程spawn、join、move、Arc、Mutex、channel等知识点&#10;- 总结并发选型速查表和死锁避免原则&#10;- 更新IDEA工作空间变更记录和任务统计">
-      <change afterPath="$PROJECT_DIR$/create_post.ps1" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月5日技术日志和Rust文件I/O学习笔记&#10;&#10;- 新增日记文章记录C语言函数章节学习内容和Rust文件操作练习&#10;- 添加Rust第10天学习笔记详细记录文件I/O操作实战经验&#10;- 实现统计文件行数、内容替换、目录大小计算三个实用函数&#10;- 记录BufReader、临时文件、原子重命名等关键知识点&#10;- 创建PowerShell脚本自动化生成每日日记和学习笔记模板">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/08-diary.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/4-rust-day-9.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/4-rust-day-9.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_post.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/create_post.ps1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Debug&quot;,
     &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -271,15 +271,8 @@
       <workItem from="1785571692593" duration="2899000" />
       <workItem from="1785757238979" duration="2795000" />
       <workItem from="1785842056319" duration="4067000" />
-      <workItem from="1785920339849" duration="2727000" />
-    </task>
-    <task id="LOCAL-00006" summary="remove(css): 删除主样式文件中的所有CSS代码&#10;&#10;- 移除了炫酷深色风格的主题变量定义&#10;- 删除了毛玻璃导航栏的自定义样式&#10;- 移除了文章列表卡片的悬浮动画效果&#10;- 清理了文章页面内容的字体设置&#10;- 删除了代码块、按钮等UI组件的圆角样式&#10;- 移除了归档页年份标题的下划线装饰&#10;- 清理了分页控件的圆形按钮样式&#10;- 删除了首页欢迎区域的径向渐变背景&#10;- 移除了移动端适配的相关样式规则">
-      <option name="closed" value="true" />
-      <created>1772980553696</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1772980553696</updated>
+      <workItem from="1785920339849" duration="3030000" />
+      <workItem from="1786183484480" duration="1142000" />
     </task>
     <task id="LOCAL-00007" summary="feat(site): 添加搜索功能、社交链接和统计配置&#10;&#10;- 启用站点搜索功能并配置相关设置&#10;- 添加 Email 社交链接到侧边栏&#10;- 配置页脚链接包含 GitHub 和 Email&#10;- 添加 Google Analytics 统计配置&#10;- 在导航菜单中增加分类和标签页面入口&#10;- 创建分类和标签页面布局文件&#10;- 添加 Markdown 功能展示示例文章">
       <option name="closed" value="true" />
@@ -665,7 +658,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785855108876</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="docs(diary): 添加8月5日技术日志和Rust文件I/O学习笔记&#10;&#10;- 新增日记文章记录C语言函数章节学习内容和Rust文件操作练习&#10;- 添加Rust第10天学习笔记详细记录文件I/O操作实战经验&#10;- 实现统计文件行数、内容替换、目录大小计算三个实用函数&#10;- 记录BufReader、临时文件、原子重命名等关键知识点&#10;- 创建PowerShell脚本自动化生成每日日记和学习笔记模板">
+      <option name="closed" value="true" />
+      <created>1785923577218</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1785923577218</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +687,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容" />
     <MESSAGE value="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容&#10;- 更新 atom.xml、rss.xml 和 rss.json 中的文章摘要&#10;- 修复 Java 教程文章 URL 中的编码问题&#10;- 调整 RSS 订阅源中的时间戳更新&#10;- 更新 next-env.d.ts 中的类型导入路径" />
     <MESSAGE value="feat(blog): 添加Java运算符与控制流教程文章&#10;&#10;- 新增Java零基础入门教程，涵盖运算符和流程控制核心概念&#10;- 详细介绍算术、赋值、比较、逻辑、位运算符和三元运算符&#10;- 添加完整的流程控制语句讲解，包括if/else、switch、循环语句&#10;- 实现控制循环的break和continue语句使用说明&#10;- 提供常见误区与调试技巧表格帮助初学者避坑&#10;- 修复IDEA工作空间配置中的账户ID和索引设置问题" />
     <MESSAGE value="chore(workflow): 配置 GitHub Actions 获取完整提交历史&#10;&#10;- 在 checkout 步骤中添加 fetch-depth: 0 参数&#10;- 确保工作流可以访问完整的 Git 提交历史记录" />
@@ -711,6 +711,7 @@
     <MESSAGE value="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;" />
     <MESSAGE value="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 添加8月4日技术日志和Rust并发学习笔记&#10;&#10;- 新增日记文章记录C语言循环结构与goto语句学习内容&#10;- 添加Rust第9天学习笔记详细记录并发编程核心概念与实践&#10;- 记录线程spawn、join、move、Arc、Mutex、channel等知识点&#10;- 总结并发选型速查表和死锁避免原则&#10;- 更新IDEA工作空间变更记录和任务统计" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月4日技术日志和Rust并发学习笔记&#10;&#10;- 新增日记文章记录C语言循环结构与goto语句学习内容&#10;- 添加Rust第9天学习笔记详细记录并发编程核心概念与实践&#10;- 记录线程spawn、join、move、Arc、Mutex、channel等知识点&#10;- 总结并发选型速查表和死锁避免原则&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <MESSAGE value="docs(diary): 添加8月5日技术日志和Rust文件I/O学习笔记&#10;&#10;- 新增日记文章记录C语言函数章节学习内容和Rust文件操作练习&#10;- 添加Rust第10天学习笔记详细记录文件I/O操作实战经验&#10;- 实现统计文件行数、内容替换、目录大小计算三个实用函数&#10;- 记录BufReader、临时文件、原子重命名等关键知识点&#10;- 创建PowerShell脚本自动化生成每日日记和学习笔记模板" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月5日技术日志和Rust文件I/O学习笔记&#10;&#10;- 新增日记文章记录C语言函数章节学习内容和Rust文件操作练习&#10;- 添加Rust第10天学习笔记详细记录文件I/O操作实战经验&#10;- 实现统计文件行数、内容替换、目录大小计算三个实用函数&#10;- 记录BufReader、临时文件、原子重命名等关键知识点&#10;- 创建PowerShell脚本自动化生成每日日记和学习笔记模板" />
   </component>
 </project>
