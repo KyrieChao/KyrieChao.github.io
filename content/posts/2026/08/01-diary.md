@@ -62,7 +62,7 @@ unsigned int ui = 5;
 
 今天完成了 Rustlings 全部练习，看到 Congratulations 的 Finish line。
 
-具体内容记录在 [Rust Day7 笔记](1-rust-day7)，要点：
+具体内容记录在 [Rust Day7 笔记](01-rust-day7)，要点：
 
 - **生命周期标注**：手写了带生命周期的 `Book<'a>` 结构体及 `impl` 块，能写 `longer_title` 这类多引用返回的方法
 - **闭包**：`Fn` / `FnMut` / `FnOnce` 三个 trait 的区别和适用场景

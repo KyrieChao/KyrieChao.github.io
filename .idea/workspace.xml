@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,15 +271,7 @@
       <workItem from="1785842056319" duration="4067000" />
       <workItem from="1785920339849" duration="3030000" />
       <workItem from="1786183484480" duration="1247000" />
-      <workItem from="1786360843412" duration="469000" />
-    </task>
-    <task id="LOCAL-00009" summary="feat(blog): 添加文章摘要支持并更新feed时间戳&#10;&#10;- 在文章数据结构中添加excerpt字段支持&#10;- 更新RSS和Atom订阅的时间戳为最新构建时间&#10;- 扩展文章元数据类型定义以包含excerpt和series字段&#10;- 修改posts.ts中的数据验证类型以匹配新的字段结构">
-      <option name="closed" value="true" />
-      <created>1773036128279</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1773036128279</updated>
+      <workItem from="1786360843412" duration="854000" />
     </task>
     <task id="LOCAL-00010" summary="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新">
       <option name="closed" value="true" />
@@ -663,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786361035114</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <option name="closed" value="true" />
+      <created>1786361338710</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1786361338710</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
