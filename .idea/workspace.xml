@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月8日技术日志和LED驱动练习笔记&#10;&#10;- 新增日记文章记录STC8G单片机LED控制程序学习内容&#10;- 详细记录5个LED控制项目包括流水灯、频闪灯、呼吸灯等实现&#10;- 添加PWM原理和定时器中断配置的核心代码片段&#10;- 总结寄存器配置要点和推挽输出设置方法&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,14 +269,7 @@
       <workItem from="1785842056319" duration="4067000" />
       <workItem from="1785920339849" duration="3030000" />
       <workItem from="1786183484480" duration="1247000" />
-    </task>
-    <task id="LOCAL-00008" summary="feat(blog): 迁移博客系统从 Jekyll 到 Next.js&#10;&#10;- 创建新的 .gitignore 文件配置 Next.js 和相关工具的忽略规则&#10;- 将旧的 Jekyll 配置文件和文章迁移到 _legacy_jekyll 目录&#10;- 添加新的博客文章内容到 content/posts 目录&#10;- 更新配置文件中的作者信息、联系方式和默认布局设置&#10;- 添加 Minimal Mistakes 主题的 SCSS 样式文件用于旧版 Jekyll 站点&#10;- 调整文章日期格式和页面布局配置以适配新系统">
-      <option name="closed" value="true" />
-      <created>1773035981324</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1773035981324</updated>
+      <workItem from="1786360843412" duration="469000" />
     </task>
     <task id="LOCAL-00009" summary="feat(blog): 添加文章摘要支持并更新feed时间戳&#10;&#10;- 在文章数据结构中添加excerpt字段支持&#10;- 更新RSS和Atom订阅的时间戳为最新构建时间&#10;- 扩展文章元数据类型定义以包含excerpt和series字段&#10;- 修改posts.ts中的数据验证类型以匹配新的字段结构">
       <option name="closed" value="true" />
@@ -662,7 +655,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786184695498</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计">
+      <option name="closed" value="true" />
+      <created>1786361035114</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1786361035114</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,7 +684,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 添加Java运算符与控制流教程文章&#10;&#10;- 新增Java零基础入门教程，涵盖运算符和流程控制核心概念&#10;- 详细介绍算术、赋值、比较、逻辑、位运算符和三元运算符&#10;- 添加完整的流程控制语句讲解，包括if/else、switch、循环语句&#10;- 实现控制循环的break和continue语句使用说明&#10;- 提供常见误区与调试技巧表格帮助初学者避坑&#10;- 修复IDEA工作空间配置中的账户ID和索引设置问题" />
     <MESSAGE value="chore(workflow): 配置 GitHub Actions 获取完整提交历史&#10;&#10;- 在 checkout 步骤中添加 fetch-depth: 0 参数&#10;- 确保工作流可以访问完整的 Git 提交历史记录" />
     <MESSAGE value="fix(ci): 修复部署工作流中的构建命令&#10;&#10;- 将构建命令从 'next build' 更改为 'run build'&#10;- 确保使用正确的包管理器运行构建脚本" />
     <MESSAGE value="feat(blog): 更新博客内容并调整分页设置&#10;&#10;- 添加新的Java零基础入门教程文章&#10;- 更新Atom和RSS订阅源的时间戳&#10;- 在订阅源中添加作者和贡献者信息&#10;- 将每页文章数量从5篇调整为6篇&#10;- 更新RSS JSON和XML文件中的文章列表&#10;- 添加完整的Java运算符和流程控制教程内容" />
@@ -708,6 +708,7 @@
     <MESSAGE value="docs(diary): 添加8月4日技术日志和Rust并发学习笔记&#10;&#10;- 新增日记文章记录C语言循环结构与goto语句学习内容&#10;- 添加Rust第9天学习笔记详细记录并发编程核心概念与实践&#10;- 记录线程spawn、join、move、Arc、Mutex、channel等知识点&#10;- 总结并发选型速查表和死锁避免原则&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 添加8月5日技术日志和Rust文件I/O学习笔记&#10;&#10;- 新增日记文章记录C语言函数章节学习内容和Rust文件操作练习&#10;- 添加Rust第10天学习笔记详细记录文件I/O操作实战经验&#10;- 实现统计文件行数、内容替换、目录大小计算三个实用函数&#10;- 记录BufReader、临时文件、原子重命名等关键知识点&#10;- 创建PowerShell脚本自动化生成每日日记和学习笔记模板" />
     <MESSAGE value="docs(diary): 添加8月8日技术日志和LED驱动练习笔记&#10;&#10;- 新增日记文章记录STC8G单片机LED控制程序学习内容&#10;- 详细记录5个LED控制项目包括流水灯、频闪灯、呼吸灯等实现&#10;- 添加PWM原理和定时器中断配置的核心代码片段&#10;- 总结寄存器配置要点和推挽输出设置方法&#10;- 更新IDEA工作空间变更记录和任务统计" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月8日技术日志和LED驱动练习笔记&#10;&#10;- 新增日记文章记录STC8G单片机LED控制程序学习内容&#10;- 详细记录5个LED控制项目包括流水灯、频闪灯、呼吸灯等实现&#10;- 添加PWM原理和定时器中断配置的核心代码片段&#10;- 总结寄存器配置要点和推挽输出设置方法&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <MESSAGE value="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计" />
   </component>
 </project>
