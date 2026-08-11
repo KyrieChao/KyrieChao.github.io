@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 重命名日记文件并更新链接引用&#10;&#10;- 重命名 1-diary.md 为 01-diary.md 并更新内部链接&#10;- 重命名 3-diary.md 为 03-diary.md 并更新内部链接  &#10;- 重命名 4-diary.md 为 04-diary.md 并更新内部链接&#10;- 修正 8月10日日记标题日期与实际日期一致&#10;- 更新 IDEA 工作空间变更记录和任务统计&#10;- 同步调整相关文件的时间戳信息">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/11-diary.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/11-rust-day-12.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="更新今日日志+rust" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -275,15 +271,7 @@
       <workItem from="1786183484480" duration="1247000" />
       <workItem from="1786360843412" duration="854000" />
       <workItem from="1786361794979" duration="955000" />
-      <workItem from="1786441199425" duration="447000" />
-    </task>
-    <task id="LOCAL-00011" summary="feat(blog): 添加四篇新博客文章并更新RSS订阅&#10;&#10;- 新增数学笔记文章：傅里叶变换基础，用于测试KaTeX公式渲染&#10;- 添加Python数据分析教程：Pandas实战入门指南&#10;- 发布Next.js 14实战系列两篇文章：从零开始搭建博客和深入理解路由与布局&#10;- 更新Atom和RSS订阅源，包含最新文章内容和发布时间戳&#10;- 修正RSS XML和JSON文件中的最后构建时间戳更新&#10;- 添加next-env.d.ts配置文件支持Next.js类型检查&#10;- 更新IDEA工作空间配置以适配新的开发环境设置">
-      <option name="closed" value="true" />
-      <created>1773046167940</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1773046167940</updated>
+      <workItem from="1786441199425" duration="679000" />
     </task>
     <task id="LOCAL-00012" summary="chore(config): 更新项目配置和忽略规则&#10;&#10;- 在 .gitignore 中添加 docs 目录忽略规则&#10;- 将网站标题从 &quot;我的 Next.js 博客&quot; 更新为 &quot;KyrieChao Blog&quot;&#10;- 从项目中移除 WRITING_TEMPLATE.md 模板文件&#10;- 更新 IDEA 工作空间配置以适配新的开发环境设置&#10;- 调整最近移动文件记录路径配置&#10;- 更新本地任务计数器和提交历史记录">
       <option name="closed" value="true" />
@@ -669,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786361859970</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="更新今日日志+rust">
+      <option name="closed" value="true" />
+      <created>1786441830908</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1786441830908</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +686,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix(ci): 修复部署工作流中的构建命令&#10;&#10;- 将构建命令从 'next build' 更改为 'run build'&#10;- 确保使用正确的包管理器运行构建脚本" />
     <MESSAGE value="feat(blog): 更新博客内容并调整分页设置&#10;&#10;- 添加新的Java零基础入门教程文章&#10;- 更新Atom和RSS订阅源的时间戳&#10;- 在订阅源中添加作者和贡献者信息&#10;- 将每页文章数量从5篇调整为6篇&#10;- 更新RSS JSON和XML文件中的文章列表&#10;- 添加完整的Java运算符和流程控制教程内容" />
     <MESSAGE value="feat(blog): 添加Failure框架实战指南系列教程&#10;&#10;- 新增编程式链式校验教程文档&#10;- 新增声明式校验与Web层集成教程&#10;- 新增函数式结果处理教程文档&#10;- 新增生产运维与附录教程文档&#10;- 更新IDEA工作空间配置文件&#10;- 添加Failure框架快速开始指南" />
     <MESSAGE value="feat(blog): 添加Failure框架实战指南系列教程&#10;&#10;- 在多篇博客文章中添加excerpt字段&#10;- 为所有Failure框架教程文章添加series分类&#10;- 更新IDEA工作空间配置文件中的任务记录&#10;- 修改工作时间统计和任务计数器&#10;- 清理VCS配置中的历史提交消息记录" />
@@ -715,6 +710,7 @@
     <MESSAGE value="docs(diary): 添加8月8日技术日志和LED驱动练习笔记&#10;&#10;- 新增日记文章记录STC8G单片机LED控制程序学习内容&#10;- 详细记录5个LED控制项目包括流水灯、频闪灯、呼吸灯等实现&#10;- 添加PWM原理和定时器中断配置的核心代码片段&#10;- 总结寄存器配置要点和推挽输出设置方法&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 重命名日记文件并更新链接引用&#10;&#10;- 重命名 1-diary.md 为 01-diary.md 并更新内部链接&#10;- 重命名 3-diary.md 为 03-diary.md 并更新内部链接  &#10;- 重命名 4-diary.md 为 04-diary.md 并更新内部链接&#10;- 修正 8月10日日记标题日期与实际日期一致&#10;- 更新 IDEA 工作空间变更记录和任务统计&#10;- 同步调整相关文件的时间戳信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 重命名日记文件并更新链接引用&#10;&#10;- 重命名 1-diary.md 为 01-diary.md 并更新内部链接&#10;- 重命名 3-diary.md 为 03-diary.md 并更新内部链接  &#10;- 重命名 4-diary.md 为 04-diary.md 并更新内部链接&#10;- 修正 8月10日日记标题日期与实际日期一致&#10;- 更新 IDEA 工作空间变更记录和任务统计&#10;- 同步调整相关文件的时间戳信息" />
+    <MESSAGE value="更新今日日志+rust" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新今日日志+rust" />
   </component>
 </project>
