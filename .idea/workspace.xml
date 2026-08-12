@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="更新今日日志+rust" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="更新今日日志+rust">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/12-diary.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/12-rust-day-13.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/07/24-phase1.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/07/24-phase1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/04-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/04-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/11-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/11-diary.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,14 +279,8 @@
       <workItem from="1786360843412" duration="854000" />
       <workItem from="1786361794979" duration="955000" />
       <workItem from="1786441199425" duration="679000" />
-    </task>
-    <task id="LOCAL-00012" summary="chore(config): 更新项目配置和忽略规则&#10;&#10;- 在 .gitignore 中添加 docs 目录忽略规则&#10;- 将网站标题从 &quot;我的 Next.js 博客&quot; 更新为 &quot;KyrieChao Blog&quot;&#10;- 从项目中移除 WRITING_TEMPLATE.md 模板文件&#10;- 更新 IDEA 工作空间配置以适配新的开发环境设置&#10;- 调整最近移动文件记录路径配置&#10;- 更新本地任务计数器和提交历史记录">
-      <option name="closed" value="true" />
-      <created>1773046990422</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1773046990422</updated>
+      <workItem from="1786441921591" duration="45000" />
+      <workItem from="1786532093721" duration="1408000" />
     </task>
     <task id="LOCAL-00013" summary="feat(blog): 初始化 Jekyll 博客项目并配置 Minimal Mistakes 主题&#10;&#10;- 添加 .gitignore 文件配置忽略规则&#10;- 创建 Markdown 功能展示文章和博客欢迎页面&#10;- 配置 Minimal Mistakes 主题的 SCSS 样式文件&#10;- 设置博客主题配置文件 _config.yml&#10;- 添加多种颜色主题皮肤支持&#10;- 配置归档、基础元素、按钮、页脚和表单样式&#10;- 设置代码版权信息和动画效果">
       <option name="closed" value="true" />
@@ -665,7 +666,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786441830908</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="更新今日日志+rust">
+      <option name="closed" value="true" />
+      <created>1786441939919</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1786441939919</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

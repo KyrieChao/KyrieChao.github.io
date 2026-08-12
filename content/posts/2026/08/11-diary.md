@@ -52,7 +52,7 @@ hello.c  →  ①预处理  →  hello.i  →  ②编译  →  hello.s  →  ③
 
 ### Rust
 
-学习内容：[Rust Day12 笔记](./11-rust-day-12.md)——**阶段 2：枚举、Result、Option、自定义错误、文件 I/O**
+学习内容：[Rust Day12 笔记](./11-rust-day-12)——**阶段 2：枚举、Result、Option、自定义错误、文件 I/O**
 
 今天在 `demo3.rs` 里写了阶段 2 的练习：
 
