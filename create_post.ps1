@@ -4,12 +4,16 @@
 #       或在 PowerShell 中执行：.\create_post.ps1
 # ==================================================
 
-# ---------- 1. 获取当前日期 ----------
+# ---------- 1. 获取当前日期和时间 ----------
 $year = (Get-Date).Year
 $month = (Get-Date).Month.ToString("00")
 $day = (Get-Date).Day.ToString("00")
 $dateStr = Get-Date -Format "yyyy-MM-dd"
-$datetimeStr = "$dateStr $datetimeStr +0800"   # 固定时间 08:00 东八区
+
+# 获取当前时间，并附加时区偏移（如 +0800）
+$now = Get-Date
+$timezoneOffset = $now.ToString('zzz') -replace ':', ''
+$datetimeStr = $now.ToString('yyyy-MM-dd HH:mm:ss') + " " + $timezoneOffset
 
 # 目标目录
 $targetDir = "content\posts\$year\$month"
@@ -20,11 +24,14 @@ if (-not (Test-Path $targetDir)) {
     New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
 }
 
-# ---------- 3. 定义文件路径 ----------
+# ---------- 3. 定义 UTF-8 无 BOM 编码 ----------
+$Utf8NoBom = New-Object System.Text.UTF8Encoding $false
+
+# ---------- 4. 定义文件路径 ----------
 $diaryFile = Join-Path $targetDir "$day-diary.md"
 $rustFilePrefix = Join-Path $targetDir "$day-rust-day-"
 
-# ---------- 4. 创建日记文件（若不存在） ----------
+# ---------- 5. 创建日记文件（若不存在） ----------
 if (Test-Path $diaryFile) {
     Write-Host "📝 日记文件已存在：$diaryFile" -ForegroundColor Cyan
 } else {
@@ -47,16 +54,12 @@ series: "每日日志"
 ## 思考
 
 ## 明日计划
-
-## 思考
 "@
-    # 以 UTF-8 无 BOM 格式保存
-    $Utf8NoBom = New-Object System.Text.UTF8Encoding $false
     [System.IO.File]::WriteAllText($diaryFile, $diaryContent, $Utf8NoBom)
     Write-Host "✅ 创建日记：$diaryFile" -ForegroundColor Green
 }
 
-# ---------- 5. 计算下一个 Rust 笔记编号 ----------
+# ---------- 6. 计算下一个 Rust 笔记编号 ----------
 $maxNum = 0
 $files = Get-ChildItem -Path $targetDir -Filter "*-rust-day-*.md" -File
 foreach ($file in $files) {
@@ -68,7 +71,7 @@ foreach ($file in $files) {
 $nextNum = $maxNum + 1
 $rustFile = "$rustFilePrefix$nextNum.md"
 
-# ---------- 6. 创建 Rust 笔记文件（若不存在） ----------
+# ---------- 7. 创建 Rust 笔记文件（若不存在） ----------
 if (Test-Path $rustFile) {
     Write-Host "📝 Rust 笔记已存在：$rustFile" -ForegroundColor Cyan
 } else {

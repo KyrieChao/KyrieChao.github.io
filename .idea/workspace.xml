@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="更新今日日志+rust">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/12-diary.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/12-rust-day-13.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 更新日记内容和链接修复&#10;&#10;- 修复 Rust Day9 笔记链接去除多余扩展名&#10;- 修复 Rust Day12 笔记链接去除多余扩展名&#10;- 修复总纲链接去除多余扩展名&#10;- 添加 8月12日日记记录数组起步与阶段3学习&#10;- 添加 Rust Day13 笔记关于集合迭代器和Todo CLI&#10;- 更新 IDEA 工作空间配置文件变更记录">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/13-diary.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/13-rust-day-14.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/07/24-phase1.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/07/24-phase1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/04-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/04-diary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/11-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/11-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_post.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/create_post.ps1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,15 +278,8 @@
       <workItem from="1786361794979" duration="955000" />
       <workItem from="1786441199425" duration="679000" />
       <workItem from="1786441921591" duration="45000" />
-      <workItem from="1786532093721" duration="1408000" />
-    </task>
-    <task id="LOCAL-00013" summary="feat(blog): 初始化 Jekyll 博客项目并配置 Minimal Mistakes 主题&#10;&#10;- 添加 .gitignore 文件配置忽略规则&#10;- 创建 Markdown 功能展示文章和博客欢迎页面&#10;- 配置 Minimal Mistakes 主题的 SCSS 样式文件&#10;- 设置博客主题配置文件 _config.yml&#10;- 添加多种颜色主题皮肤支持&#10;- 配置归档、基础元素、按钮、页脚和表单样式&#10;- 设置代码版权信息和动画效果">
-      <option name="closed" value="true" />
-      <created>1773047596685</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1773047596685</updated>
+      <workItem from="1786532093721" duration="1676000" />
+      <workItem from="1786624221173" duration="1859000" />
     </task>
     <task id="LOCAL-00014" summary="feat(blog): 添加新文章并重构首页布局&#10;&#10;- 添加三篇新文章：&quot;重读《黑客与画家》有感&quot;、&quot;我的 2026 高效工作流分享&quot;、&quot;Tailwind CSS 实用技巧分享&quot;&#10;- 新增 FeaturedSeries 组件展示精选专栏&#10;- 新增 RecentPosts 组件显示最新文章&#10;- 移除遗留的 Jekyll 博客相关忽略规则&#10;- 更新 RSS 和 Atom 订阅文件内容&#10;- 添加定时部署任务到 GitHub Actions&#10;- 过滤掉未来日期的文章以避免提前发布&#10;- 修复分页导航路径问题&#10;- 更新博客名称和版权信息">
       <option name="closed" value="true" />
@@ -674,7 +665,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786441939919</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="docs(diary): 更新日记内容和链接修复&#10;&#10;- 修复 Rust Day9 笔记链接去除多余扩展名&#10;- 修复 Rust Day12 笔记链接去除多余扩展名&#10;- 修复总纲链接去除多余扩展名&#10;- 添加 8月12日日记记录数组起步与阶段3学习&#10;- 添加 Rust Day13 笔记关于集合迭代器和Todo CLI&#10;- 更新 IDEA 工作空间配置文件变更记录">
+      <option name="closed" value="true" />
+      <created>1786533792079</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1786533792079</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 更新博客内容并调整分页设置&#10;&#10;- 添加新的Java零基础入门教程文章&#10;- 更新Atom和RSS订阅源的时间戳&#10;- 在订阅源中添加作者和贡献者信息&#10;- 将每页文章数量从5篇调整为6篇&#10;- 更新RSS JSON和XML文件中的文章列表&#10;- 添加完整的Java运算符和流程控制教程内容" />
     <MESSAGE value="feat(blog): 添加Failure框架实战指南系列教程&#10;&#10;- 新增编程式链式校验教程文档&#10;- 新增声明式校验与Web层集成教程&#10;- 新增函数式结果处理教程文档&#10;- 新增生产运维与附录教程文档&#10;- 更新IDEA工作空间配置文件&#10;- 添加Failure框架快速开始指南" />
     <MESSAGE value="feat(blog): 添加Failure框架实战指南系列教程&#10;&#10;- 在多篇博客文章中添加excerpt字段&#10;- 为所有Failure框架教程文章添加series分类&#10;- 更新IDEA工作空间配置文件中的任务记录&#10;- 修改工作时间统计和任务计数器&#10;- 清理VCS配置中的历史提交消息记录" />
     <MESSAGE value="docs: 更新 failure 框架教程文档和 atom 订阅&#10;&#10;- 重构声明式校验文档，优化 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 完善函数式结果处理文档，更新 Result 链式操作和 Results 工具类介绍&#10;- 补充生产运维配置文档，增加可观测性、TraceId、I18n 缓存等配置说明&#10;- 优化编程式校验文档，完善 Failure.begin()/strict() 使用指南&#10;- 更新快速入门文档，明确环境要求和依赖配置步骤&#10;- 更新 atom.xml 订阅文件中的文章列表和发布时间戳" />
@@ -720,6 +718,7 @@
     <MESSAGE value="docs(diary): 添加8月10日技术日志和Rust所有权学习笔记&#10;&#10;- 新增日记文章记录C语言变量作用域与Rust格式化宏学习内容&#10;- 添加Rust第11天学习笔记详细记录所有权与借用核心概念&#10;- 实现C语言二进制统计、冒泡排序、指针运算等实用代码示例&#10;- 总结Rust Display与Debug trait及格式化宏完整语法说明&#10;- 记录阶段0热身练习和阶段1所有权转换的实际编程经验&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 重命名日记文件并更新链接引用&#10;&#10;- 重命名 1-diary.md 为 01-diary.md 并更新内部链接&#10;- 重命名 3-diary.md 为 03-diary.md 并更新内部链接  &#10;- 重命名 4-diary.md 为 04-diary.md 并更新内部链接&#10;- 修正 8月10日日记标题日期与实际日期一致&#10;- 更新 IDEA 工作空间变更记录和任务统计&#10;- 同步调整相关文件的时间戳信息" />
     <MESSAGE value="更新今日日志+rust" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新今日日志+rust" />
+    <MESSAGE value="docs(diary): 更新日记内容和链接修复&#10;&#10;- 修复 Rust Day9 笔记链接去除多余扩展名&#10;- 修复 Rust Day12 笔记链接去除多余扩展名&#10;- 修复总纲链接去除多余扩展名&#10;- 添加 8月12日日记记录数组起步与阶段3学习&#10;- 添加 Rust Day13 笔记关于集合迭代器和Todo CLI&#10;- 更新 IDEA 工作空间配置文件变更记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 更新日记内容和链接修复&#10;&#10;- 修复 Rust Day9 笔记链接去除多余扩展名&#10;- 修复 Rust Day12 笔记链接去除多余扩展名&#10;- 修复总纲链接去除多余扩展名&#10;- 添加 8月12日日记记录数组起步与阶段3学习&#10;- 添加 Rust Day13 笔记关于集合迭代器和Todo CLI&#10;- 更新 IDEA 工作空间配置文件变更记录" />
   </component>
 </project>
