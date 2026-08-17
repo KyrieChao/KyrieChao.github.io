@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月13日日记和Rust学习计划调整记录&#10;&#10;- 添加 2026年8月13日日记记录C语言数组学习内容&#10;- 记录 Rust Day14 学习节奏调整计划和阶段4拆分安排&#10;- 更新 create_post.ps1 脚本获取当前时间并使用UTF-8编码&#10;- 修复 IDEA 工作空间配置文件中的任务记录信息">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/14-diary.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/17-diary.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,15 +278,9 @@
       <workItem from="1786441921591" duration="45000" />
       <workItem from="1786532093721" duration="1676000" />
       <workItem from="1786624221173" duration="1938000" />
-      <workItem from="1786714154833" duration="305000" />
-    </task>
-    <task id="LOCAL-00015" summary="docs(readme): 更新文档以反映博客项目的完整信息&#10;&#10;- 替换默认 Next.js 项目描述为 KyrieChao Blog 介绍&#10;- 添加项目特性列表包括框架、样式、内容管理和功能特点&#10;- 提供详细的本地开发和安装说明&#10;- 添加写文章指南和目录结构说明&#10;- 包含部署配置和 GitHub Actions 自动化信息&#10;- 补充许可证信息和在线访问链接">
-      <option name="closed" value="true" />
-      <created>1773050172035</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1773050172035</updated>
+      <workItem from="1786714154833" duration="358000" />
+      <workItem from="1786790581611" duration="30000" />
+      <workItem from="1786967062368" duration="2142000" />
     </task>
     <task id="LOCAL-00016" summary="feat(blog): 重构博客系统并新增提交活跃度功能&#10;&#10;- 添加 CommitGraph 组件展示提交历史热力图&#10;- 更新 .gitignore 添加 commit-history.json&#10;- 重命名并移动文章文件至日期格式目录结构&#10;- 删除 Jekyll 遗留文件和旧文章内容&#10;- 重构关于页面增加个人信息和技能栈展示&#10;- 更新 RSS 和搜索索引生成脚本支持嵌套目录&#10;- 添加活动日志导航链接到布局组件&#10;- 修改构建脚本集成提交历史生成&#10;- 安装 react-activity-calendar 依赖包&#10;- 修复标签页面链接问题">
       <option name="closed" value="true" />
@@ -672,7 +666,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786628076160</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
+      <option name="closed" value="true" />
+      <created>1786714484274</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1786714484274</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +695,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 添加Failure框架实战指南系列教程&#10;&#10;- 在多篇博客文章中添加excerpt字段&#10;- 为所有Failure框架教程文章添加series分类&#10;- 更新IDEA工作空间配置文件中的任务记录&#10;- 修改工作时间统计和任务计数器&#10;- 清理VCS配置中的历史提交消息记录" />
     <MESSAGE value="docs: 更新 failure 框架教程文档和 atom 订阅&#10;&#10;- 重构声明式校验文档，优化 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 完善函数式结果处理文档，更新 Result 链式操作和 Results 工具类介绍&#10;- 补充生产运维配置文档，增加可观测性、TraceId、I18n 缓存等配置说明&#10;- 优化编程式校验文档，完善 Failure.begin()/strict() 使用指南&#10;- 更新快速入门文档，明确环境要求和依赖配置步骤&#10;- 更新 atom.xml 订阅文件中的文章列表和发布时间戳" />
     <MESSAGE value="docs(blog): 更新文章" />
     <MESSAGE value="docs(blog): 更新 Failure 框架教程文档&#10;&#10;- 更新 atom.xml 中的 updated 时间戳&#10;- 重构生产运维章节内容，增加可观测性、TraceId、I18n 缓存调优等详细说明&#10;- 优化 Result 使用教程，更新方法名称和使用示例&#10;- 完善声明式校验教程，改进 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 补充编程式校验教程，增加常用方法速查和上下文复用说明&#10;- 添加快速开始教程，提供详细的依赖引入和使用示例&#10;- 为 RSS 订阅添加完整的 HTML 内容更新&#10;- 添加代码块样式配置以改善文档显示效果&#10;- 修复 Next.js 类型定义路径问题" />
@@ -718,6 +719,7 @@
     <MESSAGE value="更新今日日志+rust" />
     <MESSAGE value="docs(diary): 更新日记内容和链接修复&#10;&#10;- 修复 Rust Day9 笔记链接去除多余扩展名&#10;- 修复 Rust Day12 笔记链接去除多余扩展名&#10;- 修复总纲链接去除多余扩展名&#10;- 添加 8月12日日记记录数组起步与阶段3学习&#10;- 添加 Rust Day13 笔记关于集合迭代器和Todo CLI&#10;- 更新 IDEA 工作空间配置文件变更记录" />
     <MESSAGE value="docs(diary): 添加8月13日日记和Rust学习计划调整记录&#10;&#10;- 添加 2026年8月13日日记记录C语言数组学习内容&#10;- 记录 Rust Day14 学习节奏调整计划和阶段4拆分安排&#10;- 更新 create_post.ps1 脚本获取当前时间并使用UTF-8编码&#10;- 修复 IDEA 工作空间配置文件中的任务记录信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月13日日记和Rust学习计划调整记录&#10;&#10;- 添加 2026年8月13日日记记录C语言数组学习内容&#10;- 记录 Rust Day14 学习节奏调整计划和阶段4拆分安排&#10;- 更新 create_post.ps1 脚本获取当前时间并使用UTF-8编码&#10;- 修复 IDEA 工作空间配置文件中的任务记录信息" />
+    <MESSAGE value="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
   </component>
 </project>
