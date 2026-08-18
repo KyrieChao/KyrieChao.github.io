@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/17-diary.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月17日C语言指针进阶学习记录&#10;&#10;- 添加2026年8月17日日记记录C语言指针进阶内容&#10;- 详细整理指针常量与常量指针的区别和定义&#10;- 记录指针相关运算包括加减整数、同类型指针相减等&#10;- 整理数组与指针的关系包括指针数组和数组指针概念&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/18-diary.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/01-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/01-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/01-rust-day7.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/01-rust-day7.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/03-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/03-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/03-rust-day-8.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/03-rust-day-8.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/04-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/04-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/04-rust-day-9.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/04-rust-day-9.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/05-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/05-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/05-rust-day-10.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/05-rust-day-10.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/08-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/0/08-diary.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +61,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;JavaScript Debug.127.0.0.1:55329.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -86,14 +96,14 @@
       <recent name="D:\Work\WorkRuby\github-blog\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\WorkRuby\github-blog\content\posts\2026\08\0" />
       <recent name="D:\Work\WorkRuby\github-blog\.trae" />
       <recent name="D:\Work\WorkRuby\github-blog\content\posts\2026\03\11" />
       <recent name="D:\Work\WorkRuby\github-blog\content\posts\2026\03\00" />
       <recent name="D:\Work\WorkRuby\github-blog\content\posts\2026\03" />
-      <recent name="D:\Work\WorkRuby\github-blog\public\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="JavaScript Debug.127.0.0.1:55329">
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -202,6 +212,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="127.0.0.1:55329" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:55329">
+      <method v="2" />
+    </configuration>
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
@@ -217,6 +230,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.127.0.0.1:55329" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -280,15 +294,9 @@
       <workItem from="1786624221173" duration="1938000" />
       <workItem from="1786714154833" duration="358000" />
       <workItem from="1786790581611" duration="30000" />
-      <workItem from="1786967062368" duration="2142000" />
-    </task>
-    <task id="LOCAL-00016" summary="feat(blog): 重构博客系统并新增提交活跃度功能&#10;&#10;- 添加 CommitGraph 组件展示提交历史热力图&#10;- 更新 .gitignore 添加 commit-history.json&#10;- 重命名并移动文章文件至日期格式目录结构&#10;- 删除 Jekyll 遗留文件和旧文章内容&#10;- 重构关于页面增加个人信息和技能栈展示&#10;- 更新 RSS 和搜索索引生成脚本支持嵌套目录&#10;- 添加活动日志导航链接到布局组件&#10;- 修改构建脚本集成提交历史生成&#10;- 安装 react-activity-calendar 依赖包&#10;- 修复标签页面链接问题">
-      <option name="closed" value="true" />
-      <created>1773059714883</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1773059714884</updated>
+      <workItem from="1786967062368" duration="3958000" />
+      <workItem from="1787012424348" duration="110000" />
+      <workItem from="1787051303184" duration="970000" />
     </task>
     <task id="LOCAL-00017" summary="feat(blog): 更新博客功能并修复链接格式&#10;&#10;- 添加阅读进度组件显示文章阅读状态&#10;- 修复文章链接格式，统一使用斜杠分隔日期路径&#10;- 更新Next.js路由配置，调整路径解析逻辑&#10;- 添加社交媒体卡片元数据生成功能&#10;- 集成@vercel/og库用于生成Open Graph图像&#10;- 添加github-slugger依赖处理标题锚点链接&#10;- 更新atom.xml中的文章链接和更新时间&#10;- 添加react-tooltip组件增强用户体验&#10;- 修复next-env.d.ts中的类型引用路径&#10;- 配置metadataBase确保URL生成正确">
       <option name="closed" value="true" />
@@ -674,7 +682,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786714484274</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="docs(diary): 添加8月17日C语言指针进阶学习记录&#10;&#10;- 添加2026年8月17日日记记录C语言指针进阶内容&#10;- 详细整理指针常量与常量指针的区别和定义&#10;- 记录指针相关运算包括加减整数、同类型指针相减等&#10;- 整理数组与指针的关系包括指针数组和数组指针概念&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
+      <option name="closed" value="true" />
+      <created>1786970446555</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1786970446555</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +711,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs: 更新 failure 框架教程文档和 atom 订阅&#10;&#10;- 重构声明式校验文档，优化 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 完善函数式结果处理文档，更新 Result 链式操作和 Results 工具类介绍&#10;- 补充生产运维配置文档，增加可观测性、TraceId、I18n 缓存等配置说明&#10;- 优化编程式校验文档，完善 Failure.begin()/strict() 使用指南&#10;- 更新快速入门文档，明确环境要求和依赖配置步骤&#10;- 更新 atom.xml 订阅文件中的文章列表和发布时间戳" />
     <MESSAGE value="docs(blog): 更新文章" />
     <MESSAGE value="docs(blog): 更新 Failure 框架教程文档&#10;&#10;- 更新 atom.xml 中的 updated 时间戳&#10;- 重构生产运维章节内容，增加可观测性、TraceId、I18n 缓存调优等详细说明&#10;- 优化 Result 使用教程，更新方法名称和使用示例&#10;- 完善声明式校验教程，改进 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 补充编程式校验教程，增加常用方法速查和上下文复用说明&#10;- 添加快速开始教程，提供详细的依赖引入和使用示例&#10;- 为 RSS 订阅添加完整的 HTML 内容更新&#10;- 添加代码块样式配置以改善文档显示效果&#10;- 修复 Next.js 类型定义路径问题" />
     <MESSAGE value="docs(blog): 添加个人计划和培训阶段文档&#10;&#10;- 新增个人计划总纲文档，包含职业主线、技术扩展、认知建设等内容&#10;- 添加阶段一培训计划文档，详细规划嵌入式培训和实习安排&#10;- 更新atom.xml、rss.xml和rss.json中的时间戳和文章列表&#10;- 修复posts.ts中URL解析可能带.md后缀的问题&#10;- 更新IDEA工作空间配置中的任务记录和提交历史" />
@@ -720,6 +735,7 @@
     <MESSAGE value="docs(diary): 更新日记内容和链接修复&#10;&#10;- 修复 Rust Day9 笔记链接去除多余扩展名&#10;- 修复 Rust Day12 笔记链接去除多余扩展名&#10;- 修复总纲链接去除多余扩展名&#10;- 添加 8月12日日记记录数组起步与阶段3学习&#10;- 添加 Rust Day13 笔记关于集合迭代器和Todo CLI&#10;- 更新 IDEA 工作空间配置文件变更记录" />
     <MESSAGE value="docs(diary): 添加8月13日日记和Rust学习计划调整记录&#10;&#10;- 添加 2026年8月13日日记记录C语言数组学习内容&#10;- 记录 Rust Day14 学习节奏调整计划和阶段4拆分安排&#10;- 更新 create_post.ps1 脚本获取当前时间并使用UTF-8编码&#10;- 修复 IDEA 工作空间配置文件中的任务记录信息" />
     <MESSAGE value="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
+    <MESSAGE value="docs(diary): 添加8月17日C语言指针进阶学习记录&#10;&#10;- 添加2026年8月17日日记记录C语言指针进阶内容&#10;- 详细整理指针常量与常量指针的区别和定义&#10;- 记录指针相关运算包括加减整数、同类型指针相减等&#10;- 整理数组与指针的关系包括指针数组和数组指针概念&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月17日C语言指针进阶学习记录&#10;&#10;- 添加2026年8月17日日记记录C语言指针进阶内容&#10;- 详细整理指针常量与常量指针的区别和定义&#10;- 记录指针相关运算包括加减整数、同类型指针相减等&#10;- 整理数组与指针的关系包括指针数组和数组指针概念&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
   </component>
 </project>
