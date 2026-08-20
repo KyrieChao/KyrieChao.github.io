@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月18日C语言typedef与函数指针学习记录&#10;&#10;- 添加2026年8月18日日记记录C语言typedef与函数指针内容&#10;- 详细整理typedef关键字用法和函数指针相关概念&#10;- 记录字符型指针两种用途和链表练习代码实现&#10;- 修复多篇日记文件中链接格式缺少.md扩展名问题&#10;- 调整8月份日记文件目录结构统一移至子目录中&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/19-diary.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月19日C语言二级指针与内存管理学习记录&#10;&#10;- 添加2026年8月19日日记记录C语言二级指针与内存管理内容&#10;- 详细整理二级指针和多级指针的概念及使用方法&#10;- 记录内存管理五大区域（栈堆静存常量代码区）的特点和作用&#10;- 整理链表练习代码包括单向链表和循环链表的实现对比&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -288,15 +287,8 @@
       <workItem from="1786967062368" duration="3958000" />
       <workItem from="1787012424348" duration="110000" />
       <workItem from="1787051303184" duration="1732000" />
-      <workItem from="1787148818919" duration="1184000" />
-    </task>
-    <task id="LOCAL-00018" summary="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明">
-      <option name="closed" value="true" />
-      <created>1773066770416</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1773066770416</updated>
+      <workItem from="1787148818919" duration="1674000" />
+      <workItem from="1787233692423" duration="383000" />
     </task>
     <task id="LOCAL-00019" summary="feat(blog): 添加Java零基础入门教程文章&#10;&#10;- 新增Java核心语法学习笔记，涵盖环境配置和项目创建&#10;- 详细介绍Java基本数据类型，包括整数、浮点、字符和布尔类型&#10;- 添加类型转换规则说明，包含自动转换和强制转换示例&#10;- 说明变量命名规范和常量定义方法&#10;- 添加常见编程陷阱和错误示例提醒&#10;- 更新IDEA项目配置和编译运行说明">
       <option name="closed" value="true" />
@@ -682,7 +674,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787057402709</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="docs(diary): 添加8月19日C语言二级指针与内存管理学习记录&#10;&#10;- 添加2026年8月19日日记记录C语言二级指针与内存管理内容&#10;- 详细整理二级指针和多级指针的概念及使用方法&#10;- 记录内存管理五大区域（栈堆静存常量代码区）的特点和作用&#10;- 整理链表练习代码包括单向链表和循环链表的实现对比&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
+      <option name="closed" value="true" />
+      <created>1787151723861</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1787151723861</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +703,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs(blog): 更新 Failure 框架教程文档&#10;&#10;- 更新 atom.xml 中的 updated 时间戳&#10;- 重构生产运维章节内容，增加可观测性、TraceId、I18n 缓存调优等详细说明&#10;- 优化 Result 使用教程，更新方法名称和使用示例&#10;- 完善声明式校验教程，改进 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 补充编程式校验教程，增加常用方法速查和上下文复用说明&#10;- 添加快速开始教程，提供详细的依赖引入和使用示例&#10;- 为 RSS 订阅添加完整的 HTML 内容更新&#10;- 添加代码块样式配置以改善文档显示效果&#10;- 修复 Next.js 类型定义路径问题" />
     <MESSAGE value="docs(blog): 添加个人计划和培训阶段文档&#10;&#10;- 新增个人计划总纲文档，包含职业主线、技术扩展、认知建设等内容&#10;- 添加阶段一培训计划文档，详细规划嵌入式培训和实习安排&#10;- 更新atom.xml、rss.xml和rss.json中的时间戳和文章列表&#10;- 修复posts.ts中URL解析可能带.md后缀的问题&#10;- 更新IDEA工作空间配置中的任务记录和提交历史" />
     <MESSAGE value="feat(blog): 更新博客文章内容和时间戳&#10;&#10;- 添加新的培训阶段文章，详细规划嵌入式学习路线&#10;- 更新个人计划文章，完善职业发展和技术扩展方向&#10;- 修正所有RSS和Atom feed中的时间戳信息&#10;- 替换原有的测试文章为正式的培训计划内容" />
     <MESSAGE value="chore(workflow): 更新GitHub Actions部署版本&#10;&#10;- 将actions/deploy-pages从v4升级到v5版本&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
@@ -728,6 +727,7 @@
     <MESSAGE value="docs(diary): 添加8月14日C语言字符数组进阶与指针入门学习记录&#10;&#10;- 添加 2026年8月14日日记记录C语言字符数组进阶内容&#10;- 记录指针入门知识包括内存地址、&amp;与*运算符、大小端存储&#10;- 整理中文编码表示和三维数组、字符串数组相关知识点&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
     <MESSAGE value="docs(diary): 添加8月17日C语言指针进阶学习记录&#10;&#10;- 添加2026年8月17日日记记录C语言指针进阶内容&#10;- 详细整理指针常量与常量指针的区别和定义&#10;- 记录指针相关运算包括加减整数、同类型指针相减等&#10;- 整理数组与指针的关系包括指针数组和数组指针概念&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
     <MESSAGE value="docs(diary): 添加8月18日C语言typedef与函数指针学习记录&#10;&#10;- 添加2026年8月18日日记记录C语言typedef与函数指针内容&#10;- 详细整理typedef关键字用法和函数指针相关概念&#10;- 记录字符型指针两种用途和链表练习代码实现&#10;- 修复多篇日记文件中链接格式缺少.md扩展名问题&#10;- 调整8月份日记文件目录结构统一移至子目录中&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月18日C语言typedef与函数指针学习记录&#10;&#10;- 添加2026年8月18日日记记录C语言typedef与函数指针内容&#10;- 详细整理typedef关键字用法和函数指针相关概念&#10;- 记录字符型指针两种用途和链表练习代码实现&#10;- 修复多篇日记文件中链接格式缺少.md扩展名问题&#10;- 调整8月份日记文件目录结构统一移至子目录中&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
+    <MESSAGE value="docs(diary): 添加8月19日C语言二级指针与内存管理学习记录&#10;&#10;- 添加2026年8月19日日记记录C语言二级指针与内存管理内容&#10;- 详细整理二级指针和多级指针的概念及使用方法&#10;- 记录内存管理五大区域（栈堆静存常量代码区）的特点和作用&#10;- 整理链表练习代码包括单向链表和循环链表的实现对比&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月19日C语言二级指针与内存管理学习记录&#10;&#10;- 添加2026年8月19日日记记录C语言二级指针与内存管理内容&#10;- 详细整理二级指针和多级指针的概念及使用方法&#10;- 记录内存管理五大区域（栈堆静存常量代码区）的特点和作用&#10;- 整理链表练习代码包括单向链表和循环链表的实现对比&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
   </component>
 </project>
