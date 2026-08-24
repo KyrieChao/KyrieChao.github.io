@@ -53,7 +53,7 @@ series: "每日日志"
 
 ### Rust
 
-学习内容：[Rust Day13 笔记](./12-rust-day-13)——**阶段 3：集合、迭代器与 Todo CLI**
+学习内容：[Rust Day13 笔记](12-rust-day-13.md)——**阶段 3：集合、迭代器与 Todo CLI**
 
 #### MyStack（封装 Vec）
 
