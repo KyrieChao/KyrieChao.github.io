@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月20日C语言结构体与动态内存管理学习记录&#10;&#10;- 添加2026年8月20日日记记录C语言结构体与动态内存管理内容&#10;- 详细整理空类型指针(void*)概念和泛型编程应用&#10;- 记录内存管理五大区域详细对比和堆区内存操作函数&#10;- 整理结构体声明语法和双向链表练习代码实现&#10;- 更新IDEA工作空间配置文件中的任务记录信息">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/26-diary.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/31-diary.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +94,7 @@
       <recent name="D:\Work\WorkRuby\github-blog\content\posts\2026\03\00" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.127.0.0.1:55329">
+  <component name="RunManager">
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -203,12 +203,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="127.0.0.1:55329" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:55329">
-      <method v="2" />
-    </configuration>
-    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
-      <method v="2" />
-    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -221,7 +215,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.127.0.0.1:55329" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -291,15 +284,9 @@
       <workItem from="1787148818919" duration="1674000" />
       <workItem from="1787233692423" duration="695000" />
       <workItem from="1787578575055" duration="836000" />
-      <workItem from="1787747873668" duration="1450000" />
-    </task>
-    <task id="LOCAL-00021" summary="fix(blog): 修复URL参数编码处理问题&#10;&#10;- 在generateStaticParams中对ID段进行encodeURIComponent编码&#10;- 在页面组件中添加decodeURIComponent解码处理URL参数&#10;- 修复Next.js路由中中文路径的正确解析&#10;- 更新atom.xml和rss.xml中的时间戳和摘要内容&#10;- 调整OG路由中ID参数的解码逻辑&#10;- 修正RSS和Atom订阅源的文章摘要长度">
-      <option name="closed" value="true" />
-      <created>1773069224600</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1773069224600</updated>
+      <workItem from="1787747873668" duration="1549000" />
+      <workItem from="1787833853729" duration="1116000" />
+      <workItem from="1788181026626" duration="774000" />
     </task>
     <task id="LOCAL-00022" summary="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容">
       <option name="closed" value="true" />
@@ -685,7 +672,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787579392230</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录">
+      <option name="closed" value="true" />
+      <created>1787749343642</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1787749343643</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +701,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 更新博客文章内容和时间戳&#10;&#10;- 添加新的培训阶段文章，详细规划嵌入式学习路线&#10;- 更新个人计划文章，完善职业发展和技术扩展方向&#10;- 修正所有RSS和Atom feed中的时间戳信息&#10;- 替换原有的测试文章为正式的培训计划内容" />
     <MESSAGE value="chore(workflow): 更新GitHub Actions部署版本&#10;&#10;- 将actions/deploy-pages从v4升级到v5版本&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
     <MESSAGE value="chore(workflow): 更新GitHub Actions部署版本&#10;&#10;- 将actions/deploy-pages从v4升级到v5版本&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录&#10;- 在博客文章中添加excerpt字段支持" />
     <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第一篇，制定3个月学习路线&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
@@ -731,6 +725,7 @@
     <MESSAGE value="docs(diary): 添加8月18日C语言typedef与函数指针学习记录&#10;&#10;- 添加2026年8月18日日记记录C语言typedef与函数指针内容&#10;- 详细整理typedef关键字用法和函数指针相关概念&#10;- 记录字符型指针两种用途和链表练习代码实现&#10;- 修复多篇日记文件中链接格式缺少.md扩展名问题&#10;- 调整8月份日记文件目录结构统一移至子目录中&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
     <MESSAGE value="docs(diary): 添加8月19日C语言二级指针与内存管理学习记录&#10;&#10;- 添加2026年8月19日日记记录C语言二级指针与内存管理内容&#10;- 详细整理二级指针和多级指针的概念及使用方法&#10;- 记录内存管理五大区域（栈堆静存常量代码区）的特点和作用&#10;- 整理链表练习代码包括单向链表和循环链表的实现对比&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
     <MESSAGE value="docs(diary): 添加8月20日C语言结构体与动态内存管理学习记录&#10;&#10;- 添加2026年8月20日日记记录C语言结构体与动态内存管理内容&#10;- 详细整理空类型指针(void*)概念和泛型编程应用&#10;- 记录内存管理五大区域详细对比和堆区内存操作函数&#10;- 整理结构体声明语法和双向链表练习代码实现&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月20日C语言结构体与动态内存管理学习记录&#10;&#10;- 添加2026年8月20日日记记录C语言结构体与动态内存管理内容&#10;- 详细整理空类型指针(void*)概念和泛型编程应用&#10;- 记录内存管理五大区域详细对比和堆区内存操作函数&#10;- 整理结构体声明语法和双向链表练习代码实现&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
+    <MESSAGE value="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录" />
   </component>
 </project>
