@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/08/31-diary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加8月31日C Kit完结学习记录&#10;&#10;- 添加2026年8月31日日记记录C Kit完结相关内容&#10;- 记录C语言链表学习过程中遇到的教学方式问题&#10;- 整理C Kit项目完结后的技术总结和未来计划&#10;- 更新IDEA工作空间配置文件中的任务记录信息&#10;- 完善Rust学习状态反思和个人思考记录" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -286,15 +283,7 @@
       <workItem from="1787578575055" duration="836000" />
       <workItem from="1787747873668" duration="1549000" />
       <workItem from="1787833853729" duration="1116000" />
-      <workItem from="1788181026626" duration="774000" />
-    </task>
-    <task id="LOCAL-00022" summary="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容">
-      <option name="closed" value="true" />
-      <created>1773069566860</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1773069566860</updated>
+      <workItem from="1788181026626" duration="1086000" />
     </task>
     <task id="LOCAL-00023" summary="feat(blog): 添加文章摘要字段&#10;&#10;- 在博客文章元数据中新增 excerpt 字段&#10;- 为 Next.js 教程系列文章添加摘要内容&#10;- 更新 atom.xml、rss.xml 和 rss.json 中的文章摘要&#10;- 修复 Java 教程文章 URL 中的编码问题&#10;- 调整 RSS 订阅源中的时间戳更新&#10;- 更新 next-env.d.ts 中的类型导入路径">
       <option name="closed" value="true" />
@@ -680,7 +669,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787749343643</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="docs(diary): 添加8月31日C Kit完结学习记录&#10;&#10;- 添加2026年8月31日日记记录C Kit完结相关内容&#10;- 记录C语言链表学习过程中遇到的教学方式问题&#10;- 整理C Kit项目完结后的技术总结和未来计划&#10;- 更新IDEA工作空间配置文件中的任务记录信息&#10;- 完善Rust学习状态反思和个人思考记录">
+      <option name="closed" value="true" />
+      <created>1788181916998</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1788181916999</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +698,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore(workflow): 更新GitHub Actions部署版本&#10;&#10;- 将actions/deploy-pages从v4升级到v5版本&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
     <MESSAGE value="chore(workflow): 更新GitHub Actions部署版本&#10;&#10;- 将actions/deploy-pages从v4升级到v5版本&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录&#10;- 在博客文章中添加excerpt字段支持" />
     <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第一篇，制定3个月学习路线&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
     <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第二篇，详细记录Day2学习内容&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
@@ -726,6 +722,7 @@
     <MESSAGE value="docs(diary): 添加8月19日C语言二级指针与内存管理学习记录&#10;&#10;- 添加2026年8月19日日记记录C语言二级指针与内存管理内容&#10;- 详细整理二级指针和多级指针的概念及使用方法&#10;- 记录内存管理五大区域（栈堆静存常量代码区）的特点和作用&#10;- 整理链表练习代码包括单向链表和循环链表的实现对比&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
     <MESSAGE value="docs(diary): 添加8月20日C语言结构体与动态内存管理学习记录&#10;&#10;- 添加2026年8月20日日记记录C语言结构体与动态内存管理内容&#10;- 详细整理空类型指针(void*)概念和泛型编程应用&#10;- 记录内存管理五大区域详细对比和堆区内存操作函数&#10;- 整理结构体声明语法和双向链表练习代码实现&#10;- 更新IDEA工作空间配置文件中的任务记录信息" />
     <MESSAGE value="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录" />
+    <MESSAGE value="docs(diary): 添加8月31日C Kit完结学习记录&#10;&#10;- 添加2026年8月31日日记记录C Kit完结相关内容&#10;- 记录C语言链表学习过程中遇到的教学方式问题&#10;- 整理C Kit项目完结后的技术总结和未来计划&#10;- 更新IDEA工作空间配置文件中的任务记录信息&#10;- 完善Rust学习状态反思和个人思考记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加8月31日C Kit完结学习记录&#10;&#10;- 添加2026年8月31日日记记录C Kit完结相关内容&#10;- 记录C语言链表学习过程中遇到的教学方式问题&#10;- 整理C Kit项目完结后的技术总结和未来计划&#10;- 更新IDEA工作空间配置文件中的任务记录信息&#10;- 完善Rust学习状态反思和个人思考记录" />
   </component>
 </project>
