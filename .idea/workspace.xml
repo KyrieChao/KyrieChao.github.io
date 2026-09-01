@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="chore(workspace): 更新IDEA工作空间配置中的任务记录信息&#10;&#10;- 修改变更列表中的提交注释内容，更新为8月31日C Kit完结学习记录&#10;- 删除过期的本地任务LOCAL-00022并调整工作项持续时间统计&#10;- 添加新的本地任务LOCAL-00071记录8月31日学习日记相关内容&#10;- 更新最后一次提交消息为C Kit完结学习记录">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/09/01-diary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/20-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/2/20-diary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/24-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/2/24-diary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/26-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/2/26-diary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/2026/08/31-diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/2026/08/3/31-diary.md" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -291,15 +284,7 @@
       <workItem from="1787747873668" duration="1549000" />
       <workItem from="1787833853729" duration="1116000" />
       <workItem from="1788181026626" duration="2129000" />
-      <workItem from="1788265177789" duration="608000" />
-    </task>
-    <task id="LOCAL-00024" summary="feat(blog): 添加Java运算符与控制流教程文章&#10;&#10;- 新增Java零基础入门教程，涵盖运算符和流程控制核心概念&#10;- 详细介绍算术、赋值、比较、逻辑、位运算符和三元运算符&#10;- 添加完整的流程控制语句讲解，包括if/else、switch、循环语句&#10;- 实现控制循环的break和continue语句使用说明&#10;- 提供常见误区与调试技巧表格帮助初学者避坑&#10;- 修复IDEA工作空间配置中的账户ID和索引设置问题">
-      <option name="closed" value="true" />
-      <created>1773235149001</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1773235149001</updated>
+      <workItem from="1788265177789" duration="645000" />
     </task>
     <task id="LOCAL-00025" summary="chore(workflow): 配置 GitHub Actions 获取完整提交历史&#10;&#10;- 在 checkout 步骤中添加 fetch-depth: 0 参数&#10;- 确保工作流可以访问完整的 Git 提交历史记录">
       <option name="closed" value="true" />
@@ -685,7 +670,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788182231799</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划">
+      <option name="closed" value="true" />
+      <created>1788265803758</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1788265803758</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +699,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第一篇，制定3个月学习路线&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
     <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第二篇，详细记录Day2学习内容&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
     <MESSAGE value="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件" />
     <MESSAGE value="docs(diary): 添加 7月29日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rust Options学习进展&#10;- 添加Rust第4天学习笔记详细记录Option与Result实践&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
@@ -731,6 +723,7 @@
     <MESSAGE value="docs(diary): 添加8月26日哈希表学习记录&#10;&#10;- 添加2026年8月26日日记记录C语言哈希表相关内容&#10;- 记录手写哈希表的实现过程和学习感悟&#10;- 整理排序算法复习心得和链表学习计划&#10;- 更新C Kit工具文档和文件复制功能说明&#10;- 完善Rust学习状态反思和个人思考记录" />
     <MESSAGE value="docs(diary): 添加8月31日C Kit完结学习记录&#10;&#10;- 添加2026年8月31日日记记录C Kit完结相关内容&#10;- 记录C语言链表学习过程中遇到的教学方式问题&#10;- 整理C Kit项目完结后的技术总结和未来计划&#10;- 更新IDEA工作空间配置文件中的任务记录信息&#10;- 完善Rust学习状态反思和个人思考记录" />
     <MESSAGE value="chore(workspace): 更新IDEA工作空间配置中的任务记录信息&#10;&#10;- 修改变更列表中的提交注释内容，更新为8月31日C Kit完结学习记录&#10;- 删除过期的本地任务LOCAL-00022并调整工作项持续时间统计&#10;- 添加新的本地任务LOCAL-00071记录8月31日学习日记相关内容&#10;- 更新最后一次提交消息为C Kit完结学习记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(workspace): 更新IDEA工作空间配置中的任务记录信息&#10;&#10;- 修改变更列表中的提交注释内容，更新为8月31日C Kit完结学习记录&#10;- 删除过期的本地任务LOCAL-00022并调整工作项持续时间统计&#10;- 添加新的本地任务LOCAL-00071记录8月31日学习日记相关内容&#10;- 更新最后一次提交消息为C Kit完结学习记录" />
+    <MESSAGE value="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划" />
   </component>
 </project>
