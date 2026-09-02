@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/09/02-diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +24,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/KyrieChao/KyrieChao.github.io.git&quot;,
+    &quot;url&quot;: &quot;git@github.com:KyrieChao/KyrieChao.github.io.git&quot;,
     &quot;accountId&quot;: &quot;63db1572-92d1-4238-995a-bf827723b9bb&quot;
   }
 }</component>
@@ -285,14 +288,8 @@
       <workItem from="1787833853729" duration="1116000" />
       <workItem from="1788181026626" duration="2129000" />
       <workItem from="1788265177789" duration="645000" />
-    </task>
-    <task id="LOCAL-00025" summary="chore(workflow): 配置 GitHub Actions 获取完整提交历史&#10;&#10;- 在 checkout 步骤中添加 fetch-depth: 0 参数&#10;- 确保工作流可以访问完整的 Git 提交历史记录">
-      <option name="closed" value="true" />
-      <created>1773235760263</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1773235760263</updated>
+      <workItem from="1788265850947" duration="131000" />
+      <workItem from="1788351510391" duration="1009000" />
     </task>
     <task id="LOCAL-00026" summary="fix(ci): 修复部署工作流中的构建命令&#10;&#10;- 将构建命令从 'next build' 更改为 'run build'&#10;- 确保使用正确的包管理器运行构建脚本">
       <option name="closed" value="true" />
@@ -678,7 +675,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788265803758</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划">
+      <option name="closed" value="true" />
+      <created>1788265883055</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1788265883056</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
