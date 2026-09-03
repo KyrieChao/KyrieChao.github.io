@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/09/02-diary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月2日技术学习日记&#10;&#10;- 新增2026年9月2日日记记录关于C语言二叉树学习和技术项目规划&#10;- 记录C语言数据结构学习过程中的理解情况和项目开发困惑&#10;- 添加Rust学习状态跟踪和个人思考总结&#10;- 规划明日C语言项目开发和构思学习计划" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -289,15 +286,7 @@
       <workItem from="1788181026626" duration="2129000" />
       <workItem from="1788265177789" duration="645000" />
       <workItem from="1788265850947" duration="131000" />
-      <workItem from="1788351510391" duration="1009000" />
-    </task>
-    <task id="LOCAL-00026" summary="fix(ci): 修复部署工作流中的构建命令&#10;&#10;- 将构建命令从 'next build' 更改为 'run build'&#10;- 确保使用正确的包管理器运行构建脚本">
-      <option name="closed" value="true" />
-      <created>1773236091460</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1773236091460</updated>
+      <workItem from="1788351510391" duration="1027000" />
     </task>
     <task id="LOCAL-00027" summary="feat(blog): 更新博客内容并调整分页设置&#10;&#10;- 添加新的Java零基础入门教程文章&#10;- 更新Atom和RSS订阅源的时间戳&#10;- 在订阅源中添加作者和贡献者信息&#10;- 将每页文章数量从5篇调整为6篇&#10;- 更新RSS JSON和XML文件中的文章列表&#10;- 添加完整的Java运算符和流程控制教程内容">
       <option name="closed" value="true" />
@@ -683,7 +672,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788265883056</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="docs(diary): 添加9月2日技术学习日记&#10;&#10;- 新增2026年9月2日日记记录关于C语言二叉树学习和技术项目规划&#10;- 记录C语言数据结构学习过程中的理解情况和项目开发困惑&#10;- 添加Rust学习状态跟踪和个人思考总结&#10;- 规划明日C语言项目开发和构思学习计划">
+      <option name="closed" value="true" />
+      <created>1788352531297</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1788352531297</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -704,7 +701,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(blog): 添加日志和Rust学习系列文章&#10;&#10;- 新建日志系列文章，记录Rust练习和培训感受&#10;- 创建Rust学习计划系列第二篇，详细记录Day2学习内容&#10;- 在博客文章中添加excerpt字段支持&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录" />
     <MESSAGE value="fix(ui): 修复目录组件滚动溢出问题&#10;&#10;- 为目录组件添加最大高度限制和垂直滚动条&#10;- 修正IDEA工作空间中的任务持续时间统计&#10;- 更新提交历史记录中的文章标题描述&#10;- 添加新的本地任务记录到配置文件" />
     <MESSAGE value="docs(diary): 添加 7月29日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rust Options学习进展&#10;- 添加Rust第4天学习笔记详细记录Option与Result实践&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <MESSAGE value="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日" />
@@ -729,6 +725,7 @@
     <MESSAGE value="docs(diary): 添加8月31日C Kit完结学习记录&#10;&#10;- 添加2026年8月31日日记记录C Kit完结相关内容&#10;- 记录C语言链表学习过程中遇到的教学方式问题&#10;- 整理C Kit项目完结后的技术总结和未来计划&#10;- 更新IDEA工作空间配置文件中的任务记录信息&#10;- 完善Rust学习状态反思和个人思考记录" />
     <MESSAGE value="chore(workspace): 更新IDEA工作空间配置中的任务记录信息&#10;&#10;- 修改变更列表中的提交注释内容，更新为8月31日C Kit完结学习记录&#10;- 删除过期的本地任务LOCAL-00022并调整工作项持续时间统计&#10;- 添加新的本地任务LOCAL-00071记录8月31日学习日记相关内容&#10;- 更新最后一次提交消息为C Kit完结学习记录" />
     <MESSAGE value="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划" />
+    <MESSAGE value="docs(diary): 添加9月2日技术学习日记&#10;&#10;- 新增2026年9月2日日记记录关于C语言二叉树学习和技术项目规划&#10;- 记录C语言数据结构学习过程中的理解情况和项目开发困惑&#10;- 添加Rust学习状态跟踪和个人思考总结&#10;- 规划明日C语言项目开发和构思学习计划" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月2日技术学习日记&#10;&#10;- 新增2026年9月2日日记记录关于C语言二叉树学习和技术项目规划&#10;- 记录C语言数据结构学习过程中的理解情况和项目开发困惑&#10;- 添加Rust学习状态跟踪和个人思考总结&#10;- 规划明日C语言项目开发和构思学习计划" />
   </component>
 </project>
