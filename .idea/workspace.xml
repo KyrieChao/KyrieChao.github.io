@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月3日突发考试紧张日记&#10;&#10;- 新增2026年9月3日日记记录关于突发考试压力和紧张情绪的反思&#10;- 记录C语言数据结构学习进度和项目开发停滞情况&#10;- 添加今日链表栈队列哈希表练习状态和新内容学习计划&#10;- 整理设计编程语言想法记录和个人思考总结&#10;- 规划明日C语言项目开发和学习安排">
-      <change afterPath="$PROJECT_DIR$/content/posts/2026/09/04-diary.md" afterDir="false" />
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月4日进入新阶段MCU日记&#10;&#10;- 新增2026年9月4日日记记录关于进入新阶段MCU的学习情况&#10;- 记录C语言数据结构学习进度包括链表实现和LRU缓存练习&#10;- 添加C语言项目规划包括文件压缩工具和图像处理工具等内容&#10;- 更新Rust学习状态和C语言学习计划安排">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/09/07-diary.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -291,23 +291,9 @@
       <workItem from="1788265850947" duration="131000" />
       <workItem from="1788351510391" duration="1027000" />
       <workItem from="1788435477147" duration="238000" />
-      <workItem from="1788527298966" duration="762000" />
-    </task>
-    <task id="LOCAL-00028" summary="feat(blog): 更新博客内容并调整分页设置&#10;&#10;- 添加新的Java零基础入门教程文章&#10;- 更新Atom和RSS订阅源的时间戳&#10;- 在订阅源中添加作者和贡献者信息&#10;- 将每页文章数量从5篇调整为6篇&#10;- 更新RSS JSON和XML文件中的文章列表&#10;- 添加完整的Java运算符和流程控制教程内容">
-      <option name="closed" value="true" />
-      <created>1773275426692</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1773275426692</updated>
-    </task>
-    <task id="LOCAL-00029" summary="feat(blog): 添加Failure框架实战指南系列教程&#10;&#10;- 新增编程式链式校验教程文档&#10;- 新增声明式校验与Web层集成教程&#10;- 新增函数式结果处理教程文档&#10;- 新增生产运维与附录教程文档&#10;- 更新IDEA工作空间配置文件&#10;- 添加Failure框架快速开始指南">
-      <option name="closed" value="true" />
-      <created>1774514274750</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1774514274750</updated>
+      <workItem from="1788527298966" duration="1585000" />
+      <workItem from="1788568214827" duration="50000" />
+      <workItem from="1788778573816" duration="1391000" />
     </task>
     <task id="LOCAL-00030" summary="feat(blog): 添加Failure框架实战指南系列教程&#10;&#10;- 在多篇博客文章中添加excerpt字段&#10;- 为所有Failure框架教程文章添加series分类&#10;- 更新IDEA工作空间配置文件中的任务记录&#10;- 修改工作时间统计和任务计数器&#10;- 清理VCS配置中的历史提交消息记录">
       <option name="closed" value="true" />
@@ -685,7 +671,23 @@
       <option name="project" value="LOCAL" />
       <updated>1788435704784</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="docs(diary): 添加9月4日进入新阶段MCU日记&#10;&#10;- 新增2026年9月4日日记记录关于进入新阶段MCU的学习情况&#10;- 记录C语言数据结构学习进度包括链表实现和LRU缓存练习&#10;- 添加C语言项目规划包括文件压缩工具和图像处理工具等内容&#10;- 更新Rust学习状态和C语言学习计划安排">
+      <option name="closed" value="true" />
+      <created>1788528069299</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1788528069299</updated>
+    </task>
+    <task id="LOCAL-00078" summary="docs(diary): 添加9月4日进入新阶段MCU日记&#10;&#10;- 新增2026年9月4日日记记录关于进入新阶段MCU的学习情况&#10;- 记录C语言数据结构学习进度包括链表实现和LRU缓存练习&#10;- 添加C语言项目规划包括文件压缩工具和图像处理工具等内容&#10;- 更新Rust学习状态和C语言学习计划安排">
+      <option name="closed" value="true" />
+      <created>1788528359382</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1788528359382</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -699,14 +701,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs(diary): 添加 7月29日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rust Options学习进展&#10;- 添加Rust第4天学习笔记详细记录Option与Result实践&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <MESSAGE value="docs(diary): 添加 7月30日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录域名备案通过、Rustlings收尾、C语言运算符学习进展&#10;- 添加Rust第5天学习笔记详细记录闭包、迭代器与智能指针实践&#10;- 更新IDEA工作空间任务统计和变更列表记录&#10;- 修正Rust学习计划文章日期为7月30日" />
     <MESSAGE value="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <MESSAGE value="docs(diary): 添加 8月1日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言隐式类型转换规则和Rustlings完结学习进展&#10;- 添加Rust第7天学习笔记详细记录生命周期、闭包、迭代器、智能指针等内容&#10;- 修正7月31日日记标题格式保持一致性&#10;- 更新IDEA工作空间变更记录和任务统计" />
@@ -731,6 +744,7 @@
     <MESSAGE value="docs(diary): 添加9月1日自我认识思考日记&#10;&#10;- 新增2026年9月1日日记记录关于自我认识、痛苦与行动的深度思考&#10;- 记录C语言链表队列学习过程中的教学体验和技能掌握反思&#10;- 分析C-Kit项目开发中的创造快感与逃避学习的潜在动机识别&#10;- 整理多任务并行中的主线、兴趣、休息三分类管理方法论&#10;- 反思持续思考与实际行动之间的认知差距问题&#10;- 完善Rust学习状态记录和未来行动计划" />
     <MESSAGE value="docs(diary): 添加9月2日技术学习日记&#10;&#10;- 新增2026年9月2日日记记录关于C语言二叉树学习和技术项目规划&#10;- 记录C语言数据结构学习过程中的理解情况和项目开发困惑&#10;- 添加Rust学习状态跟踪和个人思考总结&#10;- 规划明日C语言项目开发和构思学习计划" />
     <MESSAGE value="docs(diary): 添加9月3日突发考试紧张日记&#10;&#10;- 新增2026年9月3日日记记录关于突发考试压力和紧张情绪的反思&#10;- 记录C语言数据结构学习进度和项目开发停滞情况&#10;- 添加今日链表栈队列哈希表练习状态和新内容学习计划&#10;- 整理设计编程语言想法记录和个人思考总结&#10;- 规划明日C语言项目开发和学习安排" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月3日突发考试紧张日记&#10;&#10;- 新增2026年9月3日日记记录关于突发考试压力和紧张情绪的反思&#10;- 记录C语言数据结构学习进度和项目开发停滞情况&#10;- 添加今日链表栈队列哈希表练习状态和新内容学习计划&#10;- 整理设计编程语言想法记录和个人思考总结&#10;- 规划明日C语言项目开发和学习安排" />
+    <MESSAGE value="docs(diary): 添加9月4日进入新阶段MCU日记&#10;&#10;- 新增2026年9月4日日记记录关于进入新阶段MCU的学习情况&#10;- 记录C语言数据结构学习进度包括链表实现和LRU缓存练习&#10;- 添加C语言项目规划包括文件压缩工具和图像处理工具等内容&#10;- 更新Rust学习状态和C语言学习计划安排" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月4日进入新阶段MCU日记&#10;&#10;- 新增2026年9月4日日记记录关于进入新阶段MCU的学习情况&#10;- 记录C语言数据结构学习进度包括链表实现和LRU缓存练习&#10;- 添加C语言项目规划包括文件压缩工具和图像处理工具等内容&#10;- 更新Rust学习状态和C语言学习计划安排" />
   </component>
 </project>
