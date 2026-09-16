@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月7日压缩项目小成日记&#10;&#10;- 新增2026年9月7日日记记录关于哈夫曼项目完成情况&#10;- 记录C语言哈夫曼结构实现进度和AI辅助开发细节&#10;- 添加Rust学习状态和个人思考总结&#10;- 规划明日项目完善计划">
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -293,15 +293,8 @@
       <workItem from="1788527298966" duration="1585000" />
       <workItem from="1788568214827" duration="50000" />
       <workItem from="1788778573816" duration="1423000" />
-      <workItem from="1789086131681" duration="939000" />
-    </task>
-    <task id="LOCAL-00031" summary="docs: 更新 failure 框架教程文档和 atom 订阅&#10;&#10;- 重构声明式校验文档，优化 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 完善函数式结果处理文档，更新 Result 链式操作和 Results 工具类介绍&#10;- 补充生产运维配置文档，增加可观测性、TraceId、I18n 缓存等配置说明&#10;- 优化编程式校验文档，完善 Failure.begin()/strict() 使用指南&#10;- 更新快速入门文档，明确环境要求和依赖配置步骤&#10;- 更新 atom.xml 订阅文件中的文章列表和发布时间戳">
-      <option name="closed" value="true" />
-      <created>1774516904980</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1774516904980</updated>
+      <workItem from="1789086131681" duration="1174000" />
+      <workItem from="1789560837307" duration="764000" />
     </task>
     <task id="LOCAL-00032" summary="docs(blog): 更新文章">
       <option name="closed" value="true" />
@@ -687,7 +680,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788787273911</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划">
+      <option name="closed" value="true" />
+      <created>1789089586471</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1789089586471</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,7 +721,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs(diary): 添加 7月31日技术日志和Rust迭代器学习笔记&#10;&#10;- 新增日记文章记录C语言位运算符、类型转换和Rust迭代器收尾学习进展&#10;- 添加Rust第6天学习笔记详细记录迭代器相关方法如flat_map、product、collect等&#10;- 修正Rust/day5.md链接指向正确的30-rust-day5.md文件&#10;- 移除日记中关于日期确认的疑问内容&#10;- 更新IDEA工作空间任务统计和变更列表记录" />
     <MESSAGE value="docs(diary): 添加 8月1日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言隐式类型转换规则和Rustlings完结学习进展&#10;- 添加Rust第7天学习笔记详细记录生命周期、闭包、迭代器、智能指针等内容&#10;- 修正7月31日日记标题格式保持一致性&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;" />
     <MESSAGE value="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
@@ -745,6 +745,7 @@
     <MESSAGE value="docs(diary): 添加9月3日突发考试紧张日记&#10;&#10;- 新增2026年9月3日日记记录关于突发考试压力和紧张情绪的反思&#10;- 记录C语言数据结构学习进度和项目开发停滞情况&#10;- 添加今日链表栈队列哈希表练习状态和新内容学习计划&#10;- 整理设计编程语言想法记录和个人思考总结&#10;- 规划明日C语言项目开发和学习安排" />
     <MESSAGE value="docs(diary): 添加9月4日进入新阶段MCU日记&#10;&#10;- 新增2026年9月4日日记记录关于进入新阶段MCU的学习情况&#10;- 记录C语言数据结构学习进度包括链表实现和LRU缓存练习&#10;- 添加C语言项目规划包括文件压缩工具和图像处理工具等内容&#10;- 更新Rust学习状态和C语言学习计划安排" />
     <MESSAGE value="docs(diary): 添加9月7日压缩项目小成日记&#10;&#10;- 新增2026年9月7日日记记录关于哈夫曼项目完成情况&#10;- 记录C语言哈夫曼结构实现进度和AI辅助开发细节&#10;- 添加Rust学习状态和个人思考总结&#10;- 规划明日项目完善计划" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月7日压缩项目小成日记&#10;&#10;- 新增2026年9月7日日记记录关于哈夫曼项目完成情况&#10;- 记录C语言哈夫曼结构实现进度和AI辅助开发细节&#10;- 添加Rust学习状态和个人思考总结&#10;- 规划明日项目完善计划" />
+    <MESSAGE value="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划" />
   </component>
 </project>
