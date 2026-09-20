@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月16日关于项目同化与人际关系思考的日记&#10;&#10;- 新增2026年9月16日日记记录关于Comp-Chao项目结束和PixLab开启的内容&#10;- 记录C语言和Rust学习进展以及项目投入过度导致的自我同化担忧&#10;- 添加关于学习阶段认知、性格变化与人际关系的深度思考总结&#10;- 分析&quot;看懂&quot;与&quot;独立实现&quot;的区别以及执行模式与反思模式的平衡&#10;- 探讨人的性格变化规律和人际关系中&quot;你不了解我&quot;的双重含义&#10;- 反思提前站在未来看现在的习惯以及如何在变化中保持自我认知&#10;- 规划后续项目调整和自我探索的时间安排" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -294,23 +292,7 @@
       <workItem from="1788568214827" duration="50000" />
       <workItem from="1788778573816" duration="1423000" />
       <workItem from="1789086131681" duration="1174000" />
-      <workItem from="1789560837307" duration="764000" />
-    </task>
-    <task id="LOCAL-00032" summary="docs(blog): 更新文章">
-      <option name="closed" value="true" />
-      <created>1774517236109</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1774517236109</updated>
-    </task>
-    <task id="LOCAL-00033" summary="docs(blog): 更新 Failure 框架教程文档&#10;&#10;- 更新 atom.xml 中的 updated 时间戳&#10;- 重构生产运维章节内容，增加可观测性、TraceId、I18n 缓存调优等详细说明&#10;- 优化 Result 使用教程，更新方法名称和使用示例&#10;- 完善声明式校验教程，改进 @Validate、@Scene、@SkipValidation 等注解说明&#10;- 补充编程式校验教程，增加常用方法速查和上下文复用说明&#10;- 添加快速开始教程，提供详细的依赖引入和使用示例&#10;- 为 RSS 订阅添加完整的 HTML 内容更新&#10;- 添加代码块样式配置以改善文档显示效果&#10;- 修复 Next.js 类型定义路径问题">
-      <option name="closed" value="true" />
-      <created>1774518781300</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1774518781300</updated>
+      <workItem from="1789560837307" duration="956000" />
     </task>
     <task id="LOCAL-00034" summary="docs(blog): 添加个人计划和培训阶段文档&#10;&#10;- 新增个人计划总纲文档，包含职业主线、技术扩展、认知建设等内容&#10;- 添加阶段一培训计划文档，详细规划嵌入式培训和实习安排&#10;- 更新atom.xml、rss.xml和rss.json中的时间戳和文章列表&#10;- 修复posts.ts中URL解析可能带.md后缀的问题&#10;- 更新IDEA工作空间配置中的任务记录和提交历史">
       <option name="closed" value="true" />
@@ -688,7 +670,23 @@
       <option name="project" value="LOCAL" />
       <updated>1789089586471</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="docs(diary): 添加9月16日关于项目同化与人际关系思考的日记&#10;&#10;- 新增2026年9月16日日记记录关于Comp-Chao项目结束和PixLab开启的内容&#10;- 记录C语言和Rust学习进展以及项目投入过度导致的自我同化担忧&#10;- 添加关于学习阶段认知、性格变化与人际关系的深度思考总结&#10;- 分析&quot;看懂&quot;与&quot;独立实现&quot;的区别以及执行模式与反思模式的平衡&#10;- 探讨人的性格变化规律和人际关系中&quot;你不了解我&quot;的双重含义&#10;- 反思提前站在未来看现在的习惯以及如何在变化中保持自我认知&#10;- 规划后续项目调整和自我探索的时间安排">
+      <option name="closed" value="true" />
+      <created>1789562392674</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1789562392675</updated>
+    </task>
+    <task id="LOCAL-00082" summary="docs(diary): 添加9月16日关于项目同化与人际关系思考的日记&#10;&#10;- 新增2026年9月16日日记记录关于Comp-Chao项目结束和PixLab开启的内容&#10;- 记录C语言和Rust学习进展以及项目投入过度导致的自我同化担忧&#10;- 添加关于学习阶段认知、性格变化与人际关系的深度思考总结&#10;- 分析&quot;看懂&quot;与&quot;独立实现&quot;的区别以及执行模式与反思模式的平衡&#10;- 探讨人的性格变化规律和人际关系中&quot;你不了解我&quot;的双重含义&#10;- 反思提前站在未来看现在的习惯以及如何在变化中保持自我认知&#10;- 规划后续项目调整和自我探索的时间安排">
+      <option name="closed" value="true" />
+      <created>1789562428773</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1789562428773</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -721,7 +719,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs(diary): 添加 8月1日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言隐式类型转换规则和Rustlings完结学习进展&#10;- 添加Rust第7天学习笔记详细记录生命周期、闭包、迭代器、智能指针等内容&#10;- 修正7月31日日记标题格式保持一致性&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="update(content): 更新 Rust 学习计划第7天标题&#10;&#10;- 将文章标题从 &quot;Rust 第6天学习 — Rustlings 完结&quot; 更新为 &quot;Rust 第7天学习 — Rustlings 完结&quot;" />
     <MESSAGE value="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 添加8月4日技术日志和Rust并发学习笔记&#10;&#10;- 新增日记文章记录C语言循环结构与goto语句学习内容&#10;- 添加Rust第9天学习笔记详细记录并发编程核心概念与实践&#10;- 记录线程spawn、join、move、Arc、Mutex、channel等知识点&#10;- 总结并发选型速查表和死锁避免原则&#10;- 更新IDEA工作空间变更记录和任务统计" />
@@ -746,6 +743,7 @@
     <MESSAGE value="docs(diary): 添加9月4日进入新阶段MCU日记&#10;&#10;- 新增2026年9月4日日记记录关于进入新阶段MCU的学习情况&#10;- 记录C语言数据结构学习进度包括链表实现和LRU缓存练习&#10;- 添加C语言项目规划包括文件压缩工具和图像处理工具等内容&#10;- 更新Rust学习状态和C语言学习计划安排" />
     <MESSAGE value="docs(diary): 添加9月7日压缩项目小成日记&#10;&#10;- 新增2026年9月7日日记记录关于哈夫曼项目完成情况&#10;- 记录C语言哈夫曼结构实现进度和AI辅助开发细节&#10;- 添加Rust学习状态和个人思考总结&#10;- 规划明日项目完善计划" />
     <MESSAGE value="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划" />
+    <MESSAGE value="docs(diary): 添加9月16日关于项目同化与人际关系思考的日记&#10;&#10;- 新增2026年9月16日日记记录关于Comp-Chao项目结束和PixLab开启的内容&#10;- 记录C语言和Rust学习进展以及项目投入过度导致的自我同化担忧&#10;- 添加关于学习阶段认知、性格变化与人际关系的深度思考总结&#10;- 分析&quot;看懂&quot;与&quot;独立实现&quot;的区别以及执行模式与反思模式的平衡&#10;- 探讨人的性格变化规律和人际关系中&quot;你不了解我&quot;的双重含义&#10;- 反思提前站在未来看现在的习惯以及如何在变化中保持自我认知&#10;- 规划后续项目调整和自我探索的时间安排" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月16日关于项目同化与人际关系思考的日记&#10;&#10;- 新增2026年9月16日日记记录关于Comp-Chao项目结束和PixLab开启的内容&#10;- 记录C语言和Rust学习进展以及项目投入过度导致的自我同化担忧&#10;- 添加关于学习阶段认知、性格变化与人际关系的深度思考总结&#10;- 分析&quot;看懂&quot;与&quot;独立实现&quot;的区别以及执行模式与反思模式的平衡&#10;- 探讨人的性格变化规律和人际关系中&quot;你不了解我&quot;的双重含义&#10;- 反思提前站在未来看现在的习惯以及如何在变化中保持自我认知&#10;- 规划后续项目调整和自我探索的时间安排" />
   </component>
 </project>
