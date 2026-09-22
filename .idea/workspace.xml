@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月20日关于PixLab项目开始的日记&#10;&#10;- 新增2026年9月20日日记记录关于PixLab项目启动和技术学习进展&#10;- 记录C语言MCU ADC学习情况和学习效率影响因素分析&#10;- 添加PixLab项目规划和MCU知识巩固计划安排&#10;- 更新明日项目继续和知识巩固的具体计划">
+    <list default="true" id="0f891c55-0ff1-4a7e-9efd-ecb1416427ee" name="Changes" comment="docs(diary): 添加9月20日关于PixLab项目开始的日记&#10;&#10;- 新增2026年9月20日日记记录关于PixLab项目启动和技术学习进展&#10;- 记录C语言MCU ADC学习情况和学习效率影响因素分析&#10;- 添加PixLab项目规划和MCU知识巩固计划安排&#10;- 更新明日项目继续和知识巩固的具体计划&#10;- 新增9月21日日记记录PixLab项目测试和MCU复习计划">
+      <change afterPath="$PROJECT_DIR$/content/posts/2026/09/22-diary.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,14 +297,8 @@
       <workItem from="1789086131681" duration="1174000" />
       <workItem from="1789560837307" duration="956000" />
       <workItem from="1789909172363" duration="525000" />
-    </task>
-    <task id="LOCAL-00035" summary="feat(blog): 更新博客文章内容和时间戳&#10;&#10;- 添加新的培训阶段文章，详细规划嵌入式学习路线&#10;- 更新个人计划文章，完善职业发展和技术扩展方向&#10;- 修正所有RSS和Atom feed中的时间戳信息&#10;- 替换原有的测试文章为正式的培训计划内容">
-      <option name="closed" value="true" />
-      <created>1784883314006</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1784883314006</updated>
+      <workItem from="1789998193011" duration="202000" />
+      <workItem from="1790082863455" duration="836000" />
     </task>
     <task id="LOCAL-00036" summary="chore(workflow): 更新GitHub Actions部署版本&#10;&#10;- 将actions/deploy-pages从v4升级到v5版本&#10;- 更新IDEA工作空间配置中的任务记录和提交历史&#10;- 修正工作项持续时间统计信息&#10;- 清理过时的提交消息记录">
       <option name="closed" value="true" />
@@ -689,7 +684,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789909468781</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="docs(diary): 添加9月20日关于PixLab项目开始的日记&#10;&#10;- 新增2026年9月20日日记记录关于PixLab项目启动和技术学习进展&#10;- 记录C语言MCU ADC学习情况和学习效率影响因素分析&#10;- 添加PixLab项目规划和MCU知识巩固计划安排&#10;- 更新明日项目继续和知识巩固的具体计划&#10;- 新增9月21日日记记录PixLab项目测试和MCU复习计划">
+      <option name="closed" value="true" />
+      <created>1789998384014</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1789998384015</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -722,7 +725,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs(diary): 添加 8月3日技术日志和Rust学习笔记&#10;&#10;- 新增日记文章记录C语言流程控制结构和Rust线程巩固复习内容&#10;- 添加Rust第8天学习笔记详细记录并发编程和trait相关知识点&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 添加8月4日技术日志和Rust并发学习笔记&#10;&#10;- 新增日记文章记录C语言循环结构与goto语句学习内容&#10;- 添加Rust第9天学习笔记详细记录并发编程核心概念与实践&#10;- 记录线程spawn、join、move、Arc、Mutex、channel等知识点&#10;- 总结并发选型速查表和死锁避免原则&#10;- 更新IDEA工作空间变更记录和任务统计" />
     <MESSAGE value="docs(diary): 添加8月5日技术日志和Rust文件I/O学习笔记&#10;&#10;- 新增日记文章记录C语言函数章节学习内容和Rust文件操作练习&#10;- 添加Rust第10天学习笔记详细记录文件I/O操作实战经验&#10;- 实现统计文件行数、内容替换、目录大小计算三个实用函数&#10;- 记录BufReader、临时文件、原子重命名等关键知识点&#10;- 创建PowerShell脚本自动化生成每日日记和学习笔记模板" />
     <MESSAGE value="docs(diary): 添加8月8日技术日志和LED驱动练习笔记&#10;&#10;- 新增日记文章记录STC8G单片机LED控制程序学习内容&#10;- 详细记录5个LED控制项目包括流水灯、频闪灯、呼吸灯等实现&#10;- 添加PWM原理和定时器中断配置的核心代码片段&#10;- 总结寄存器配置要点和推挽输出设置方法&#10;- 更新IDEA工作空间变更记录和任务统计" />
@@ -747,6 +749,7 @@
     <MESSAGE value="docs(diary): 添加9月10日补日志记录MCU学习和压缩项目进展&#10;&#10;- 新增2026年9月10日日记记录关于MCU学习和压缩项目的最新进展&#10;- 记录C语言MCU阶段学习情况和标准哈夫曼压缩项目完成状态&#10;- 添加硬件购买经历和代码理解困难的反思总结&#10;- 规划明日压缩项目优化和完善MCU代码学习计划" />
     <MESSAGE value="docs(diary): 添加9月16日关于项目同化与人际关系思考的日记&#10;&#10;- 新增2026年9月16日日记记录关于Comp-Chao项目结束和PixLab开启的内容&#10;- 记录C语言和Rust学习进展以及项目投入过度导致的自我同化担忧&#10;- 添加关于学习阶段认知、性格变化与人际关系的深度思考总结&#10;- 分析&quot;看懂&quot;与&quot;独立实现&quot;的区别以及执行模式与反思模式的平衡&#10;- 探讨人的性格变化规律和人际关系中&quot;你不了解我&quot;的双重含义&#10;- 反思提前站在未来看现在的习惯以及如何在变化中保持自我认知&#10;- 规划后续项目调整和自我探索的时间安排" />
     <MESSAGE value="docs(diary): 添加9月20日关于PixLab项目开始的日记&#10;&#10;- 新增2026年9月20日日记记录关于PixLab项目启动和技术学习进展&#10;- 记录C语言MCU ADC学习情况和学习效率影响因素分析&#10;- 添加PixLab项目规划和MCU知识巩固计划安排&#10;- 更新明日项目继续和知识巩固的具体计划" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月20日关于PixLab项目开始的日记&#10;&#10;- 新增2026年9月20日日记记录关于PixLab项目启动和技术学习进展&#10;- 记录C语言MCU ADC学习情况和学习效率影响因素分析&#10;- 添加PixLab项目规划和MCU知识巩固计划安排&#10;- 更新明日项目继续和知识巩固的具体计划" />
+    <MESSAGE value="docs(diary): 添加9月20日关于PixLab项目开始的日记&#10;&#10;- 新增2026年9月20日日记记录关于PixLab项目启动和技术学习进展&#10;- 记录C语言MCU ADC学习情况和学习效率影响因素分析&#10;- 添加PixLab项目规划和MCU知识巩固计划安排&#10;- 更新明日项目继续和知识巩固的具体计划&#10;- 新增9月21日日记记录PixLab项目测试和MCU复习计划" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(diary): 添加9月20日关于PixLab项目开始的日记&#10;&#10;- 新增2026年9月20日日记记录关于PixLab项目启动和技术学习进展&#10;- 记录C语言MCU ADC学习情况和学习效率影响因素分析&#10;- 添加PixLab项目规划和MCU知识巩固计划安排&#10;- 更新明日项目继续和知识巩固的具体计划&#10;- 新增9月21日日记记录PixLab项目测试和MCU复习计划" />
   </component>
 </project>
