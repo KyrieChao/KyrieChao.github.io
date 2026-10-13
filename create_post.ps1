@@ -60,33 +60,33 @@ series: "每日日志"
 }
 
 # ---------- 6. 计算下一个 Rust 笔记编号 ----------
-$maxNum = 0
-$files = Get-ChildItem -Path $targetDir -Filter "*-rust-day-*.md" -File
-foreach ($file in $files) {
-    if ($file.Name -match '-rust-day-(\d+)\.md$') {
-        $num = [int]$Matches[1]
-        if ($num -gt $maxNum) { $maxNum = $num }
-    }
-}
-$nextNum = $maxNum + 1
-$rustFile = "$rustFilePrefix$nextNum.md"
-
-# ---------- 7. 创建 Rust 笔记文件（若不存在） ----------
-if (Test-Path $rustFile) {
-    Write-Host "📝 Rust 笔记已存在：$rustFile" -ForegroundColor Cyan
-} else {
-    $rustContent = @"
----
-title: "Rust 学习计划"
-date: "$datetimeStr"
-excerpt: ""
-tags: ["Rust", "学习路线", "编程语言"]
-categories: ["学习规划", "技术成长"]
-series: "Rust Plan"
----
-"@
-    [System.IO.File]::WriteAllText($rustFile, $rustContent, $Utf8NoBom)
-    Write-Host "✅ 创建 Rust 笔记：$rustFile" -ForegroundColor Green
-}
+# $maxNum = 0
+# $files = Get-ChildItem -Path $targetDir -Filter "*-rust-day-*.md" -File
+# foreach ($file in $files) {
+#     if ($file.Name -match '-rust-day-(\d+)\.md$') {
+#         $num = [int]$Matches[1]
+#         if ($num -gt $maxNum) { $maxNum = $num }
+#     }
+# }
+# $nextNum = $maxNum + 1
+# $rustFile = "$rustFilePrefix$nextNum.md"
+#
+# # ---------- 7. 创建 Rust 笔记文件（若不存在） ----------
+# if (Test-Path $rustFile) {
+#     Write-Host "📝 Rust 笔记已存在：$rustFile" -ForegroundColor Cyan
+# } else {
+#     $rustContent = @"
+# ---
+# title: "Rust 学习计划"
+# date: "$datetimeStr"
+# excerpt: ""
+# tags: ["Rust", "学习路线", "编程语言"]
+# categories: ["学习规划", "技术成长"]
+# series: "Rust Plan"
+# ---
+# "@
+#     [System.IO.File]::WriteAllText($rustFile, $rustContent, $Utf8NoBom)
+#     Write-Host "✅ 创建 Rust 笔记：$rustFile" -ForegroundColor Green
+# }
 
 Write-Host "🎉 完成！" -ForegroundColor Magenta
