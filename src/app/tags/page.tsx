@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getAllTags, getAllCategories } from "@/lib/tags";
 
 export default function TagsPage() {
@@ -6,7 +5,7 @@ export default function TagsPage() {
   const categories = getAllCategories();
 
   return (
-    <div className="max-w-2xl mx-auto py-10 px-6">
+    <div className="w-full py-10">
       <h1 className="text-3xl font-bold mb-8 dark:text-white">分类与标签</h1>
       
       <section className="mb-12">

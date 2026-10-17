@@ -1,92 +1,101 @@
-﻿# ==================================================
-# 自动创建每日日记和 Rust 学习笔记（Windows 版）
-# 用法：右键点击文件 -> “使用 PowerShell 运行”
-#       或在 PowerShell 中执行：.\create_post.ps1
-# ==================================================
+param(
+    [Parameter(Position = 0)]
+    [string]$Type = "day",
 
-# ---------- 1. 获取当前日期和时间 ----------
-$year = (Get-Date).Year
-$month = (Get-Date).Month.ToString("00")
-$day = (Get-Date).Day.ToString("00")
-$dateStr = Get-Date -Format "yyyy-MM-dd"
+    [Parameter(Position = 1)]
+    [string]$PlanPeriod
+)
 
-# 获取当前时间，并附加时区偏移（如 +0800）
-$now = Get-Date
-$timezoneOffset = $now.ToString('zzz') -replace ':', ''
-$datetimeStr = $now.ToString('yyyy-MM-dd HH:mm:ss') + " " + $timezoneOffset
+$ErrorActionPreference = "Stop"
 
-# 目标目录
-$targetDir = "content\posts\$year\$month"
-
-# ---------- 2. 确保目录存在 ----------
-if (-not (Test-Path $targetDir)) {
-    Write-Host "目录 $targetDir 不存在，正在创建..." -ForegroundColor Yellow
-    New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+if ($args.Count -gt 0) {
+    Write-Error "参数过多。用法：.\create_post.ps1 day | .\create_post.ps1 plan day|half-mon|week"
+    exit 2
 }
 
-# ---------- 3. 定义 UTF-8 无 BOM 编码 ----------
-$Utf8NoBom = New-Object System.Text.UTF8Encoding $false
+$Type = $Type.ToLowerInvariant()
+if ($Type -notin @("day", "plan")) {
+    Write-Error "未知类型 '$Type'。用法：.\create_post.ps1 day | .\create_post.ps1 plan day|half-mon|week"
+    exit 2
+}
 
-# ---------- 4. 定义文件路径 ----------
-$diaryFile = Join-Path $targetDir "$day-diary.md"
-$rustFilePrefix = Join-Path $targetDir "$day-rust-day-"
+$planTypes = @{
+    "day"      = @{ Slug = "daily-plan"; Title = "日规划"; Series = "Daily Plan" }
+    "half-mon" = @{ Slug = "half-month-plan"; Title = "半月规划"; Series = "Half-Month Plan" }
+    "week"     = @{ Slug = "weekly-plan"; Title = "周规划"; Series = "Weekly Plan" }
+}
 
-# ---------- 5. 创建日记文件（若不存在） ----------
-if (Test-Path $diaryFile) {
-    Write-Host "📝 日记文件已存在：$diaryFile" -ForegroundColor Cyan
-} else {
-    $diaryContent = @"
+if ($Type -eq "plan") {
+    if ([string]::IsNullOrWhiteSpace($PlanPeriod)) {
+        Write-Error "请指定计划周期：day、half-mon 或 week。"
+        exit 2
+    }
+
+    $PlanPeriod = $PlanPeriod.ToLowerInvariant()
+    if (-not $planTypes.ContainsKey($PlanPeriod)) {
+        Write-Error "未知计划周期 '$PlanPeriod'。可用值：day、half-mon、week。"
+        exit 2
+    }
+} elseif (-not [string]::IsNullOrWhiteSpace($PlanPeriod)) {
+    Write-Error "日记命令不接受第二个参数。用法：.\create_post.ps1 day"
+    exit 2
+}
+
+$now = Get-Date
+$year = $now.ToString("yyyy")
+$month = $now.ToString("MM")
+$day = $now.ToString("dd")
+$dateStr = $now.ToString("yyyy-MM-dd")
+$timezoneOffset = $now.ToString("zzz") -replace ":", ""
+$datetimeStr = "$($now.ToString('yyyy-MM-dd HH:mm:ss')) $timezoneOffset"
+
+$targetDir = Join-Path $PSScriptRoot (Join-Path "content\posts\$year" $month)
+if ($Type -eq "day") {
+    $fileName = "{0}-diary.md" -f $day
+    $title = $dateStr
+    $content = @"
 ---
-title: "$dateStr"
+title: "$title"
 date: "$datetimeStr"
 excerpt: ""
-tags: ["Rust", "C语言", "培训", "日志"]
+tags: ["日志"]
 categories: ["日志"]
 series: "每日日志"
 ---
-
-## 技术
-
-### C 语言
-
-### Rust
-
-## 思考
-
-## 明日计划
 "@
-    [System.IO.File]::WriteAllText($diaryFile, $diaryContent, $Utf8NoBom)
-    Write-Host "✅ 创建日记：$diaryFile" -ForegroundColor Green
+} else {
+    $plan = $planTypes[$PlanPeriod]
+    $fileName = "{0}-{1}.md" -f $day, $plan.Slug
+    $title = "$dateStr $($plan.Title)"
+    $bodyHeading = switch ($PlanPeriod) {
+        "day" { "## 明日目标" }
+        "half-mon" { "## 本阶段目标" }
+        "week" { "## 本周重点" }
+    }
+    $content = @"
+---
+title: "$title"
+date: "$datetimeStr"
+excerpt: ""
+tags: ["规划"]
+categories: ["规划"]
+series: "$($plan.Series)"
+---
+
+$bodyHeading
+"@
 }
 
-# ---------- 6. 计算下一个 Rust 笔记编号 ----------
-# $maxNum = 0
-# $files = Get-ChildItem -Path $targetDir -Filter "*-rust-day-*.md" -File
-# foreach ($file in $files) {
-#     if ($file.Name -match '-rust-day-(\d+)\.md$') {
-#         $num = [int]$Matches[1]
-#         if ($num -gt $maxNum) { $maxNum = $num }
-#     }
-# }
-# $nextNum = $maxNum + 1
-# $rustFile = "$rustFilePrefix$nextNum.md"
-#
-# # ---------- 7. 创建 Rust 笔记文件（若不存在） ----------
-# if (Test-Path $rustFile) {
-#     Write-Host "📝 Rust 笔记已存在：$rustFile" -ForegroundColor Cyan
-# } else {
-#     $rustContent = @"
-# ---
-# title: "Rust 学习计划"
-# date: "$datetimeStr"
-# excerpt: ""
-# tags: ["Rust", "学习路线", "编程语言"]
-# categories: ["学习规划", "技术成长"]
-# series: "Rust Plan"
-# ---
-# "@
-#     [System.IO.File]::WriteAllText($rustFile, $rustContent, $Utf8NoBom)
-#     Write-Host "✅ 创建 Rust 笔记：$rustFile" -ForegroundColor Green
-# }
+$targetPath = Join-Path $targetDir $fileName
+if (Test-Path -LiteralPath $targetPath) {
+    Write-Error "文件已存在，不会覆盖：$targetPath"
+    exit 1
+}
 
-Write-Host "🎉 完成！" -ForegroundColor Magenta
+if (-not (Test-Path -LiteralPath $targetDir)) {
+    New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+}
+
+$utf8NoBom = New-Object System.Text.UTF8Encoding $false
+[System.IO.File]::WriteAllText($targetPath, $content, $utf8NoBom)
+Write-Host "✅ 创建文件：$targetPath" -ForegroundColor Green

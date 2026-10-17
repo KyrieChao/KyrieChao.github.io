@@ -7,8 +7,8 @@ export default function SeriesPage() {
   const seriesNames = Object.keys(seriesMap).sort();
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-6">
-      <header className="mb-10 text-center">
+    <div className="w-full py-10">
+      <header className="mb-10 border-b border-gray-200 pb-8 dark:border-gray-800 dark:text-white">
         <h1 className="text-4xl font-bold mb-4 dark:text-white">系列专栏</h1>
         <p className="text-gray-600 dark:text-gray-400">系统性的专题文章合集</p>
       </header>
@@ -18,7 +18,7 @@ export default function SeriesPage() {
       ) : (
         <div className="space-y-12">
           {seriesNames.map((seriesName) => (
-            <section key={seriesName} className="border rounded-lg p-6 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+            <section id={`series-${seriesName}`} key={seriesName} className="border rounded-lg p-6 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
               <h2 className="text-2xl font-bold mb-6 dark:text-gray-100 flex items-center">
                 <span className="mr-2">📚</span> {seriesName}
                 <span className="ml-3 text-sm font-normal text-gray-500 bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-full">

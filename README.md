@@ -1,57 +1,68 @@
 # KyrieChao Blog
 
-基于 Next.js 14 构建的个人博客，部署于 GitHub Pages。
+个人技术博客，使用 Next.js 静态导出，并通过 GitHub Pages 部署。
 
-🌐 **在线访问**: [https://kyriechao.github.io/](https://kyriechao.github.io/)
+🌐 **在线访问**：[https://kyriechao.github.io/](https://kyriechao.github.io/)
 
-## ✨ 特性
+## 技术栈
 
-- **框架**: Next.js 14 (App Router)
-- **样式**: Tailwind CSS
-- **内容管理**: 基于 Markdown 文件
-- **暗黑模式**: 完美支持日间/夜间模式切换
-- **功能**:
-  - 全文搜索 (Fuse.js)
-  - RSS 订阅
-  - 代码高亮
-  - 数学公式支持 (KaTeX)
-  - 响应式设计 (移动端/PC端适配)
+- Next.js 16 App Router、React 19、TypeScript
+- Tailwind CSS 4
+- Markdown 文章：gray-matter、remark/rehype
+- 搜索：Fuse.js
+- 评论：Giscus
+- 数学公式：KaTeX；代码高亮：highlight.js
+- RSS、Atom、JSON Feed 和文章 Open Graph 图片
 
-## 🚀 本地开发
+## 功能与页面
 
-首先，安装依赖：
+- 首页、文章列表和文章详情
+- 分类、标签和专栏聚合
+- 全文搜索、目录、阅读进度和暗色模式
+- Giscus 评论、RSS 订阅和 Git 提交活动图
+- 构建时生成静态页面，部署到 GitHub Pages
 
-```bash
-npm install
-# 或者
-yarn
-# 或者
-pnpm install
-```
+主要路由：`/`、`/posts`、`/series`、`/tags`、`/about` 和 `/activity`。
 
-启动开发服务器：
+## 本地开发
+
+需要 Node.js 20。
 
 ```bash
+npm ci
 npm run dev
 ```
 
-打开浏览器访问 [http://localhost:3000](http://localhost:3000) 即可看到效果。
+开发服务器默认地址为 [http://localhost:3000](http://localhost:3000)。
 
-## 📝 写文章
+```bash
+npm run lint
+npm run build
+```
 
-详细指南请参考：[博客写作指南 (docs/WRITING_GUIDE.md)](docs/WRITING_GUIDE.md)
+`dev` 和 `build` 会先生成搜索索引、RSS/Atom/JSON Feed 和提交历史数据。生产构建使用 Next.js 静态导出，生成的站点位于 `out/`。
 
-简而言之：
-1. 在 `content/posts/` 目录下创建 Markdown 文件。
-2. 添加必要的 Frontmatter 元数据（标题、日期、分类等）。
+## 添加文章
 
-## ⚙️ 部署
+在 `content/posts/` 下按现有的年份、月份和日期目录结构新建 `.md` 文件。每篇文章需要在 frontmatter 中提供标题和日期；分类、标签、摘要和专栏为可选字段：
 
-本项目通过 GitHub Actions 自动部署到 GitHub Pages。
+```yaml
+---
+title: "文章标题"
+date: "2026-10-17 14:00:00 +0800"
+categories: ["技术"]
+tags: ["Next.js", "博客"]
+excerpt: "文章摘要"
+series: "专栏名称"
+---
 
-- **触发条件**: 推送到 `main` 分支时。
-- **定时构建**: 每天北京时间 05:00, 14:00, 22:00 自动触发（用于发布定时文章）。
+从这里开始写 Markdown 正文。
+```
 
-## 📄 License
+日期晚于构建时间的文章不会显示。GitHub Actions 每天北京时间 05:00、14:00 和 22:00 自动重新构建，以发布到期文章。
 
-MIT
+关于页面内容位于 `content/about.md`。
+
+## 部署
+
+`.github/workflows/deploy.yml` 会在推送到 `main` 分支、手动触发或定时任务触发时构建站点，并将 `out/` 部署到 GitHub Pages。

@@ -6,7 +6,7 @@ import html from "remark-html";
 import remarkGfm from "remark-gfm";
 
 export async function getAboutData() {
-  const fullPath = path.join(process.cwd(), "_legacy_jekyll/about.md");
+  const fullPath = path.join(process.cwd(), "content/about.md");
   let fileContents;
   
   if (fs.existsSync(fullPath)) {
