@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kyriechao.github.io</id>
     <title>My Blog</title>
-    <updated>2026-10-18T00:44:44.659Z</updated>
+    <updated>2026-10-22T00:29:28.998Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Kyrie Chao</name>
@@ -16,18 +16,252 @@
     <icon>https://kyriechao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2026, Kyrie Chao</rights>
     <entry>
+        <title type="html"><![CDATA[2026-10-21 状态回归或者]]></title>
+        <id>https://kyriechao.github.io/posts/2026/10/21-diary</id>
+        <link href="https://kyriechao.github.io/posts/2026/10/21-diary"/>
+        <updated>2026-10-21T02:22:52.000Z</updated>
+        <summary type="html"><![CDATA[状态回归或者 今晚状态特别好 写什么会什么]]></summary>
+        <content type="html"><![CDATA[
+## 规则
+
+阅读文档，理解基本概念。
+
+合上文档，自己写一个最小程序。实在不知道怎么开始，可以重新查阅文档，但先明确自己卡在哪里。
+
+记录一个具体结果：程序运行成功了什么，或者自己在哪一步卡住了。
+
+## 日常 
+
+今天答辩了MCU的阶段性项目 我看到好多有实力的项目 
+
+我没做出来 因为前几天状态不在 低迷了 对完成项目 不期待了 
+
+然后我觉得 还是对自己有兴趣的方面捣鼓的话 学习的很快 进步也很快 我傲慢着看着他们。
+
+为什么我说我是傲慢的呢 我从始至终 没觉得有人有我的代码深度 都是刚入门的新手 我起码敲了有几年了。
+
+> 我这次是真的补了 之前的内容了 起码可以敲出来了 不看别的 能记住api了
+
+今天我敲代码的时候发现 我差点又忍不住去弄项目了 例如 krio 在服务器充当把文件复制移动到 as/下的 然后我可以在网页复制文件内容了
+
+这个krio就是 解决了 Xshell连接服务器后 我无法复制长文件的内容 手动复制的话 最多复制38行 krio直接复制移动到 复制网址部署目录下 我就可以在网页点击复制
+
+网站是:[https://as.chaokyrie.asia](https://as.chaokyrie.asia)
+
+我想修改成任何人都可以往这里传 前提是有注册的 当前就是我能使用。
+
+
+另一个就是 CKit的了 
+
+接触到 静态库和共享库 我想加进CKit里面 让CKit更加的方便 但是我觉得先别做 
+
+等过几天还是觉得需要的再做 好多都是三分钟热度 即使做成了 价值不高的话 时间利用率就低了
+
+
+### 力扣 
+这个是deep seek 给的答案
+```c
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* getRow(int rowIndex, int* returnSize) {
+    int num = rowIndex + 1;
+    int* arr = malloc(sizeof(int) * num);
+    *returnSize = num;
+    for (int i = 0; i < num; i++)
+        arr[i] = 1;
+
+    for (int i = 2; i < num; i++) {
+        for (int j = i - 1; j > 0; j--) {
+            arr[j] = arr[j] + arr[j - 1];
+        }
+    }
+    return arr;
+}
+```
+
+这个是我自己写的 额 还是说一下 我没发现 num-1会无限递归 deepseek看了之后我才知道的 但是我思路的代码成功了
+```c
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* getRow(int rowIndex, int* returnSize) {
+    int num = rowIndex + 1;
+    int* arr = malloc(sizeof(int) * num);
+    arr[0] = arr[num - 1] = 1;
+    *returnSize = num;
+    if (num < 2) {
+        return arr;
+    }
+    int n1;
+    int* brr = getRow(num - 2, &n1);
+    for (int i = 1; i < num - 1; i++) {
+        arr[i] = brr[i - 1] + brr[i];
+    }
+    free(brr);
+    return arr;
+}
+```
+
+
+我看了几天的日志 写的挺多的 功劳应该在我的Blog变好看的原因吧 愿意看愿意写了。
+
+
+今天完成了一天一题，复习了day1-day6 day7 day8也看了看 今天讲了 多线程同步控制、死锁还需要多看看多理解理解。
+
+
+多发发 我觉得有意思的图片吧
+
+![原神](/images/10_21_1.jpg)
+
+![原神](/images/10_21_2.jpg)
+
+![原神](/images/10_21_3.jpg)
+
+
+虽然今晚也是挺饿的 但是我感觉状态很好  这个不足为惧。
+
+又解决一道 虽然很简单 但是苍蝇再小也是肉
+```c
+// 给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。返回这个结果。
+
+// 示例 :
+// 输入: num = 38
+// 输出: 2 
+// 解释: 各位相加的过程为：
+// 38 --> 3 + 8 --> 11
+// 11 --> 1 + 1 --> 2
+// 由于 2 是一位数，所以返回 2。
+
+int addDigits(int num) {
+    int n = 0;
+    while (1) {
+        n += num % 10;
+        num /= 10;
+        if (num <= 0)
+            break;
+    }
+    if (n >= 10) {
+        return addDigits(n);
+    }else{
+        return n;
+    }
+
+}
+```]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2026-10-20 无聊的一天]]></title>
+        <id>https://kyriechao.github.io/posts/2026/10/20-diary</id>
+        <link href="https://kyriechao.github.io/posts/2026/10/20-diary"/>
+        <updated>2026-10-20T12:07:29.000Z</updated>
+        <summary type="html"><![CDATA[什么都没做 什么都很急 ]]></summary>
+        <content type="html"><![CDATA[
+
+## 日常
+
+害 又悠闲又忙 也不知道在忙什么。
+
+明天下午要答辩项目 简历也要改 准备PPT。
+
+但是我现在在写C语言 但是写的/练的也不全。
+
+我现在不情愿的把任务勾好了、我感觉我不会做。
+
+今天也是无趣。晚上还要带电脑回去、供暖预备呢好像。
+
+感觉 我知道我现在的处境或者说 当前处境还不够痛 不足以让我改变。一直拖拖拖。]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2026-10-19 电脑历险]]></title>
+        <id>https://kyriechao.github.io/posts/2026/10/19-diary</id>
+        <link href="https://kyriechao.github.io/posts/2026/10/19-diary"/>
+        <updated>2026-10-19T13:08:35.000Z</updated>
+        <summary type="html"><![CDATA[真的是吐了 今天收获颇多]]></summary>
+        <content type="html"><![CDATA[
+
+> 这里就先不学了已经顾不上了 项目跟学习进度有够我吃的了。
+
+## 日常
+
+今天真的是我的最倒霉的一天...
+
+早上一来 我开始弄我的项目小车烧完程序之后 抬头显示屏显示无信号 我疑惑怎么突然关机了
+
+我弄我的电脑 发现大概是坏了 去维修跟我说 主板烧坏了 花了我350 + 清洁/硅胶 100 450 我是从花呗里拿了
+
+上午没听课 我直接回宿舍了
+
+![随拍](/images/10_19.jpg)
+
+我发现 不上课的时间 外面是这种情况么
+
+似乎我应该好好感受。
+
+晚上，电脑修好了 我就继续弄项目小车，但是我开始畏手畏脚了 我怕哪个操作又把电脑干坏了。
+
+到烧写代码时候 发现Keil MDK未发现设备？ 我就捣鼓就是没摸过芯片 后来我摸了一下 特别特别烫 左手中指指腹烫出了个小泡
+
+我在想的是 小车应该做不成了 害。
+
+今天学习了线程相关的锁。有互斥锁、自旋锁 里面还分阻塞/不阻塞。也是需要好好看看。
+
+现在感觉有点饿了，萌生出不想写日志、补任务了。但是！我决定补！
+
+太饿了 要走了！
+]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[2026-10-19 周规划]]></title>
         <id>https://kyriechao.github.io/posts/2026/10/17-weekly-plan</id>
         <link href="https://kyriechao.github.io/posts/2026/10/17-weekly-plan"/>
         <updated>2026-10-18T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[安排本周的学习重点、实践任务与阶段检查]]></summary>
         <content type="html"><![CDATA[
+## 规则
+
+阅读文档，理解基本概念。
+
+合上文档，自己写一个最小程序。实在不知道怎么开始，可以重新查阅文档，但先明确自己卡在哪里。
+
+记录一个具体结果：程序运行成功了什么，或者自己在哪一步卡住了。
+
 ## 本周重点
 
 ### P0：Linux 系统编程
-- [ ] 完成 Day 1–6 的系统复习
-- [ ] 独立完成文件 I/O、fork/waitpid、管道通信实验
-- [ ] 整理知识盲点与待解决问题
+- [X] 完成 Day 1–6 的系统复习
+- [X] 独立完成文件 I/O、fork/waitpid、管道通信实验 [原因](./20-diary) [原因](./21-diary) 
+- [X] 整理知识盲点与待解决问题
 
 ### P1：C 语言
 - [ ] 持续进行力扣练习
@@ -35,8 +269,9 @@
 - [ ] 针对薄弱点进行练习
 
 ### P2：MCU 与嵌入式
-- [ ] 保持适量练习
-- [ ] 根据实际进度决定是否扩展学习
+- [x] 保持适量练习
+- [x] 根据实际进度决定是否扩展学习[原因](./19-diary)
+
 
 ## 本周约束
 - 周日以休息为主
@@ -49,6 +284,39 @@
 - 本周新发现：
 - 下周需要继续的任务：
 ]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2026-10-18 做简历]]></title>
+        <id>https://kyriechao.github.io/posts/2026/10/18-diary</id>
+        <link href="https://kyriechao.github.io/posts/2026/10/18-diary"/>
+        <updated>2026-10-18T10:57:57.000Z</updated>
+        <summary type="html"><![CDATA[做简历 我觉得快吐了]]></summary>
+        <content type="html"><![CDATA[
+## 日常
+
+今天上了一天的就业课 我对着老师的教法不认同，或者说我对应试技巧的有了新的看法。
+
+今天教我们的方法有看公司网站已经做好的项目模块把这个项目当作自己在这家公司实习项目
+
+约等于我在这家公司实习过。
+
+教学期间能看的项目一点没有，该就业的时候 搞个速成的 不理解。
+
+今天调整了Bolg的图片文案。
+
+昨晚就打算什么都不做了。
+
+当作周一的吧规划吧]]></content>
         <author>
             <name>Kyrie Chao</name>
             <email>your-email@example.com</email>
@@ -223,6 +491,14 @@ int** generate(int numRows, int* returnSize, int** returnColumnSizes) {
         <updated>2026-10-17T04:00:00.000Z</updated>
         <summary type="html"><![CDATA[明确未来半个月的主要目标与阶段成果]]></summary>
         <content type="html"><![CDATA[
+## 规则
+
+阅读文档，理解基本概念。
+
+合上文档，自己写一个最小程序。实在不知道怎么开始，可以重新查阅文档，但先明确自己卡在哪里。
+
+记录一个具体结果：程序运行成功了什么，或者自己在哪一步卡住了。
+
 ## 本阶段目标
 
 ### 1. Linux 系统编程
@@ -272,17 +548,17 @@ int** generate(int numRows, int* returnSize, int** returnColumnSizes) {
 
 ### P0：Linux 系统编程复习
 
-- [ ] 不看笔记，梳理 Day 1—Day 6 的核心知识
-- [ ] 复习文件 I/O：`open`、`read`、`write`、`lseek`
-- [ ] 编写文件读写实验，处理错误返回值
-- [ ] 编写 `fork` + `waitpid` 实验，理解进程创建与回收
+- [X] 不看笔记，梳理 Day 1—Day 6 的核心知识
+- [X] 复习文件 I/O：`open`、`read`、`write`、`lseek`
+- [X] 编写文件读写实验，处理错误返回值
+- [X] 编写 `fork` + `waitpid` 实验，理解进程创建与回收
 - [ ] 编写匿名管道实验，完成父子进程通信
 - [ ] 记录无法独立解释或实现的知识点
 
 ### P1：C 语言练习
 
-- [ ] 完成 1—2 道力扣题
-- [ ] 复盘解题思路、边界条件和代码问题
+- [X] 完成 1—2 道力扣题
+- [X] 复盘解题思路、边界条件和代码问题
 
 ### P2：嵌入式巩固
 
