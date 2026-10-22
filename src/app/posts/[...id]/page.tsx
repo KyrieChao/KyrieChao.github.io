@@ -120,7 +120,7 @@ export default async function Post({
 
           <Comments />
         </article>
-        <TableOfContents toc={Array.isArray(postData.toc) ? postData.toc : []} />
+        <TableOfContents />
       </div>
     </div>
   );

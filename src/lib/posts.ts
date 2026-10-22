@@ -11,7 +11,6 @@ import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import GithubSlugger from "github-slugger";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -20,7 +19,6 @@ export interface PostData {
   date: string;
   title: string;
   contentHtml?: string;
-  toc?: { id: string; text: string; level: number }[];
   tags?: string[];
   categories?: string[];
   excerpt?: string;
@@ -141,18 +139,6 @@ export async function getPostData(id: string | string[]) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
-  // Extract TOC
-  const toc: { id: string; text: string; level: number }[] = [];
-  const headingRegex = /^(#{2,3})\s+(.*)$/gm;
-  const slugger = new GithubSlugger();
-  let match;
-  while ((match = headingRegex.exec(matterResult.content)) !== null) {
-    const level = match[1].length;
-    const text = match[2];
-    const id = slugger.slug(text);
-    toc.push({ id, text, level });
-  }
-
 // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(remarkGfm) // Support GFM (tables, etc.)
@@ -172,7 +158,6 @@ export async function getPostData(id: string | string[]) {
   return {
     id,
     contentHtml,
-    toc,
     ...data,
     tags: Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []),
     categories: Array.isArray(data.categories) ? data.categories : (data.categories ? [data.categories] : []),
