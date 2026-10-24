@@ -12,11 +12,20 @@ export function TableOfContents() {
     const content = document.querySelector("article .prose");
     if (!content) return;
 
+    // 折叠块的标题（summary）没有 id，这里补上，目录才能跳转到它
+    content.querySelectorAll<HTMLElement>("details > summary").forEach((summary, index) => {
+      if (!summary.id) summary.id = `details-summary-${index + 1}`;
+    });
+
     const updateHeadings = () => {
-      const headings = Array.from(
-        content.querySelectorAll<HTMLElement>("h2[id], h3[id], h4[id]")
-      ).filter((heading) => {
-        let details = heading.parentElement?.closest("details");
+      const nodes = Array.from(
+        content.querySelectorAll<HTMLElement>(
+          "h2[id], h3[id], h4[id], details > summary[id]"
+        )
+      ).filter((node) => {
+        // summary 自身可见，只需外层 details 都已展开
+        const start = node.tagName === "SUMMARY" ? node.parentElement : node;
+        let details = start?.parentElement?.closest("details");
         while (details) {
           if (!details.open) return false;
           details = details.parentElement?.closest("details") ?? null;
@@ -24,12 +33,21 @@ export function TableOfContents() {
         return true;
       });
 
+      // summary 的层级比它前面最近的标题低一级，最深到四级
+      let lastLevel = 1;
       setItems(
-        headings.map((heading) => ({
-          id: heading.id,
-          text: heading.textContent?.trim() ?? "",
-          level: Number(heading.tagName.slice(1)),
-        }))
+        nodes.map((node) => {
+          const isSummary = node.tagName === "SUMMARY";
+          const level = isSummary
+            ? Math.min(lastLevel + 1, 4)
+            : Number(node.tagName.slice(1));
+          if (!isSummary) lastLevel = level;
+          return {
+            id: node.id,
+            text: node.textContent?.trim() ?? "",
+            level,
+          };
+        })
       );
     };
 

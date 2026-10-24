@@ -86,7 +86,7 @@ export default async function Post({
           </div>
 
           <div
-            className="prose prose-base md:prose-lg dark:prose-invert max-w-none mb-12 prose-h1:text-2xl md:prose-h1:text-3xl prose-h1:leading-tight prose-h2:text-xl md:prose-h2:text-2xl prose-h3:text-lg md:prose-h3:text-xl"
+            className="prose prose-sm md:prose-base dark:prose-invert max-w-none mb-12 prose-h1:text-xl md:prose-h1:text-2xl prose-h1:leading-tight prose-h2:text-lg md:prose-h2:text-xl prose-h3:text-base md:prose-h3:text-lg"
             dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
           />
           
