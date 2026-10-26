@@ -38,7 +38,7 @@ series: "Weekly Plan"
 
 编写 `mycp.c`，实现以下命令：
 
-```
+```bash
 ./mycp source.txt destination.txt
 ```
 
@@ -93,7 +93,7 @@ library_demo/
 
 你能不照抄命令，独立完成下面的流程：
 
-```
+```bash
 calc.c → calc.o → libcalc.a → 静态链接程序
 calc.c → calc.o → libcalc.so → 动态链接程序
 ```
@@ -203,7 +203,7 @@ calc.c → calc.o → libcalc.so → 动态链接程序
 
 编写一个服务端程序，实现：
 
-```
+```text
 socket()
    ↓
 bind()
