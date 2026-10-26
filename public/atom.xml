@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kyriechao.github.io</id>
     <title>My Blog</title>
-    <updated>2026-10-24T02:23:00.046Z</updated>
+    <updated>2026-10-26T07:41:56.838Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Kyrie Chao</name>
@@ -16,26 +16,789 @@
     <icon>https://kyriechao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2026, Kyrie Chao</rights>
     <entry>
-        <title type="html"><![CDATA[2026-10-24]]></title>
-        <id>https://kyriechao.github.io/posts/2026/10/24-diary</id>
-        <link href="https://kyriechao.github.io/posts/2026/10/24-diary"/>
-        <updated>2026-10-24T01:58:47.000Z</updated>
+        <title type="html"><![CDATA[2026-10-26]]></title>
+        <id>https://kyriechao.github.io/posts/2026/10/26-diary</id>
+        <link href="https://kyriechao.github.io/posts/2026/10/26-diary"/>
+        <updated>2026-10-26T01:04:25.000Z</updated>
         <summary type="html"><![CDATA[
 
  日常
 
+周末去爬长城了、今天腿都是酸的。
 
-<details>
+其实我本来上周日休息的、毕竟没休息好久了。可是这个计划恰好是舍友上上周打算要去的、我没休息然后他们也等我最后没去。
 
-<summary>ChatGPT 今日规划</summary>
-今天统一采用一个原则：先独立尝试，再根据实际卡点查资料，最后用运行结果验收。 不以代码写得快不快作为唯一标准。
+上周日我就得去了...
 
- 一、统一测试规则
+长城
+![长城](/images/10_26_4.jpg)
 
-每个任务建议限时 30 分钟独立...]]></summary>
+小猫咪！
+!...]]></summary>
         <content type="html"><![CDATA[
 
 ## 日常
+
+周末去爬长城了、今天腿都是酸的。
+
+其实我本来上周日休息的、毕竟没休息好久了。可是这个计划恰好是舍友上上周打算要去的、我没休息然后他们也等我最后没去。
+
+上周日我就得去了...
+
+长城
+![长城](/images/10_26_4.jpg)
+
+小猫咪！
+![小猫](/images/10_26_3.jpg)
+
+好多人、电梯也好长
+![人](/images/10_26_2.jpg)
+
+我爬的快、等了他们1小时左右
+![长城](/images/10_26_1.jpg)
+
+我等他们的期间、有一个意大利外国人(中年妇女)跟我问路，但是我英语不好啊☠️。
+
+我中间听到了个 finsh 我后面回想应该在问我 那里是终点么? 但是我回了个 
+
+> Sorry、my english very bad.
+
+我第一次后悔没好好学英语、没有帮到她。我感觉给祖国丢脸了......
+
+### 周一: Day 1 文件操作
+
+核心任务：独立实现文件复制程序
+
+具体练习
+
+编写 `mycp.c`，实现以下命令：
+
+```bash
+./mycp source.txt destination.txt
+```
+
+要求：
+
+1. 使用 `open()` 打开源文件、创建目标文件。
+2. 使用固定大小的缓冲区，例如 `char buf[1024]`。
+3. 使用循环调用 `read()`，直到文件读取结束。
+4. 对每次读取到的数据使用 `write()` 写入目标文件。
+5. 正确处理文件描述符关闭和错误返回。
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
+
+#define BUFF_SIZE (1024 * 8)
+
+void assess(int dest, int src) {
+    if (close(dest) < 0) {
+        perror("close dest");
+        if (close(src) < 0) perror("close src");
+        exit(-1);
+    }
+    if (close(src) < 0) {
+        perror("close src");
+        exit(-1);
+    }
+}
+
+int main(int argc, char **argv) {
+    if (argc != 3) {
+        fprintf(stderr, "Usage: %s <src> <dest>\n", argv[0]);
+        exit(-1);
+    }
+    int src = open(argv[1], O_RDONLY);
+    if (src < 0) {
+        perror("open src");
+        exit(-1);
+    }
+    int dest = open(argv[2], O_WRONLY | O_CREAT | O_EXCL, 0664);
+    if (dest < 0) {
+        close(src);
+        if (errno == EEXIST) {
+            fprintf(stderr, "dest %s already exists\n", argv[2]);
+        } else {
+            perror("open dest");
+        }
+        exit(-1);
+    }
+    char buf[BUFF_SIZE] = {0};
+    while (1) {
+        ssize_t r = 0;
+        do {
+            r = read(src, buf, BUFF_SIZE);
+        } while (r < 0 && errno == EINTR);
+        if (r < 0) {
+            perror("read src");
+            assess(dest, src);
+            exit(-1);
+        }
+        if (r == 0) break;
+        ssize_t total = 0;
+        while (total < r) {
+            ssize_t w;
+            do {
+                w = write(dest, buf + total, r - total);
+            } while (w < 0 && errno == EINTR);
+            if (w < 0) {
+                perror("write dest");
+                assess(dest, src);
+                exit(-1);
+            }
+            if (w == 0) {
+                fprintf(stderr, "write returned 0\n");
+                assess(dest, src);
+                exit(-1);
+            }
+            total += w;
+        }
+    }
+    assess(dest, src);
+    printf("copy file finshed!\n");
+    return 0;
+}
+```
+
+必须测试的情况：
+
+- 源文件为空。
+- 源文件小于 1024 字节。
+- 源文件大于 1024 字节。
+- 源文件不存在。
+- 目标文件已存在。
+
+已实现: 
+
+```bash
+root@kyriechao:~/work/linux/test# ls -l | grep test_cp_src.txt 
+-rw-r--r-- 1 root root    13 Oct 26 10:22 test_cp_src.txt
+root@kyriechao:~/work/linux/test# ck mycp.c -- test_cp_src.txt test_cp_dest.txt
+[编译] mycp.c → ck/mycp
+[运行] ck/mycp test_cp_src.txt test_cp_dest.txt
+---
+copy file finshed!
+---
+[退出码: 0]
+root@kyriechao:~/work/linux/test# cmp -s test_cp_src.txt test_cp_dest.txt && echo "ok" ||echo "fail"
+ok
+root@kyriechao:~/work/linux/test# ck mycp.c -- AAA.txt test_cp_dest.txt
+[编译] mycp.c → ck/mycp
+[运行] ck/mycp AAA.txt test_cp_dest.txt
+---
+open src: No such file or directory
+---
+[退出码: 255]
+root@kyriechao:~/work/linux/test# ck mycp.c -- test_cp_src.txt test_cp_dest.txt
+[编译] mycp.c → ck/mycp
+[运行] ck/mycp test_cp_src.txt test_cp_dest.txt
+---
+dest test_cp_dest.txt already exists
+---
+[退出码: 255]
+root@kyriechao:~/work/linux/test# touch AAA.txt
+root@kyriechao:~/work/linux/test# ck mycp.c -- AAA.txt a.txt
+[编译] mycp.c → ck/mycp
+[运行] ck/mycp AAA.txt a.txt
+---
+copy file finshed!
+---
+[退出码: 0]
+root@kyriechao:~/work/linux/test# cmp -s AAA.txt a.txt && echo "ok" || echo "fail"
+ok
+root@kyriechao:~/work/linux/test# ls -l | grep AAA.txt
+-rw-r--r-- 1 root root     0 Oct 26 10:24 AAA.txt
+root@kyriechao:~/work/linux/test# ls -l | grep a.txt
+-rw-r--r-- 1 root root     0 Oct 26 10:24 a.txt
+root@kyriechao:~/work/linux/test# 
+```
+超过 (1024*8)
+```bash
+root@kyriechao:~/work/linux/test# dd if=/dev/urandom of=big.bin bs=1M count=100
+100+0 records in
+100+0 records out
+104857600 bytes (105 MB, 100 MiB) copied, 0.436657 s, 240 MB/s
+root@kyriechao:~/work/linux/test# clear
+root@kyriechao:~/work/linux/test# ck mycp.c -- big.bin big_copy.bin
+[编译] mycp.c → ck/mycp
+[运行] ck/mycp big.bin big_copy.bin
+---
+copy file finshed!
+---
+[退出码: 0]
+root@kyriechao:~/work/linux/test# cmp -s big.bin big_copy.bin && echo "ok" || echo "fail"ok
+root@kyriechao:~/work/linux/test# 
+
+```
+
+达到什么程度才算完成？
+
+你要能解释 `read()` 的三种返回情况：`-1` 表示出错、`0` 表示到达 EOF、正数表示实际读取的字节数。
+
+还有一种情况 `系统调用执行到一半收到信号` 就中断了 这里就是加了个重试机制。
+
+```c
+    ssize_t r = 0;
+    do {
+        r = read(src, buf, BUFF_SIZE);
+    } while (r < 0 && errno == EINTR);
+    if (r < 0) {
+        perror("read src");
+        assess(dest, src);
+        exit(-1);
+    }
+    if (r == 0) break;
+```
+
+同时必须理解：`write()` 不保证一次写完所有请求的数据，因此要考虑短写；不能把一次 `read()` 当作读取整个文件。缓冲区不需要随着文件大小增长，循环分块处理即可。
+
+```c
+    ssize_t total = 0;
+    while (total < r) {
+        ssize_t w;
+        do {
+            w = write(dest, buf + total, r - total);
+        } while (w < 0 && errno == EINTR);
+        if (w < 0) {
+            perror("write dest");
+            assess(dest, src);
+            exit(-1);
+        }
+        if (w == 0) {
+            fprintf(stderr, "write returned 0\n");
+            assess(dest, src);
+            exit(-1);
+        }
+        total += w;
+    }
+    ;
+```
+时间充足后，再补充 `lseek()` 和 `stat()`：写一个小程序，输出文件大小，并通过 `lseek()` 查看文件偏移。
+
+stat小程序
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <time.h>
+
+static void print_mode(mode_t mode) {
+    char type;
+    if (S_ISREG(mode)) type = '-';
+    else if (S_ISDIR(mode)) type = 'd';
+    else if (S_ISLNK(mode)) type = 'l';
+    else if (S_ISCHR(mode)) type = 'c';
+    else if (S_ISBLK(mode)) type = 'b';
+    else if (S_ISFIFO(mode)) type = 'p';
+    else if (S_ISSOCK(mode)) type = 's';
+    else type = '?';
+
+    char perm[10] = {0};
+    perm[0] = (mode & S_IRUSR) ? 'r' : '-';
+    perm[1] = (mode & S_IWUSR) ? 'w' : '-';
+    perm[2] = (mode & S_IXUSR) ? 'x' : '-';
+    perm[3] = (mode & S_IRGRP) ? 'r' : '-';
+    perm[4] = (mode & S_IWGRP) ? 'w' : '-';
+    perm[5] = (mode & S_IXGRP) ? 'x' : '-';
+    perm[6] = (mode & S_IROTH) ? 'r' : '-';
+    perm[7] = (mode & S_IWOTH) ? 'w' : '-';
+    perm[8] = (mode & S_IXOTH) ? 'x' : '-';
+    perm[9] = '\0';
+
+    printf("st_mode         : 0%o (%c%s)\n", mode & 07777, type, perm);
+}
+
+static void print_time(const char *name, struct timespec ts) {
+    char buf[64] = {0};
+    struct tm tm;
+    localtime_r(&ts.tv_sec, &tm);
+    strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", &tm);
+    printf("%-16s: %s.%09ld\n", name, buf, ts.tv_nsec);
+}
+
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <path>\n", argv[0]);
+        return 1;
+    }
+
+    struct stat st;
+    if (stat(argv[1], &st) < 0) {
+        perror("stat");
+        return 1;
+    }
+
+    printf("== stat: %s ==\n", argv[1]);
+    printf("st_dev          : %lu\n", (unsigned long)st.st_dev);
+    printf("st_ino          : %lu\n", (unsigned long)st.st_ino);
+    print_mode(st.st_mode);
+    printf("st_nlink        : %lu\n", (unsigned long)st.st_nlink);
+    printf("st_uid          : %u\n", st.st_uid);
+    printf("st_gid          : %u\n", st.st_gid);
+    printf("st_rdev         : %lu\n", (unsigned long)st.st_rdev);
+    printf("st_size         : %ld\n", (long)st.st_size);
+    printf("st_blksize      : %ld\n", (long)st.st_blksize);
+    printf("st_blocks       : %ld\n", (long)st.st_blocks);
+    print_time("st_atim", st.st_atim);
+    print_time("st_mtim", st.st_mtim);
+    print_time("st_ctim", st.st_ctim);
+
+    printf("\n== 判断宏 ==\n");
+    printf("S_ISREG         : %d\n", S_ISREG(st.st_mode));
+    printf("S_ISDIR         : %d\n", S_ISDIR(st.st_mode));
+    printf("S_ISLNK         : %d\n", S_ISLNK(st.st_mode));
+    printf("S_ISCHR         : %d\n", S_ISCHR(st.st_mode));
+    printf("S_ISBLK         : %d\n", S_ISBLK(st.st_mode));
+    printf("S_ISFIFO        : %d\n", S_ISFIFO(st.st_mode));
+    printf("S_ISSOCK        : %d\n", S_ISSOCK(st.st_mode));
+
+    printf("\n== 权限位逐位 ==\n");
+    printf("S_IRUSR         : %d\n", !!(st.st_mode & S_IRUSR));
+    printf("S_IWUSR         : %d\n", !!(st.st_mode & S_IWUSR));
+    printf("S_IXUSR         : %d\n", !!(st.st_mode & S_IXUSR));
+    printf("S_IRGRP         : %d\n", !!(st.st_mode & S_IRGRP));
+    printf("S_IWGRP         : %d\n", !!(st.st_mode & S_IWGRP));
+    printf("S_IXGRP         : %d\n", !!(st.st_mode & S_IXGRP));
+    printf("S_IROTH         : %d\n", !!(st.st_mode & S_IROTH));
+    printf("S_IWOTH         : %d\n", !!(st.st_mode & S_IWOTH));
+    printf("S_IXOTH         : %d\n", !!(st.st_mode & S_IXOTH));
+
+    return 0;
+}
+```
+
+
+```bash
+root@kyriechao:~/work/linux/test# ck file_info.c -- mycp.c
+[编译] file_info.c → ck/file_info
+[运行] ck/file_info mycp.c
+---
+== stat: mycp.c ==
+st_dev          : 64771
+st_ino          : 661239
+st_mode         : 0644 (-rw-r--r--)
+st_nlink        : 1
+st_uid          : 0
+st_gid          : 0
+st_rdev         : 0
+st_size         : 1828
+st_blksize      : 4096
+st_blocks       : 8
+st_atim         : 2026-10-26 10:15:29.321279549
+st_mtim         : 2026-10-26 10:15:29.311278520
+st_ctim         : 2026-10-26 10:15:29.314278828
+
+== 判断宏 ==
+S_ISREG         : 1
+S_ISDIR         : 0
+S_ISLNK         : 0
+S_ISCHR         : 0
+S_ISBLK         : 0
+S_ISFIFO        : 0
+S_ISSOCK        : 0
+
+== 权限位逐位 ==
+S_IRUSR         : 1
+S_IWUSR         : 1
+S_IXUSR         : 0
+S_IRGRP         : 1
+S_IWGRP         : 0
+S_IXGRP         : 0
+S_IROTH         : 1
+S_IWOTH         : 0
+S_IXOTH         : 0
+---
+[退出码: 0]
+```
+
+lseek
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <path>\n", argv[0]);
+        return 1;
+    }
+    int fd = open(argv[1], O_RDONLY);
+    if (fd < 0) {
+        perror("open file");
+        exit(-1);
+    }
+    char buf[64] = {0};
+    printf("初始偏移: %ld\n", (long)lseek(fd, 0, SEEK_CUR));
+    int n = read(fd, buf, 10);
+    if(n<0) {
+        close(fd);
+        exit(-1);
+    }
+    buf[n] = '\0';
+    printf("read: %s\n", buf);
+    printf("读10字节后: %ld\n", (long)lseek(fd, 0, SEEK_CUR));
+    printf("文件大小: %ld\n", (long)lseek(fd, 0, SEEK_END));
+    lseek(fd, 0, SEEK_SET);
+    printf("回到头: %ld\n", (long)lseek(fd, 0, SEEK_CUR));
+    close(fd);
+    return 0;
+}
+
+```
+
+
+```bash
+root@kyriechao:~/work/linux/test# ck lseek_demo.c -- lseek_demo.c
+[编译] lseek_demo.c → ck/lseek_demo
+[运行] ck/lseek_demo lseek_demo.c
+---
+初始偏移: 0
+read: #include <
+读10字节后: 10
+文件大小: 731
+回到头: 0
+---
+[退出码: 0]
+```
+
+### 复盘
+
+#### 今天搞懂的
+
+也不算今天搞懂的、懂的是更加细节的地方。
+
+例如 read、write的可能被系统中断知道了`EINTR`。
+
+对熟悉度我更了解了`write`的循环写入的。
+
+#### 踩过的坑
+
+以前就知道套公式、所以对total的位置不清楚写错了。
+
+write的也是忘记从哪里开始写
+
+<details>
+<summmary>DeepSeek所说的</summmary>
+
+#### 今天搞懂的
+- `read()` 三种返回值：`-1` 出错、`0` EOF、正数实际读到的字节数；循环里三个分支都要有。
+- `write()` 不保证一次写完，必须用 `total` 累加、从 `buf + total` 偏移续写，不能写一次就当完事。
+- 系统调用可能被信号打断返回 `EINTR`，这不是真错误，`read`/`write` 要 `do...while` 重试；`close` 遇到 `EINTR` 不重试。
+- 复制是“循环读一块、写一块”，缓冲区不随文件变大，100MB 文件也是 8KB 一块块过的。
+- `lseek` 管的是 fd 的**偏移量**（动态游标），`stat` 看的是文件**元数据**（静态属性），两回事。
+- `st_mode` 能拆出文件类型和权限；`st_dev + st_ino` 才能唯一确定一个文件。
+
+#### 踩过的坑
+- `total` 定义在循环外没重置，第二次读直接跳过写入。
+- `write` 没从 `buf + total` 开始写，短写时会重复写旧数据。
+- `perror` 文案写错（`read` 失败报成 `write`）。
+- 宏没加括号、`finshed` 拼错，小问题但容易留。
+
+### 待补
+- 目标已存在用 `O_CREAT | O_EXCL` 做到原子失败，已实现；但 `O_TRUNC` 覆盖模式下的“复制失败毁掉原目标”还没处理，后面了解临时文件 + `rename`。
+- `fsync` 保证落盘、`fchmod`/`futimens` 保留元数据，知道有这些，暂不实现。
+- 性能上可以了解 `copy_file_range`、`reflink`，现在 8KB 循环够用。
+
+</details>]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2026-10-24 周规划]]></title>
+        <id>https://kyriechao.github.io/posts/2026/10/24-weekly-plan</id>
+        <link href="https://kyriechao.github.io/posts/2026/10/24-weekly-plan"/>
+        <updated>2026-10-24T09:07:05.000Z</updated>
+        <summary type="html"><![CDATA[今天做周规划、周六晚上就休息了]]></summary>
+        <content type="html"><![CDATA[
+## 本周重点
+
+
+你说得对。之前的计划只有知识点，没有明确的练习题、代码产出和验收标准，而且没有给当天的新课留出位置。
+
+下周应该采用“双线推进”：当天的新课正常学习，旧知识每天安排一个具体的编程任务。 不要求六天内精通 Day1–Day10，而是让每一天都有可以验证的结果。
+
+# 10 月 26 日—31 日计划
+
+## 先确定每天的时间分配
+
+考虑到你培训时间较长，我建议按以下结构安排：
+
+第一条线：当天的新知识
+
+正常跟进培训课程。课后用 10–15 分钟记录新概念、关键 API、尚未解决的问题；有代码示例就自己复现一个最小版本。
+
+第二条线：旧知识实战
+
+工作日安排约 30–45 分钟，周六可适当延长。先独立完成题目，再查笔记、编译、运行和排错。
+
+以下是旧知识实战的具体安排。当天新课的主题以老师实际讲授内容为准，不预先虚构课程进度。如果当天有必须完成的培训作业，优先完成作业，再适当缩减旧知识练习。
+
+## 10 月 26 日，周一：Day 1 文件操作
+
+核心任务：独立实现文件复制程序
+
+具体练习
+
+编写 `mycp.c`，实现以下命令：
+
+```bash
+./mycp source.txt destination.txt
+```
+
+要求：
+
+1. 使用 `open()` 打开源文件、创建目标文件。
+2. 使用固定大小的缓冲区，例如 `char buf[1024]`。
+3. 使用循环调用 `read()`，直到文件读取结束。
+4. 对每次读取到的数据使用 `write()` 写入目标文件。
+5. 正确处理文件描述符关闭和错误返回。
+
+必须测试的情况：
+
+- 源文件为空。
+- 源文件小于 1024 字节。
+- 源文件大于 1024 字节。
+- 源文件不存在。
+- 目标文件已存在。
+
+达到什么程度才算完成？
+
+你要能解释 `read()` 的三种返回情况：`-1` 表示出错、`0` 表示到达 EOF、正数表示实际读取的字节数。
+
+同时必须理解：`write()` 不保证一次写完所有请求的数据，因此要考虑短写；不能把一次 `read()` 当作读取整个文件。缓冲区不需要随着文件大小增长，循环分块处理即可。
+
+时间充足后，再补充 `lseek()` 和 `stat()`：写一个小程序，输出文件大小，并通过 `lseek()` 查看文件偏移。
+
+## 10 月 27 日，周二：Day 2 库
+
+核心任务：制作并使用静态库和共享库
+
+建立一个简单项目：
+
+```
+library_demo/
+├── calc.h
+├── calc.c
+└── main.c
+```
+
+`calc.c` 实现 `add()` 和 `sub()`，`main.c` 调用它们。
+
+必须完成：
+
+1. 编译出 `libcalc.a`。
+2. 使用静态库链接生成可执行文件，并运行。
+3. 编译出 `libcalc.so`。
+4. 使用共享库链接生成另一个可执行文件，并运行。
+5. 将共享库放到单独的目录，使用 `LD_LIBRARY_PATH` 测试运行时搜索。
+
+验收标准
+
+你能不照抄命令，独立完成下面的流程：
+
+```bash
+calc.c → calc.o → libcalc.a → 静态链接程序
+calc.c → calc.o → libcalc.so → 动态链接程序
+```
+
+并能解释 `-I`、`-L`、`-l`、`-fPIC`、`-shared` 分别解决什么问题，以及为什么共享库链接成功后仍可能在运行时找不到。
+
+这一天不要求掌握 `dlopen()` 插件机制，只需能说明它的用途。
+
+## 10 月 28 日，周三：Day 3 进程
+
+核心任务：实现 fork、waitpid、exec 的组合程序
+
+编写 `process_demo.c`：
+
+1. 父进程使用 `fork()` 创建子进程。
+2. 子进程打印自己的 PID 和 PPID，然后以状态码 `7` 退出。
+3. 父进程使用 `waitpid()` 等待子进程。
+4. 父进程使用 `WIFEXITED()` 和 `WEXITSTATUS()` 获取并打印子进程退出状态。
+5. 再编写一个独立小例子，让子进程用 `execl()` 执行 `/bin/ls`，观察程序替换后的执行过程。
+
+验收标准
+
+不看笔记，你需要能解释：
+
+- `fork()` 为什么在父子进程中返回不同的值。
+- `fork()` 后父子进程分别从哪里继续执行。
+- `exec` 成功后，原程序的代码为什么不再继续执行。
+- `waitpid()` 的作用，以及退出状态 `7` 如何被取出。
+- 为什么子进程退出后，父进程不及时回收可能产生僵尸进程。
+
+`vfork()`、进程组、会话和守护进程这一天只做概念复述，不要求同时实现。
+
+## 10 月 29 日，周四：Day 4–5 进程间通信
+
+核心任务：真正跑通一次父子进程通信
+
+第一项：匿名管道程序
+
+使用 `pipe()` 和 `fork()`，实现：
+
+```
+父进程
+  │ write("hello child")
+  ▼
+匿名管道
+  │ read()
+  ▼
+子进程
+  └── 打印收到的内容
+```
+
+要求正确关闭父子进程不需要的管道端，并验证关闭所有写端后，读端最终会读到 EOF。
+
+第二项：信号小练习
+
+编写一个简单的 `SIGALRM` 示例，观察定时信号的触发。理解信号的默认处理、自定义处理以及 `pause()` 的用途。信号处理函数中不要直接进行不安全的复杂操作，例如直接调用普通的 `printf()`。
+
+第三项：IPC 口述验收
+
+不强求一天之内再实现完整的共享内存和消息队列程序，但以下问题必须答得出来：
+
+- 管道、共享内存、消息队列、信号分别适合什么情形？
+- 为什么共享内存通常还需要同步机制？
+- `shmdt()` 和 `shmctl()` 的作用有什么区别？
+- 孤儿进程和僵尸进程的区别是什么？
+
+达到什么程度？
+
+管道程序必须能够编译运行；其余知识能够结合调用流程解释清楚。如果共享内存或消息队列的调用顺序还不熟悉，就记为下一轮待练项目，不用假装已经掌握。
+
+## 10 月 30 日，周五：Day 6–8 线程与同步
+
+核心任务：复现竞态条件，并用锁修复
+
+这一天不实现完整的线程池。先把共享数据保护做扎实，再处理高级同步。
+
+第一项：竞态条件
+
+创建多个线程，让它们共同对一个全局计数器执行递增操作，例如 4 个线程各自递增 100,000 次。
+
+先不加锁，运行观察最终结果；再用 `pthread_mutex_t` 保护递增操作，重新运行。
+
+验收要求：理解为什么 `counter++` 不能简单视为一个不可分割的原子操作，以及为什么加锁后结果可以符合预期。
+
+第二项：条件变量
+
+写出一个最小的生产者—消费者示例，或先补齐其关键代码：
+
+- 共享数据由互斥锁保护。
+- 条件不满足时使用 `pthread_cond_wait()`。
+- 等待条件用 `while` 检查，而不是只用 `if`。
+- 条件满足后由生产者或消费者发出合适的通知。
+
+第三项：概念测试
+
+能区分互斥锁、信号量和条件变量的主要用途；能说出死锁的四个必要条件；能够说明 Joinable 和 Detached 线程的资源回收方式。
+
+线程池这一天只要求画出“任务队列—工作线程—同步机制”的结构，不实现完整线程池。
+
+## 10 月 31 日，周六：Day 9–10 网络通信
+
+核心任务：独立实现 TCP Echo Client/Server
+
+这也是下周最值得重视的一天，因为它和你正在学习的网络通信课程、后续工业设备通信项目直接相关。
+
+第一项：服务端
+
+编写一个服务端程序，实现：
+
+```text
+socket()
+   ↓
+bind()
+   ↓
+listen()
+   ↓
+accept()
+   ↓
+recv() / send()
+   ↓
+close(conn_fd)
+```
+
+服务端先只支持一次处理一个客户端，不要求多线程或高并发。
+
+第二项：客户端
+
+编写对应客户端，使用 `socket()` 和 `connect()` 建立连接，然后发送文本、接收回显并正确关闭套接字。
+
+第三项：故障测试
+
+至少进行以下测试：
+
+- 客户端发送正常文本，服务端正确回显。
+- 客户端退出，服务端识别 `recv()` 返回 `0`。
+- 客户端尝试连接错误的端口，观察并分析错误。
+- 修改端口配置，练习 `htons()` 和 `setsockopt()` 的使用场景。
+
+验收标准
+
+你要能解释 `listen_fd` 和 `conn_fd` 的区别，说明 TCP 是字节流而非消息协议，以及为什么 `send()` 和 `recv()` 的一次调用不一定对应一次完整的应用层消息。
+
+第一版不要求处理复杂协议分帧，也不要求实现高并发。先把连接建立、数据收发、连接关闭和基本错误检查写正确。
+
+## 最后，怎么判断这六天有没有效果？
+
+别用“看过了”“好像明白了”作为完成标准。每天给自己记录三个状态：
+
+| 状态       | 判断条件                 |
+| -------- | -------------------- |
+| A：独立完成   | 不看答案，可以写出主要代码并编译运行   |
+| B：借助资料完成 | 查看 API 文档或笔记后能够修正并跑通 |
+| C：尚未掌握   | 需要参考完整答案，或无法解释关键执行过程 |
+
+每个任务都可以标记为 A、B 或 C。标记 C 不意味着当天失败，而是明确告诉你下一轮练什么。
+
+我的判断是：下周不应该以“复习完十天”作为目标，而应该以至少完成四个可以运行的程序为底线：文件复制、库调用、进程控制、TCP 通信；并额外完成一次线程竞态与锁的验证。 IPC 其余机制和高级同步则先达到能解释、能定位、知道如何调用的程度。
+
+这样既没有把你每天的新课挤掉，也能让旧知识真正进入编程实践。]]></content>
+        <author>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </author>
+        <contributor>
+            <name>Kyrie Chao</name>
+            <email>your-email@example.com</email>
+            <uri>https://github.com/KyrieChao</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2026-10-24 周六休息 被ChatGPT气疯]]></title>
+        <id>https://kyriechao.github.io/posts/2026/10/24-diary</id>
+        <link href="https://kyriechao.github.io/posts/2026/10/24-diary"/>
+        <updated>2026-10-24T01:58:47.000Z</updated>
+        <summary type="html"><![CDATA[上午状态好好的ChatGPT一顿挑刺 心情都被搞坏了原本今天做周规划+复习Linux高编的]]></summary>
+        <content type="html"><![CDATA[
+
+## 日常
+
+今天上午状态挺好的、ChatGPT差点把我气疯了。
+
+我原本就是demo级别的练习、到后面用健硕代码的规格挑刺儿。
+
+今天还想着规划下周的、真的是有心无力了。
+
+今天已经对POSIX的 `open`、`read`、`write`、`lseek` 等等 熟悉了。
+
 
 
 <details>
