@@ -31,8 +31,8 @@ export default function SeriesPage() {
                     <span className="mr-4 text-gray-400 font-mono text-sm pt-1">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <Link 
-                      href={`/posts/${post.id}`} 
+                    <Link
+                      href={`/posts/${post.id}`}
                       className="group flex-1"
                     >
                       <h3 className="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors dark:text-gray-200">

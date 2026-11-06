@@ -10,18 +10,18 @@ import { CodeBlockEnhancer } from "@/components/CodeBlockEnhancer";
 export async function generateStaticParams() {
   const paths = getAllPostIds();
   return paths.map((path) => ({
-    id: path.params.id, 
+    id: path.params.id,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string[] }> }) {
   const { id } = await params;
-  
+
   // Need to decode here as well if we encoded in generateStaticParams?
   // Next.js App Router usually decodes params automatically.
   // But our getPostData handles decoding.
   const postId = id.map(segment => decodeURIComponent(segment)).join("/");
-  
+
   const postData = await getPostData(postId);
 
   return {
@@ -58,7 +58,7 @@ export default async function Post({
   // id params are usually decoded by Next.js.
   // But since we are encoding them in generateStaticParams, let's make sure.
   const postId = id.map(segment => decodeURIComponent(segment)).join("/");
-  
+
   const postData = await getPostData(postId);
   const { prev, next } = getAdjacentPosts(postId);
 
@@ -89,7 +89,7 @@ export default async function Post({
             className="prose prose-sm md:prose-base dark:prose-invert max-w-none mb-12 prose-h1:text-xl md:prose-h1:text-2xl prose-h1:leading-tight prose-h2:text-lg md:prose-h2:text-xl prose-h3:text-base md:prose-h3:text-lg"
             dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
           />
-          
+
           {/* Previous/Next Post Navigation */}
           <div className="flex flex-col sm:flex-row justify-between border-t border-gray-200 dark:border-gray-700 pt-6 mb-12 gap-4">
             <div className="w-full sm:w-1/2">
