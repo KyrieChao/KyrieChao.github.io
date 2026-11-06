@@ -4,11 +4,14 @@
 //   cl /std:c++17 /EHsc /utf-8 /Fe:blog.exe src/scripts/blog.cpp
 //
 // 用法：
-//   blog day            创建今天的日记
-//   blog plan day       创建日规划
-//   blog plan half-mon  创建半月规划
-//   blog plan week      创建周规划
-//   blog img            把 public/images/staging_area/ 里的图片归档到 public/images/YYYY/MM/DD/ 并编号
+//   blog day               创建今天的日记
+//   blog plan day          创建日规划
+//   blog plan half-mon     创建半月规划
+//   blog plan week         创建周规划
+//   blog img               把 staging_area 里的图片归档到今天的 public/images/YYYY/MM/DD/
+//   blog img 2026-11-5     归档到指定日期
+//   blog img 11-5          归档到今年的 11 月 5 日
+//   blog img 5             归档到本月的 5 日
 
 #include <algorithm>
 #include <cctype>
@@ -31,11 +34,10 @@
 namespace fs = std::filesystem;
 
 static const char* kUsage =
-    "用法：blog day | blog plan day|half-mon|week | blog img\n";
+    "用法：blog day | blog plan day|half-mon|week | blog img [YYYY-M-D|M-D|D]\n";
 
 static std::string to_lower(std::string s) {
-    std::transform(s.begin(), s.end(), s.begin(),
-                   [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+    std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
     return s;
 }
 
@@ -50,6 +52,69 @@ static std::string int_to_string(int value) {
     char buf[16];
     std::snprintf(buf, sizeof(buf), "%d", value);
     return buf;
+}
+
+static std::string pad2(int value) {
+    char buf[8];
+    std::snprintf(buf, sizeof(buf), "%02d", value);
+    return buf;
+}
+
+static bool parse_uint(const std::string& s, int& out) {
+    if (s.empty()) return false;
+    for (char c : s) {
+        if (std::isdigit(static_cast<unsigned char>(c)) == 0) return false;
+    }
+    out = std::atoi(s.c_str());
+    return true;
+}
+
+// 解析 2026-11-5 / 11-5 / 5，缺省的年月用当前日期补齐
+static bool parse_img_date(const std::string& arg, int curYear, int curMonth,
+                           int& year, int& month, int& day) {
+    std::vector<std::string> parts;
+    std::string current;
+    for (char c : arg) {
+        if (c == '-') {
+            parts.push_back(current);
+            current.clear();
+        } else {
+            current += c;
+        }
+    }
+    parts.push_back(current);
+
+    if (parts.size() > 3) return false;
+
+    int values[3] = {0, 0, 0};
+    for (size_t i = 0; i < parts.size(); ++i) {
+        if (!parse_uint(parts[i], values[i])) return false;
+    }
+
+    if (parts.size() == 3) {
+        year = values[0];
+        month = values[1];
+        day = values[2];
+    } else if (parts.size() == 2) {
+        year = curYear;
+        month = values[0];
+        day = values[1];
+    } else {
+        year = curYear;
+        month = curMonth;
+        day = values[0];
+    }
+
+    if (year < 1970 || year > 9999) return false;
+    if (month < 1 || month > 12) return false;
+
+    static const int kDaysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int max_day = kDaysInMonth[month - 1];
+    bool leap = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+    if (month == 2 && leap) max_day = 29;
+    if (day < 1 || day > max_day) return false;
+
+    return true;
 }
 
 // 获取可执行文件所在目录（对应 PowerShell 的 $PSScriptRoot）
@@ -123,8 +188,7 @@ static int highest_index(const fs::path& dir) {
         if (!entry.is_regular_file()) continue;
         std::string stem = entry.path().stem().string();
         if (stem.empty()) continue;
-        bool all_digits = std::all_of(stem.begin(), stem.end(),
-                                      [](unsigned char c) { return std::isdigit(c) != 0; });
+        bool all_digits = std::all_of(stem.begin(), stem.end(), [](unsigned char c) { return std::isdigit(c) != 0; });
         if (!all_digits) continue;
         max = std::max(max, std::atoi(stem.c_str()));
     }
@@ -143,8 +207,7 @@ static bool move_file(const fs::path& from, const fs::path& to) {
     return !ec;
 }
 
-static int organize_images(const fs::path& root, const std::string& year,
-                           const std::string& month, const std::string& day) {
+static int organize_images(const fs::path& root, const std::string& year, const std::string& month, const std::string& day) {
     fs::path staging = root / "public" / "images" / "staging_area";
     fs::path targetDir = root / "public" / "images" / year / month / day;
     std::string urlDir = "/images/" + year + "/" + month + "/" + day;
@@ -152,8 +215,7 @@ static int organize_images(const fs::path& root, const std::string& year,
     std::error_code ec;
     fs::create_directories(staging, ec);
     if (ec) {
-        std::cerr << "创建暂存目录失败：" << staging.string()
-                  << " (" << ec.message() << ")\n";
+        std::cerr << "创建暂存目录失败：" << staging.string() << " (" << ec.message() << ")\n";
         return 1;
     }
 
@@ -174,8 +236,7 @@ static int organize_images(const fs::path& root, const std::string& year,
 
     fs::create_directories(targetDir, ec);
     if (ec) {
-        std::cerr << "创建目录失败：" << targetDir.string()
-                  << " (" << ec.message() << ")\n";
+        std::cerr << "创建目录失败：" << targetDir.string() << " (" << ec.message() << ")\n";
         return 1;
     }
 
@@ -194,8 +255,7 @@ static int organize_images(const fs::path& root, const std::string& year,
             std::cerr << "移动失败：" << source.string() << " -> " << to.string() << "\n";
             return 1;
         }
-        std::cout << "→ " << urlDir << "/" << name
-                  << "  (" << source.filename().string() << ")\n";
+        std::cout << "→ " << urlDir << "/" << name << "  (" << source.filename().string() << ")\n";
         refs.push_back("![图](" + urlDir + "/" + name + ")");
     }
 
@@ -215,10 +275,10 @@ int main(int argc, char* argv[]) {
     std::setlocale(LC_TIME, "C");
 
     std::string type = "day";
-    std::string planPeriod;
+    std::string arg2;
 
     if (argc >= 2) type = argv[1];
-    if (argc >= 3) planPeriod = argv[2];
+    if (argc >= 3) arg2 = argv[2];
 
     if (argc > 3) {
         std::cerr << "参数过多。" << kUsage;
@@ -244,18 +304,17 @@ int main(int argc, char* argv[]) {
     };
 
     if (type == "plan") {
-        if (planPeriod.empty()) {
+        if (arg2.empty()) {
             std::cerr << "请指定计划周期：day、half-mon 或 week。\n";
             return 2;
         }
-        planPeriod = to_lower(planPeriod);
-        if (planTypes.find(planPeriod) == planTypes.end()) {
-            std::cerr << "未知计划周期 '" << planPeriod
-                      << "'。可用值：day、half-mon、week。\n";
+        arg2 = to_lower(arg2);
+        if (planTypes.find(arg2) == planTypes.end()) {
+            std::cerr << "未知计划周期 '" << arg2 << "'。可用值：day、half-mon、week。\n";
             return 2;
         }
-    } else if (!planPeriod.empty()) {
-        std::cerr << "'" << type << "' 命令不接受第二个参数。" << kUsage;
+    } else if (type == "day" && !arg2.empty()) {
+        std::cerr << "'day' 命令不接受第二个参数。" << kUsage;
         return 2;
     }
 
@@ -281,12 +340,25 @@ int main(int argc, char* argv[]) {
     // 可执行文件必须放在项目根目录，否则下面所有相对路径都会写错地方
     fs::path root = executable_dir(argv[0]);
     if (!fs::exists(root / "package.json")) {
-        std::cerr << "未在 " << root.string()
-                  << " 找到 package.json，请把可执行文件放到项目根目录。\n";
+        std::cerr << "未在 " << root.string() << " 找到 package.json，请把可执行文件放到项目根目录。\n";
         return 1;
     }
 
     if (type == "img") {
+        if (!arg2.empty()) {
+            int targetYear = 0;
+            int targetMonth = 0;
+            int targetDay = 0;
+            if (!parse_img_date(arg2, std::atoi(year.c_str()), std::atoi(month.c_str()),
+                                targetYear, targetMonth, targetDay)) {
+                std::cerr << "无法识别的日期 '" << arg2
+                          << "'。可用格式：2026-11-5、11-5 或 5\n";
+                return 2;
+            }
+            year = int_to_string(targetYear);
+            month = pad2(targetMonth);
+            day = pad2(targetDay);
+        }
         return organize_images(root, year, month, day);
     }
 
@@ -311,14 +383,14 @@ int main(int argc, char* argv[]) {
                           "series: \"每日日志\"\n"
                           "---\n";
     } else {
-        const PlanInfo& plan = planTypes.at(planPeriod);
+        const PlanInfo& plan = planTypes.at(arg2);
         fileName = day + "-" + plan.slug + ".md";
         title = dateStr + " " + plan.title;
 
         std::string bodyHeading;
-        if (planPeriod == "day")
+        if (arg2 == "day")
             bodyHeading = "## 明日目标";
-        else if (planPeriod == "half-mon")
+        else if (arg2 == "half-mon")
             bodyHeading = "## 本阶段目标";
         else
             bodyHeading = "## 本周重点";
@@ -350,8 +422,7 @@ int main(int argc, char* argv[]) {
     if (!fs::exists(targetDir, ec)) {
         fs::create_directories(targetDir, ec);
         if (ec) {
-            std::cerr << "创建目录失败：" << targetDir.string()
-                      << " (" << ec.message() << ")\n";
+            std::cerr << "创建目录失败：" << targetDir.string() << " (" << ec.message() << ")\n";
             return 1;
         }
     }
