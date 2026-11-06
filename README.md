@@ -111,6 +111,15 @@ public/images/2026/11/05/2.jpg
 
 非文章配图（例如首页装饰图）放在 `public/images/site/`。
 
+图片提交前可以跑一次压缩：长边限制到 1600px，JPEG 质量 82，PNG 保持无损。
+
+```bash
+npm run compress            # 只分析，列出每张图能省多少
+npm run compress -- --write # 确认后实际覆盖
+```
+
+站点使用 `images.unoptimized`，浏览器拿到的就是原始文件，所以体积要在提交前处理掉。
+
 ### 本地工具（可选）
 
 `src/scripts/blog.cpp` 是一个辅助命令行工具，需要自行编译，产物不进版本控制：

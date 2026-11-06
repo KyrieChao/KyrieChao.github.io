@@ -6,7 +6,8 @@
     "dev": "tsx src/scripts/generate-search-index.mts && tsx src/scripts/generate-rss.mts && tsx src/scripts/generate-commit-history.mts && next dev",
     "build": "tsx src/scripts/generate-search-index.mts && tsx src/scripts/generate-rss.mts && tsx src/scripts/generate-commit-history.mts && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "compress": "tsx src/scripts/compress-images.mts"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
@@ -49,6 +50,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
