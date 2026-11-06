@@ -13,6 +13,12 @@
 # testing
 /coverage
 
+# 图片暂存区（待归档的原始图片，不纳入版本控制）
+/public/images/staging_area/
+
+# 本地工具编译产物（源码在 src/scripts）
+/*.exe
+
 # next.js
 /.next/
 /out/

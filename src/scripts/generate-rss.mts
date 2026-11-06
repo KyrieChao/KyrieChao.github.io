@@ -10,7 +10,7 @@ function generateRssFeed() {
   const date = new Date();
   const author = {
     name: "Kyrie Chao",
-    email: "your-email@example.com", // 请替换为您的邮箱
+    email: "chao893760@163.com", // 请替换为您的邮箱
     link: "https://github.com/KyrieChao", // 请替换为您的 GitHub 主页
   };
 
@@ -18,7 +18,7 @@ function generateRssFeed() {
     console.warn(`Posts directory not found at ${postsDirectory}`);
     return;
   }
-  
+
   const getAllFiles = (dir: string, fileList: string[] = []) => {
     const files = fs.readdirSync(dir);
     files.forEach((file) => {
@@ -92,7 +92,7 @@ function generateRssFeed() {
   fs.writeFileSync(path.join(publicDir, "rss.xml"), feed.rss2());
   fs.writeFileSync(path.join(publicDir, "atom.xml"), feed.atom1());
   fs.writeFileSync(path.join(publicDir, "rss.json"), feed.json1());
-  
+
   console.log(`RSS feeds generated at ${publicDir}`);
 }
 

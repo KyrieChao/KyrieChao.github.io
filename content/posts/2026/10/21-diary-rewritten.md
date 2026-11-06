@@ -90,11 +90,11 @@ int* getRow(int rowIndex, int* returnSize) {
 
 以后多发一些自己觉得有意思的图片吧。
 
-![原神](/images/10_21_1.jpg)
+![原神](/images/2026/10/21/1.jpg)
 
-![原神](/images/10_21_2.jpg)
+![原神](/images/2026/10/21/2.jpg)
 
-![原神](/images/10_21_3.jpg)
+![原神](/images/2026/10/21/3.jpg)
 
 今晚虽然也挺饿，但状态很好，这点不舒服不算什么。
 

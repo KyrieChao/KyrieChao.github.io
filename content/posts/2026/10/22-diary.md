@@ -13,11 +13,11 @@ series: "每日日志"
 
 早晨出来的时候
 
-![早晨](/images/10_22_2.jpg)
+![早晨](/images/2026/10/22/2.jpg)
 
 这个街 走几次就不走喽
 
-![早晨](/images/10_22_3.jpg)
+![早晨](/images/2026/10/22/3.jpg)
 
 ### 就业课相关
 
@@ -212,7 +212,7 @@ int firstBadVersion(int n) {
 
 **我的疑问**：我很喜欢用递归，但总听说要小心递归，为什么？问了 DeepSeek（2026-10-22）。
 
-![DeepSeek回答](/images/10_22_1.png)
+![DeepSeek回答](/images/2026/10/22/1.png)
 
 **我的总结**：
 
