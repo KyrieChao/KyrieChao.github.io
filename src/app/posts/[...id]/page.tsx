@@ -62,8 +62,31 @@ export default async function Post({
   const postData = await getPostData(postId);
   const { prev, next } = getAdjacentPosts(postId);
 
+  const siteUrl = "https://kyriechao.github.io";
+  const postUrl = `${siteUrl}/posts/${postId.split("/").map(encodeURIComponent).join("/")}`;
+  const published = postData.date ? new Date(postData.date) : undefined;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: postData.title,
+    description: postData.excerpt || undefined,
+    datePublished: published?.toISOString(),
+    dateModified: published?.toISOString(),
+    url: postUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    image: `${siteUrl}/og/${postId}.png`,
+    author: { "@type": "Person", name: "KyrieChao", url: "https://github.com/KyrieChao" },
+    publisher: { "@type": "Organization", name: "KyrieChao Blog", url: siteUrl },
+    keywords: postData.tags?.length ? postData.tags.join(", ") : undefined,
+  };
+
   return (
     <div className="flex flex-col items-center w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <ReadingProgress />
       <CodeBlockEnhancer />
       <div className="max-w-[1920px] w-full px-8 pt-8">
@@ -78,10 +101,14 @@ export default async function Post({
         <article className="max-w-4xl w-full py-10 px-6">
           <div className="mb-8">
             <h1 className="text-3xl font-bold mb-2 dark:text-white">{postData.title}</h1>
-            <div className="text-gray-500 dark:text-gray-400">
-              {postData.date
-                ? format(new Date(postData.date), "yyyy-MM-dd")
-                : "Unknown Date"}
+            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <span>
+                {postData.date
+                  ? format(new Date(postData.date), "yyyy-MM-dd")
+                  : "Unknown Date"}
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>约 {postData.readingTime} 分钟</span>
             </div>
           </div>
 

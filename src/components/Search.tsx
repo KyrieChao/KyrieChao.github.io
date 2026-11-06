@@ -43,12 +43,26 @@ export function Search() {
     setResults(searchResults);
   }, [query, index]);
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setIsOpen((open) => !open);
+      } else if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   return (
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-        aria-label="Toggle Search"
+        aria-label="搜索文章（Ctrl+K）"
+        title="搜索文章（Ctrl+K）"
       >
         <FiSearch className="w-5 h-5" />
       </button>

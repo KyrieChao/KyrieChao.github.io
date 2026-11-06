@@ -123,6 +123,21 @@ export function getAllPostIds() {
   });
 }
 
+// 中文按 400 字/分钟、英文按 200 词/分钟估算
+function getReadingTime(markdown: string): number {
+  const text = markdown
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`]*`/g, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[#>*_~-]+/g, " ");
+
+  const chinese = (text.match(/[一-龥]/g) || []).length;
+  const english = (text.match(/[a-zA-Z]+/g) || []).length;
+
+  return Math.max(1, Math.round(chinese / 400 + english / 200));
+}
+
 export async function getPostData(id: string | string[]) {
   // Handle id being an array (from catch-all route) or string
   // If id comes from URL (params), it might be encoded (e.g. %E4%B8%AD%E6%96%87)
@@ -158,6 +173,7 @@ export async function getPostData(id: string | string[]) {
   return {
     id,
     contentHtml,
+    readingTime: getReadingTime(matterResult.content),
     ...data,
     tags: Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []),
     categories: Array.isArray(data.categories) ? data.categories : (data.categories ? [data.categories] : []),
