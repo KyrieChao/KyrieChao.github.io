@@ -36,7 +36,7 @@
 namespace fs = std::filesystem;
 
 static const char* kUsage =
-    "用法：blog day | blog plan day|half-mon|week | blog img [YYYY-M-D|M-D|D]"
+    "用法：blog day | blog plan day | half-mon | week | blog img [YYYY-M-D|M-D|D]"
     " | blog code <语言> <主题> [YYYY-M-D|M-D|D]\n";
 
 static std::string to_lower(std::string s) {
@@ -297,8 +297,7 @@ static const std::map<std::string, LangInfo> kLanguages = {
 };
 
 static bool ends_with(const std::string& s, const std::string& suffix) {
-    return s.size() >= suffix.size() &&
-           s.compare(s.size() - suffix.size(), suffix.size(), suffix) == 0;
+    return s.size() >= suffix.size() && s.compare(s.size() - suffix.size(), suffix.size(), suffix) == 0;
 }
 
 // Java 的文件名必须等于 public 类名，转成 PascalCase：two-sum -> TwoSum
@@ -327,8 +326,7 @@ static int create_code_file(const fs::path& root, const std::string& langArg,
 
     auto it = kLanguages.find(to_lower(langArg));
     if (it == kLanguages.end()) {
-        std::cerr << "不支持的语言 '" << langArg
-                  << "'。可用：rust、c、cpp、python、go、java、csharp、javascript、typescript\n";
+        std::cerr << "不支持的语言 '" << langArg << "'。可用：rust、c、cpp、python、go、java、csharp、javascript、typescript\n";
         return 2;
     }
     const LangInfo& info = it->second;
@@ -337,10 +335,8 @@ static int create_code_file(const fs::path& root, const std::string& langArg,
         int targetYear = 0;
         int targetMonth = 0;
         int targetDay = 0;
-        if (!parse_img_date(dateArg, std::atoi(year.c_str()), std::atoi(month.c_str()),
-                            targetYear, targetMonth, targetDay)) {
-            std::cerr << "无法识别的日期 '" << dateArg
-                      << "'。可用格式：2026-11-5、11-5 或 5\n";
+        if (!parse_img_date(dateArg, std::atoi(year.c_str()), std::atoi(month.c_str()), targetYear, targetMonth, targetDay)) {
+            std::cerr << "无法识别的日期 '" << dateArg << "'。可用格式：2026-11-5、11-5 或 5\n";
             return 2;
         }
         year = int_to_string(targetYear);
