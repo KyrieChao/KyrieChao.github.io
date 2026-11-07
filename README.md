@@ -17,10 +17,11 @@
 ## 特性
 
 - **Markdown 写作**：frontmatter 驱动文章元信息，分类、标签、摘要、专栏全部自动聚合
-- **全文搜索**：构建时生成索引，前端 Fuse.js 即时匹配
+- **全文搜索**：构建时生成索引，前端 Fuse.js 即时匹配，`Ctrl+K` / `Cmd+K` 唤起
 - **定时发布**：把 `date` 设为未来时间，到期由 GitHub Actions 自动上线
 - **数学与代码**：KaTeX 公式渲染，highlight.js 代码高亮并带复制按钮
-- **阅读体验**：目录导航、阅读进度条、暗色模式
+- **阅读体验**：目录导航、阅读进度条、阅读时长估算、暗色模式
+- **SEO 与可达性**：构建时生成 sitemap.xml 与 robots.txt，文章页注入 JSON-LD 结构化数据，自带自定义 404 页面
 - **自动化产物**：每篇文章自动生成 OG 分享图，同时输出 RSS 2.0 / Atom / JSON Feed
 - **活动热力图**：从 git 提交历史生成贡献图
 
@@ -48,6 +49,8 @@ public/images/
   YYYY/MM/DD/         文章配图，按发布日期分目录
   site/               站点装饰图
   staging_area/       待归档的原始图片（不纳入版本控制）
+exercises/
+  <语言>/<年>/<月>/<日>/  各语言练习代码，不参与站点构建
 src/
   app/                路由与页面
   lib/                数据层（文章、标签、专栏、关于页）
@@ -125,15 +128,20 @@ npm run compress -- --write # 确认后实际覆盖
 `src/scripts/blog.cpp` 是一个辅助命令行工具，需要自行编译，产物不进版本控制：
 
 ```bash
+# Windows 下需要先把 mingw64/bin 加进 PATH，否则编译器找不到运行库，会静默失败
 g++ -std=c++17 -O2 -static -o blog.exe src/scripts/blog.cpp
 ```
 
 ```bash
-./blog.exe day            # 创建今天的日记
-./blog.exe plan day       # 创建规划（day / half-mon / week）
-./blog.exe img            # 把 staging_area/ 的图片归档到今天
-./blog.exe img 2026-11-5  # 归档到指定日期；也可写 11-5 或 5 省略年、月
+./blog.exe day                     # 创建今天的日记
+./blog.exe plan day                # 创建规划（day / half-mon / week）
+./blog.exe img                     # 把 staging_area/ 的图片归档到今天
+./blog.exe img 2026-11-5           # 归档到指定日期；也可写 11-5 或 5 省略年、月
+./blog.exe code python hello       # 新建 exercises/python/2026/11/07/hello.py
+./blog.exe code rust two-sum 11-5  # 新建 exercises/rust/2026/11/05/two-sum.rs
 ```
+
+`code` 子命令按 `<语言>/<年>/<月>/<日>/<主题>.<扩展名>` 建空文件，日期规则与 `img` 相同，成功后打印对应的 GitHub 链接。支持 Rust、C、C++、Python、Go、Java、C#、JavaScript、TypeScript，也可以直接写扩展名式的简写：`rs`、`py`、`js`、`ts`、`cs`、`c++`、`c#`。
 
 ## 部署
 

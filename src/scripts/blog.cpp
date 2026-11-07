@@ -12,6 +12,8 @@
 //   blog img 2026-11-5     归档到指定日期
 //   blog img 11-5          归档到今年的 11 月 5 日
 //   blog img 5             归档到本月的 5 日
+//   blog code python hello      在 exercises/python/YYYY/MM/DD/ 下新建 hello.py
+//   blog code rust two-sum 11-5 在 exercises/rust/2026/11/05/ 下新建 two-sum.rs
 
 #include <algorithm>
 #include <cctype>
@@ -34,7 +36,8 @@
 namespace fs = std::filesystem;
 
 static const char* kUsage =
-    "用法：blog day | blog plan day|half-mon|week | blog img [YYYY-M-D|M-D|D]\n";
+    "用法：blog day | blog plan day|half-mon|week | blog img [YYYY-M-D|M-D|D]"
+    " | blog code <语言> <主题> [YYYY-M-D|M-D|D]\n";
 
 static std::string to_lower(std::string s) {
     std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
@@ -267,6 +270,121 @@ static int organize_images(const fs::path& root, const std::string& year, const 
     return 0;
 }
 
+// ---------- 练习代码 ----------
+
+struct LangInfo {
+    std::string dir;
+    std::string ext;
+};
+
+static const std::map<std::string, LangInfo> kLanguages = {
+    {"rust", {"rust", ".rs"}},
+    {"rs", {"rust", ".rs"}},
+    {"c", {"c", ".c"}},
+    {"cpp", {"cpp", ".cpp"}},
+    {"c++", {"cpp", ".cpp"}},
+    {"python", {"python", ".py"}},
+    {"py", {"python", ".py"}},
+    {"go", {"go", ".go"}},
+    {"java", {"java", ".java"}},
+    {"csharp", {"csharp", ".cs"}},
+    {"c#", {"csharp", ".cs"}},
+    {"cs", {"csharp", ".cs"}},
+    {"javascript", {"javascript", ".js"}},
+    {"js", {"javascript", ".js"}},
+    {"typescript", {"typescript", ".ts"}},
+    {"ts", {"typescript", ".ts"}},
+};
+
+static bool ends_with(const std::string& s, const std::string& suffix) {
+    return s.size() >= suffix.size() &&
+           s.compare(s.size() - suffix.size(), suffix.size(), suffix) == 0;
+}
+
+// Java 的文件名必须等于 public 类名，转成 PascalCase：two-sum -> TwoSum
+static std::string to_pascal_case(const std::string& s) {
+    std::string out;
+    bool upper = true;
+    for (unsigned char c : s) {
+        if (c == '-' || c == '_' || c == ' ') {
+            upper = true;
+            continue;
+        }
+        out += static_cast<char>(upper ? std::toupper(c) : c);
+        upper = false;
+    }
+    return out;
+}
+
+static int create_code_file(const fs::path& root, const std::string& langArg,
+                            const std::string& topic, const std::string& dateArg,
+                            std::string year, std::string month, std::string day) {
+    if (langArg.empty() || topic.empty()) {
+        std::cerr << "用法：blog code <语言> <主题> [日期]\n"
+                     "支持的语言：rust c cpp python go java csharp javascript typescript\n";
+        return 2;
+    }
+
+    auto it = kLanguages.find(to_lower(langArg));
+    if (it == kLanguages.end()) {
+        std::cerr << "不支持的语言 '" << langArg
+                  << "'。可用：rust、c、cpp、python、go、java、csharp、javascript、typescript\n";
+        return 2;
+    }
+    const LangInfo& info = it->second;
+
+    if (!dateArg.empty()) {
+        int targetYear = 0;
+        int targetMonth = 0;
+        int targetDay = 0;
+        if (!parse_img_date(dateArg, std::atoi(year.c_str()), std::atoi(month.c_str()),
+                            targetYear, targetMonth, targetDay)) {
+            std::cerr << "无法识别的日期 '" << dateArg
+                      << "'。可用格式：2026-11-5、11-5 或 5\n";
+            return 2;
+        }
+        year = int_to_string(targetYear);
+        month = pad2(targetMonth);
+        day = pad2(targetDay);
+    }
+
+    std::string stem = info.dir == "java" ? to_pascal_case(topic) : topic;
+    std::string fileName = stem;
+    if (!ends_with(to_lower(fileName), info.ext)) {
+        fileName += info.ext;
+    }
+
+    fs::path targetDir = root / "exercises" / info.dir / year / month / day;
+    fs::path targetPath = targetDir / fileName;
+
+    std::error_code ec;
+    if (fs::exists(targetPath, ec)) {
+        std::cerr << "文件已存在，不会覆盖：" << targetPath.string() << "\n";
+        return 1;
+    }
+
+    fs::create_directories(targetDir, ec);
+    if (ec) {
+        std::cerr << "创建目录失败：" << targetDir.string() << " (" << ec.message() << ")\n";
+        return 1;
+    }
+
+    std::ofstream ofs(targetPath, std::ios::binary);
+    if (!ofs) {
+        std::cerr << "无法写入文件：" << targetPath.string() << "\n";
+        return 1;
+    }
+    ofs.close();
+
+    std::error_code relEc;
+    fs::path relative = fs::relative(targetPath, root, relEc);
+    std::string relStr = relEc ? targetPath.generic_string() : relative.generic_string();
+
+    std::cout << "✅ 创建文件：" << relStr << "\n";
+    std::cout << "https://github.com/KyrieChao/KyrieChao.github.io/blob/main/" << relStr << "\n";
+    return 0;
+}
+
 int main(int argc, char* argv[]) {
 #if defined(_WIN32)
     SetConsoleOutputCP(CP_UTF8);
@@ -276,17 +394,24 @@ int main(int argc, char* argv[]) {
 
     std::string type = "day";
     std::string arg2;
+    std::string arg3;
+    std::string arg4;
 
     if (argc >= 2) type = argv[1];
     if (argc >= 3) arg2 = argv[2];
+    if (argc >= 4) arg3 = argv[3];
+    if (argc >= 5) arg4 = argv[4];
 
-    if (argc > 3) {
+    type = to_lower(type);
+
+    // code 要 语言 + 主题 + 可选日期，其余命令最多带一个参数
+    const bool isCode = type == "code";
+    if (argc > (isCode ? 5 : 3)) {
         std::cerr << "参数过多。" << kUsage;
         return 2;
     }
 
-    type = to_lower(type);
-    if (type != "day" && type != "plan" && type != "img") {
+    if (type != "day" && type != "plan" && type != "img" && type != "code") {
         std::cerr << "未知类型 '" << type << "'。" << kUsage;
         return 2;
     }
@@ -360,6 +485,10 @@ int main(int argc, char* argv[]) {
             day = pad2(targetDay);
         }
         return organize_images(root, year, month, day);
+    }
+
+    if (type == "code") {
+        return create_code_file(root, arg2, arg3, arg4, year, month, day);
     }
 
     fs::path targetDir = root / "content" / "posts" / year / month;
