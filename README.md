@@ -20,7 +20,7 @@
 - **全文搜索**：构建时生成索引，前端 Fuse.js 即时匹配，`Ctrl+K` / `Cmd+K` 唤起
 - **定时发布**：把 `date` 设为未来时间，到期由 GitHub Actions 自动上线
 - **数学与代码**：KaTeX 公式渲染，highlight.js 代码高亮并带复制按钮
-- **阅读体验**：目录导航、阅读进度条、阅读时长估算、暗色模式
+- **阅读体验**：目录导航、阅读进度条、阅读时长估算、图片灯箱、回到顶部、暗色模式
 - **SEO 与可达性**：构建时生成 sitemap.xml 与 robots.txt，文章页注入 JSON-LD 结构化数据，自带自定义 404 页面
 - **自动化产物**：每篇文章自动生成 OG 分享图，同时输出 RSS 2.0 / Atom / JSON Feed
 - **活动热力图**：从 git 提交历史生成贡献图
@@ -60,7 +60,7 @@ src/
   deploy.yml          构建并部署到 GitHub Pages
 ```
 
-主要路由：`/`、`/posts`、`/series`、`/tags`、`/about`、`/activity`。
+主要路由：`/`、`/posts`、`/archive`、`/series`、`/tags`、`/about`、`/activity`。
 
 ## 本地开发
 

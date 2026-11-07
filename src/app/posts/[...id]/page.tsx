@@ -5,6 +5,8 @@ import { TableOfContents } from "@/components/TableOfContents";
 import { Comments } from "@/components/Comments";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { CodeBlockEnhancer } from "@/components/CodeBlockEnhancer";
+import { ImageLightbox } from "@/components/ImageLightbox";
+import { BackToTop } from "@/components/BackToTop";
 
 // 静态导出必须实现此函数，告知 Next.js 有哪些路径需要预渲染
 export async function generateStaticParams() {
@@ -89,6 +91,8 @@ export default async function Post({
       />
       <ReadingProgress />
       <CodeBlockEnhancer />
+      <ImageLightbox />
+      <BackToTop />
       <div className="max-w-[1920px] w-full px-8 pt-8">
         <Link
           href="/"
