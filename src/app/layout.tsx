@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import "katex/dist/katex.min.css"; // Math support
 // Highlight.js styles are now in globals.css to support dark mode switching
@@ -9,16 +10,6 @@ import { Search } from "@/components/Search";
 import { CodeBlockEnhancer } from "@/components/CodeBlockEnhancer";
 import Link from "next/link";
 import { FiActivity, FiCode, FiGithub, FiRss } from "react-icons/fi";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kyriechao.github.io"),
@@ -34,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen h-full bg-background font-sans text-foreground transition-colors duration-300`}
+        className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen h-full bg-background font-sans text-foreground transition-colors duration-300`}
       >
         <Providers>
           <CodeBlockEnhancer />
@@ -69,8 +60,16 @@ export default function RootLayout({
               </div>
             </header>
             <main className="mx-auto w-full max-w-[1360px] flex-grow px-5 py-4 sm:px-8 xl:px-12">{children}</main>
-            <footer className="mt-10 border-t border-gray-200 py-6 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
-              © {new Date().getFullYear()} KyrieChao. Powered by Next.js & GitHub Pages.
+            <footer className="mt-10 border-t border-gray-200 py-6 text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
+              <nav aria-label="订阅与归档" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+                <Link href="/archive" className="transition-colors hover:text-blue-700 dark:hover:text-blue-300">归档</Link>
+                <a href="/rss.xml" className="transition-colors hover:text-blue-700 dark:hover:text-blue-300">RSS</a>
+                <a href="/atom.xml" className="transition-colors hover:text-blue-700 dark:hover:text-blue-300">Atom</a>
+                <a href="/rss.json" className="transition-colors hover:text-blue-700 dark:hover:text-blue-300">JSON Feed</a>
+              </nav>
+              <p className="mt-3 text-center">
+                © {new Date().getFullYear()} KyrieChao. Powered by Next.js & GitHub Pages.
+              </p>
             </footer>
           </div>
         </Providers>
