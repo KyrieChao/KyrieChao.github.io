@@ -36,7 +36,7 @@
 namespace fs = std::filesystem;
 
 static const char* kUsage =
-    "用法：blog day | blog plan day | half-mon | week | blog img [YYYY-M-D|M-D|D]"
+    "用法: blog day | blog plan day | half-mon | week | blog img [YYYY-M-D|M-D|D]"
     " | blog code <语言> <主题> [YYYY-M-D|M-D|D]\n";
 
 static std::string to_lower(std::string s) {
